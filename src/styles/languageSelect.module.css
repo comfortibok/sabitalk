@@ -1,0 +1,48 @@
+.mainContent {
+  max-width: 432px;
+  text-align: center;
+  padding: 0.3em;
+  display: grid;
+  gap: 1.8em;
+}
+
+.radioGroup,
+.radioInput {
+  display: flex;
+}
+
+.mainContent h3 > span,
+.mainContent p {
+  font-weight: 500;
+}
+
+.mainContentTitle {
+  font-weight: 500;
+  font-size: 1.25rem;
+  text-align: center;
+}
+
+.mainContentTitle > span {
+  font-family: "Alfa Slab One", serif;
+  color: rgba(18, 65, 99, 1);
+}
+
+.mainContent p {
+  line-height: 1.5;
+}
+
+.radioGroup {
+  flex-direction: column;
+  gap: 1em;
+}
+
+.radioInput {
+  justify-content: center;
+  align-items: center;
+  gap: 3.5em;
+}
+
+.mainContent form > button {
+  width: 288px;
+  margin-block-start: 3em;
+}

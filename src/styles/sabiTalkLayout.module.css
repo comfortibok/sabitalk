@@ -1,0 +1,48 @@
+.leftPaneContainer {
+  max-width: 523px;
+}
+
+.leftPaneContainer h1,
+.subtitle,
+.subtext {
+  font-weight: 400;
+}
+
+.leftPaneContainer .subtitle,
+.leftPaneContainer .subtext {
+  line-height: 1.5;
+}
+
+.leftPaneContainer::before {
+  content: "";
+  position: absolute;
+  width: 233px;
+  height: 233px;
+  top: -20px;
+  left: -26px;
+  background-image: url("./assets/ellipse/Ellipse\ 661.png");
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+}
+
+.leftPaneContainer h1 {
+  margin-top: 0;
+  font-family: "Alfa Slab One", serif;
+  font-size: 4.02rem;
+}
+
+.leftPaneContainer h2 {
+  font-size: 2.25rem;
+  font-weight: 600;
+  margin: 2em 0 0.5em;
+}
+
+.subtitle {
+  font-family: "Amita", serif;
+  font-size: 2.01rem;
+  padding-left: 2.5em;
+}
+
+.subtext {
+  font-size: 1.25rem;
+}
