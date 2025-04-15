@@ -4,9 +4,6 @@ import layoutStyles from "../styles/sabiTalkLayout.module.css";
 const Login = ({ onSwitch }) => {
   return (
     <div className={`${styles.formSection} ${layoutStyles.leftPaneContainer}`}>
-      <p className={styles.back}>
-        <span>&lt;</span> Back
-      </p>
       <h3 className={styles.title}>
         Enter your details to log in and start learning
       </h3>
