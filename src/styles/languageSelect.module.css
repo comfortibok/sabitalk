@@ -32,12 +32,15 @@
 }
 
 .radioGroup {
+  display: flex;
   flex-direction: column;
   gap: 1em;
+  max-width: 10rem;
+  margin: 0 auto;
 }
 
 .radioInput {
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   gap: 3.5em;
 }
