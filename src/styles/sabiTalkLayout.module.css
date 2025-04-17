@@ -2,6 +2,7 @@
   max-width: 523px;
 }
 
+
 .leftPaneContainer h1,
 .subtitle,
 .subtext {
@@ -23,6 +24,7 @@
   background-image: url("./assets/ellipse/Ellipse\ 661.png");
   background: rgba(255, 255, 255, 0.05);
   border-radius: 50%;
+  display: none;
 }
 
 .leftPaneContainer h1 {
