@@ -47,6 +47,10 @@ body {
   display: grid;
   place-items: center;
   min-height: 100vh;
+  background-image: url(./assets/ellipse/Left-pane-background.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .right-pane {
