@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import styles from "../styles/sabiTalkLayout.module.css";
 import "../App.css";
 
-const SabiTalkLayout = ({ children, showBackButton = true }) => {
+const SabiTalkLayout = ({ children = true }) => {
   return (
     <div className="app-wrapper">
       <section className="left-pane">
@@ -17,11 +17,11 @@ const SabiTalkLayout = ({ children, showBackButton = true }) => {
         </div>
       </section>
       <section className="right-pane">
-        {showBackButton && (
+        {/* {showBackButton && (
           <p className={styles.back}>
             <span>&lt;</span> Back
           </p>
-        )}
+        )} */}
         {children}
       </section>
     </div>
@@ -30,7 +30,7 @@ const SabiTalkLayout = ({ children, showBackButton = true }) => {
 
 SabiTalkLayout.propTypes = {
   children: PropTypes.node.isRequired,
-  showBackButton: PropTypes.bool, 
+  showBackButton: PropTypes.bool,
 };
 
 export default SabiTalkLayout;
