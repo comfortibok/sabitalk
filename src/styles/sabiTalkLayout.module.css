@@ -48,3 +48,10 @@
 .subtext {
   font-size: 1.25rem;
 }
+
+.back {
+  align-self: flex-start;
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 2em 0 0 2.5em;
+}

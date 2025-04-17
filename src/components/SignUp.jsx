@@ -3,6 +3,7 @@ import layoutStyles from "../styles/sabiTalkLayout.module.css";
 const SignUp = ({ onSwitch }) => {
   return (
     <div className={`${styles.formSection} ${layoutStyles.leftPaneContainer}`}>
+
       <p className={styles.back}>
         <span>
           <svg
@@ -22,6 +23,7 @@ const SignUp = ({ onSwitch }) => {
         </span>
         Back
       </p>
+
       <h3 className={styles.title}>Create an account and start learning</h3>
       <form className={styles.form}>
         <div className={styles.inputContainer}>

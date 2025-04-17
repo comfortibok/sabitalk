@@ -1,5 +1,7 @@
 .formSection {
+  border: 2px solid rebeccapurple;
   width: 100%;
+  margin: 0 auto;
   height: 100%;
   display: flex;
   flex-direction: column;
