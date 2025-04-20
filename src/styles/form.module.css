@@ -1,7 +1,6 @@
 .formSection {
-  width: 100%;
+  border: 2px solid black;
   margin: 0 auto;
-  height: 100%;
   display: flex;
   flex-direction: column;
 }
@@ -9,33 +8,27 @@
 .back {
   display: flex;
   align-items: center;
-  color: var(--primary-color);
   cursor: pointer;
-  font-weight: 500;
-
-  > span {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+  gap: 0.5em;
+  position: absolute;
+  top: -10px;
+  left: -13em;
 }
 
 .backIcon {
   width: 20px;
   height: 20px;
-  color: var(--primary-color);
-  text-align: center;
+}
+.back p {
+  font-weight: 500;
+  font-size: 1rem;
 }
 
 .title {
   font-size: inherit;
   font-weight: 600;
-  margin-block: 2em;
+  margin-block: 6em 3.43em;
   text-align: center;
-}
-
-.back span {
-  margin-right: 0.5em;
 }
 
 .form {
@@ -62,13 +55,17 @@ input {
 }
 
 label {
-  font-size: o.75rem;
+  font-size: 0.75rem;
   font-weight: 500;
+}
+input[type="password"] {
+  background: url("src/assets/icons/eye-slash.png") no-repeat 19em center;
+  width: 100%;
 }
 
 input:focus {
   outline: none;
-  border: 1px solid red;
+  border: 1px solid var(--primary-background-color);
 }
 
 button {
@@ -101,9 +98,11 @@ button:focus {
   align-items: center;
   margin-block-end: 2em;
 }
+
 .termsCheckbox label {
   margin-inline-end: 0.5em;
 }
+
 .termsLink {
   color: inherit;
   font-weight: 500;
@@ -121,6 +120,7 @@ button:focus {
   font-size: 0.75rem;
   margin-inline-start: 0.3em;
 }
+
 .signUpBtn,
 .cta,
 .loginBtn {

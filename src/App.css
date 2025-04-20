@@ -28,35 +28,30 @@ body {
 }
 
 .app-wrapper {
-  width: 100%;
   min-height: 100vh;
   padding: 1.5rem;
   display: flex;
   align-items: center;
 }
 
-.left-pane,
-.right-pane {
-  flex: 1;
-}
-
 .left-pane {
+  width: 100%;
+  max-width: 675px;
+  height: 90.37vh;
   background-color: var(--primary-background-color);
   color: var(--secondary-color);
-  border-radius: 25px;
-  display: grid;
-  place-items: center;
-  min-height: 100vh;
+  border-radius: 32px;
   background-image: url(./assets/ellipse/Left-pane-background.png);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-}
-
-.right-pane {
-  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
+}
+
+.right-pane {
+  margin: auto;
+  position: relative;
+  border: 2px solid red;
 }
