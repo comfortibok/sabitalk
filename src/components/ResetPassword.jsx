@@ -1,6 +1,6 @@
 import styles from "../styles/form.module.css";
 import layoutStyles from "../styles/sabiTalkLayout.module.css";
-const ConfirmOtp = ({ onSwitch }) => {
+const ResetPassword = ({ onSwitch }) => {
   return (
     <div className={`${styles.formSection} ${layoutStyles.leftPaneContainer}`}>
       <div className={styles.back}>
@@ -29,11 +29,11 @@ const ConfirmOtp = ({ onSwitch }) => {
             <label htmlFor="email">Email Address</label>
             <input type="text" name="email" id="email" />
           </div>
-          <button type="button">Confirm</button>
+          <button type="button" className="reset-confirm-btn">Confirm</button>
         </form>
       </div>
     </div>
   );
 };
 
-export default ConfirmOtp;
+export default ResetPassword;

@@ -14,7 +14,7 @@
 }
 
 .leftPaneContainer::before {
-  content: "";
+  content: "";  
   position: absolute;
   width: 233px;
   height: 233px;
