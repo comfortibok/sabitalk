@@ -42,12 +42,7 @@
   color: steelblue;
 }
 
-<<<<<<< HEAD
-.google {
-  width: 16px;
-  height: 16px;
-}
-=======
+
 .back p {
   font-weight: 500;
   font-size: 1rem;
@@ -72,7 +67,7 @@
   flex-direction: column;
 }
 
->>>>>>> 9f860a72f2ea25f83b1f315f5200e2f9c6106323
+
 .form {
   width: 100%;
   max-width: 288px;
