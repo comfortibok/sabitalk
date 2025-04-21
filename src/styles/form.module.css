@@ -1,27 +1,33 @@
-.formSection {
-  border: 2px solid black;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-}
-
 .back {
   display: flex;
   align-items: center;
   cursor: pointer;
   gap: 0.5em;
   position: absolute;
-  top: -10px;
-  left: -13em;
+  top: 10px;
+  left: -7em;
 }
 
 .backIcon {
   width: 20px;
   height: 20px;
 }
-.back p {
-  font-weight: 500;
-  font-size: 1rem;
+
+.eyeIcon {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 12px;
+  right: 8px;
+}
+
+.signUpBtn,
+.loginBtn {
+  width: 288px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.7em;
 }
 
 .title {
@@ -36,10 +42,37 @@
   color: steelblue;
 }
 
+<<<<<<< HEAD
 .google {
   width: 16px;
   height: 16px;
 }
+=======
+.back p {
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.passwordWrapperInput {
+  margin-block-end: 0.6em;
+}
+
+.passwordWrapperSpan {
+  font-weight: 500;
+  font-size: 0.75rem;
+  color: rgba(18, 65, 99, 1);
+  margin-block-end: 2.5em;
+  margin-left: auto;
+}
+
+.formSection {
+  border: 2px solid black;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+>>>>>>> 9f860a72f2ea25f83b1f315f5200e2f9c6106323
 .form {
   width: 100%;
   max-width: 288px;
@@ -57,6 +90,15 @@
   gap: 0.7em;
 }
 
+.passwordWrapper {
+  max-width: 288px;
+  position: relative;
+}
+
+input[type="password"] {
+  width: 100%;
+}
+
 input,
 select {
   padding: 12px;
@@ -67,10 +109,6 @@ select {
 label {
   font-size: 0.75rem;
   font-weight: 500;
-}
-input[type="password"] {
-  background: url("src/assets/icons/eye-slash.png") no-repeat 19em center;
-  width: 100%;
 }
 
 input:focus,
