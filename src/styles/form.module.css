@@ -30,7 +30,16 @@
   margin-block: 6em 3.43em;
   text-align: center;
 }
+.download {
+  width: 16px;
+  height: 16px;
+  color: steelblue;
+}
 
+.google {
+  width: 16px;
+  height: 16px;
+}
 .form {
   width: 100%;
   max-width: 288px;
