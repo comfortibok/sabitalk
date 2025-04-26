@@ -84,7 +84,7 @@ const SignUp = ({ onSwitch }) => {
           <button type="submit">Sign up</button>
           <p>
             Already have an account?{" "}
-            <a href="#" onClick={onSwitch}>
+            <a href="/login" onClick={onSwitch}>
               Log In
             </a>
           </p>

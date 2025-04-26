@@ -1,6 +1,6 @@
 import styles from "../styles/form.module.css";
 import layoutStyles from "../styles/sabiTalkLayout.module.css";
-const InputOtp = ({ onSwitch }) => {
+const InputOtp = () => {
   return (
     <div className={`${styles.formSection} ${layoutStyles.leftPaneContainer}`}>
       <div className={styles.back}>

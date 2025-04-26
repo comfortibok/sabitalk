@@ -1,5 +1,8 @@
 .leftPaneContainer {
-  width: 523px;
+  /* width: 523px; */
+  width: 50%;
+  flex: 1;
+  padding: 20px;
 }
 
 .leftPaneContainer h1,

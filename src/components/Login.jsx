@@ -1,4 +1,6 @@
 import styles from "../styles/form.module.css";
+import { Link } from "react-router-dom";
+
 
 import layoutStyles from "../styles/sabiTalkLayout.module.css";
 const Login = ({ onSwitch }) => {
@@ -54,7 +56,11 @@ const Login = ({ onSwitch }) => {
                 />
               </svg>
             </div>
-            <span className={styles.passwordWrapperSpan}>Forgot Password</span>
+            {/* <span className={styles.passwordWrapperSpan}>Forgot Password</span> */}
+            {/* Move Forgot Password outside passwordWrapper div */}
+            <Link to="/reset-password" className={styles.passwordWrapperSpan}>
+              Forgot Password?
+            </Link>
           </div>
 
           <button>Log in</button>

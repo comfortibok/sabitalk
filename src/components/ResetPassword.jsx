@@ -1,6 +1,13 @@
 import styles from "../styles/form.module.css";
 import layoutStyles from "../styles/sabiTalkLayout.module.css";
-const ResetPassword = ({ onSwitch }) => {
+import { useNavigate } from "react-router-dom";
+
+
+const ResetPassword = () => {
+  const navigate = useNavigate();
+
+
+
   return (
     <div className={`${styles.formSection} ${layoutStyles.leftPaneContainer}`}>
       <div className={styles.back}>
@@ -29,7 +36,15 @@ const ResetPassword = ({ onSwitch }) => {
             <label htmlFor="email">Email Address</label>
             <input type="text" name="email" id="email" />
           </div>
-          <button type="button" className="reset-confirm-btn">Confirm</button>
+          {/* <button type="button" className="reset-confirm-btn">Confirm</button> */}
+          <button 
+            type="button" 
+            className="reset-confirm-btn" 
+            onClick={() => navigate("/input-otp")}
+          >
+            Confirm
+          </button>
+
         </form>
       </div>
     </div>

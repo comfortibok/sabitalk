@@ -1,12 +1,12 @@
+import { useNavigate } from "react-router-dom";
 import styles from "../styles/languageSelect.module.css";
 
-const LanguageSelect = ({ onSelect }) => {
+const LanguageSelect = () => {
+  const navigate = useNavigate();
+
   const handleSubmit = (event) => {
     event.preventDefault();
-    const selectedLanguage = event.target.language.value;
-    if (onSelect) {
-      onSelect(selectedLanguage);
-    }
+    navigate("/signup");
   };
 
   return (
