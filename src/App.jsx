@@ -1,5 +1,6 @@
 
 import React from "react";
+<<<<<<< Updated upstream
 import { Routes, Route, Navigate } from "react-router-dom";
 
 import SignUpPage from "./pages/SignUp";
@@ -29,6 +30,22 @@ function App() {
       {/* Fallback */}
       <Route path="*" element={<Navigate to="/" />} />
     </Routes>
+=======
+import { Router, Routes, Route } from "react-router-dom";
+import { Navigate } from "react-router-dom";
+import Onboarding from "./pages/Onboarding";import DashboardPage from "./pages/DashboardPage";
+function App() {
+  return (
+    <>
+      <DashboardPage/>
+      {/* <Routes>
+        <Route path="/" element={<Onboarding />} />
+        <Route path="/lesson" element={<LessonPage />} />
+        <Route path="/profile" element={<ProfilePage />} />
+        <Route path="*" element={<Navigate to="/" />} />
+      </Routes> */}
+    </>
+>>>>>>> Stashed changes
   );
 }
 

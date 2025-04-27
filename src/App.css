@@ -18,12 +18,27 @@
   --secondary-color: rgba(255, 255, 255, 1);
   --secondary-button-color: rgba(59, 89, 152, 1);
   --secondary-background-color: rgba(255, 255, 255, 1);
+  --box-shadow: 0px 2px 9.9px 2px rgba(59, 89, 152, 0.12);
+  --tertiary-color: rgba(0, 0, 0, 1);
+  --color-blue: rgba(18, 65, 99, 1);
+  --color-black: rgba(21, 21, 20, 1);
+  --date-background-color: rgba(250, 250, 250, 1);
+  --wrapper-background-color: rgb(249, 249, 249);
+  --font-weight-normal: 400;
+  --font-weight-bold: 500;
+  --font-weight-extrabold: 600;
+  --font-size-extrasm: 0.75rem;
+  --font-size-small: 0.875rem;
+  --font-size-normal: 1rem;
+  --font-size-med: 1.25rem;
+  --font-size-big: 1.5rem;
+  --font-size-extrabig: 2rem;
 }
 
 body {
   font-family: "Lato", sans-serif;
   font-weight: 400;
-  font-size: 0.875rem;
+  font-size: var(--font-size-small);
   color: var(--primary-color);
 }
 
@@ -78,6 +93,7 @@ body {
   padding: 2rem;
 }
 
+<<<<<<< Updated upstream
 @media screen and (max-width: 1024px) {
   .onboarding-container{
     flex-direction: column;
@@ -91,4 +107,8 @@ body {
   .right-pane{
     width: 100%;
   }
+=======
+.reset-confirm-btn {
+  margin-block-start: 3em;
+>>>>>>> Stashed changes
 }
