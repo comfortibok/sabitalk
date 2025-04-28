@@ -2,8 +2,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;500;600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Amita&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Figtree:ital@0;1&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Figtree:ital@0;1&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@600&display=swap");
 
 *,
 *:before,
@@ -46,14 +46,21 @@ body {
   justify-content: space-between;
   padding: 1.5rem;
   align-items: center;
-  gap: 2.5em;
+  gap: 2em;
 }
 
 /* Left Pane */
 .leftPaneContainer {
-  width: 675px;
-  height: 98vh;
+  /* max-width: 675px; */
+  max-width: 50%;
+  width: 100%;
+  /* height: 98vh; */
+  min-height: 976px;
   background-color: var(--primary-background-color);
+  background-image: url(./assets/ellipse/Left-pane-background.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   color: var(--secondary-color);
   border-radius: 32px;
   display: grid;
@@ -113,7 +120,8 @@ body {
 
 /* RightPane */
 .rightPaneContainer {
-  border: 2px solid red;
+  /* border: 2px solid red; */
+  width: 50%;
   flex: 1;
 }
 
@@ -189,4 +197,3 @@ button {
   border-radius: 8px;
   padding: 0.7143em;
 }
-
