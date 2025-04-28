@@ -24,7 +24,7 @@
   text-align: center;
   background: none;
   padding: 0.65em;
-  font-family: Figtree;
+  font-family: "Figtree", sans-serif;
   cursor: pointer;
 }
 .tabs a {

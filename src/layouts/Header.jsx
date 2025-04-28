@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../styles/header.module.css";
+import styles from "../layouts/header.module.css";
 
 const Header = ({ title, date }) => {
   return (

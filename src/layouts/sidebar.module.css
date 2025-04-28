@@ -1,3 +1,14 @@
+.sidebar {
+  width: 268px;
+  background-color: var(--secondary-background-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem 0 2rem 1rem;
+  box-shadow: var(--box-shadow);
+  border-radius: 8px;
+}
+
 .logo,
 .subtext {
   font-weight: var(--font-weight-normal);
@@ -21,17 +32,6 @@
   font-family: "Amita", serif;
   text-align: center;
   margin-block-start: 0.7em;
-}
-
-.sidebar {
-  width: 268px;
-  background-color: var(--secondary-background-color);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 2rem 0 2rem 1rem;
-  box-shadow: var(--box-shadow);
-  border-radius: 8px;
 }
 
 .navLink,

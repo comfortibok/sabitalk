@@ -1,7 +1,7 @@
 import React from "react";
-import Header from "../components/Header";
-import DashboardLayout from "../components/DashboardLayout";
-import styles from "../styles/dashboard.module.css";
+import Header from "../layouts/Header";
+import DashboardLayout from "../layouts/DashboardLayout";
+import styles from "../styles/dashboardPage.module.css";
 import image from "../assets/images/0014.png";
 import OngoingLesson from "../components/OngoingLesson";
 

@@ -1,4 +1,4 @@
-.wrapper {
+.dashboardWrapper {
   padding: 1em;
   display: flex;
   min-height: 100vh;
@@ -6,6 +6,6 @@
   background-color: var(--wrapper-background-color);
 }
 
-.mainContent {
+.dashboardContent {
   flex: 1;
 }

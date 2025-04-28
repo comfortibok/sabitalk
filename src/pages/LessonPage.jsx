@@ -1,7 +1,7 @@
 import React from "react";
-import Header from "../components/Header";
-import DashboardLayout from "../components/DashboardLayout";
 import styles from "../styles/lessonPage.module.css";
+import Header from "../layouts/Header";
+import DashboardLayout from "../layouts/DashboardLayout";
 import OngoingLesson from "../components/OngoingLesson";
 
 const LessonPage = () => {

@@ -1,6 +1,6 @@
 import React from "react";
-import DashboardLayout from "../components/DashboardLayout";
-import Header from "../components/Header";
+import DashboardLayout from "../layouts/DashboardLayout";
+import Header from "../layouts/Header";
 import styles from "../styles/profilePage.module.css";
 import avatar from "../assets/images/Ellipse 668.png";
 const ProfilePage = () => {
