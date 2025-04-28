@@ -1,0 +1,87 @@
+.sidebar {
+  width: 268px;
+  background-color: var(--secondary-background-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem 0 2rem 1rem;
+  box-shadow: var(--box-shadow);
+  border-radius: 8px;
+}
+
+.logo,
+.subtext {
+  font-weight: var(--font-weight-normal);
+  align-self: center;
+  color: var(--tertiary-color);
+}
+
+.subtext,
+.logout,
+.navList li {
+  font-size: var(--font-size-normal);
+}
+
+.logo {
+  font-family: "Alfa Slab One", serif;
+  font-size: var(--font-size-extrabig);
+  line-height: 100%;
+}
+
+.subtext {
+  font-family: "Amita", serif;
+  text-align: center;
+  margin-block-start: 0.7em;
+}
+
+.navLink,
+.logoutContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.7em;
+}
+
+nav {
+  margin-block: 5.8em auto;
+}
+
+.navList {
+  list-style: none;
+}
+
+.navList li {
+  padding: 1rem;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  margin-block-end: 0.5rem;
+  cursor: pointer;
+}
+
+.navLink {
+  text-decoration: none;
+  color: var(--secondary-color);
+}
+
+.navLink.currentLink {
+  color: var(--secondary-color);
+}
+
+.navList li {
+  background-color: var(--primary-background-color);
+}
+
+.logout {
+  font-weight: var(--font-weight-bold);
+  color: rgb(255, 0, 0);
+  cursor: pointer;
+}
+
+/* SVG styles
+.navLink svg {
+  fill: var(--tertiary-color);
+}
+
+.navList li {
+  color: var(--primary-color); 
+  background: none;
+} */

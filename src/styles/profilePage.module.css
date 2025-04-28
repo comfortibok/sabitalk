@@ -1,107 +1,78 @@
-/* Container layout */
-.container {
-  display: flex;
-  min-height: 100vh;
-  background-color: #f9f9f9;
+.avatar {
+  width: 116px;
+  height: 116px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
-/* Sidebar */
-.sidebar {
-  width: 240px;
-  background-color: #fff;
-  padding: 2rem 1rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  border-right: 1px solid #e0e0e0;
+.userName {
+  font-size: var(--font-size-med);
+  font-weight: var(--font-weight-bold);
 }
 
-.logo {
-  font-weight: bold;
-  font-size: 1.5rem;
+.editBtn,
+.userEmail {
+  font-weight: var(--font-weight-normal);
 }
 
-.tagline {
-  font-size: 0.85rem;
-  color: #555;
-  margin-bottom: 2rem;
+.userEmail,
+.lessonSectionTitle,
+.title {
+  font-size: var(--font-size-normal);
 }
 
-.sidebar ul {
-  list-style: none;
-  padding: 0;
+.lessonSectionTitle,
+.title,
+.lessonTitle {
+  font-weight: var(--font-weight-extrabold);
 }
 
-.sidebar li {
-  padding: 0.75rem 1rem;
-  cursor: pointer;
-  border-radius: 0.5rem;
-  margin-bottom: 0.5rem;
+.editBtn,
+.info,
+.lessonTitle {
+  font-size: var(--font-size-small);
 }
 
-.active {
-  background-color: #3b82f6;
-  color: #fff;
+.info {
+  color: var(--primary-color);
 }
 
-.logout {
-  background: none;
-  color: red;
-  border: none;
-  font-weight: bold;
-  cursor: pointer;
+.userName,
+.userEmail,
+.title {
+  color: var(--tertiary-color);
 }
 
-/* Profile Content */
-.profileContent {
-  flex: 1;
-  padding: 2rem;
+.lessonTitle {
+  color: var(--color-black);
 }
 
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.editBtn,
+.card {
+  background-color: var(--secondary-background-color);
 }
 
-.date {
-  background-color: #fff;
-  padding: 0.5rem 1rem;
-  border-radius: 1rem;
-  font-size: 0.85rem;
-  color: #888;
-  box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+.card,
+.editBtn,
+.lessonCard {
+  border-radius: 8px;
 }
 
 .card {
-  margin-top: 2rem;
-  background-color: #fff;
+  margin-block-start: 3rem;
   padding: 2rem;
-  border-radius: 1rem;
-  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
+  box-shadow: var(--box-shadow);
 }
 
 .userInfo {
   display: flex;
   align-items: center;
   gap: 1rem;
-  margin-bottom: 1.5rem;
+  margin-block-end: 1.5rem;
 }
 
-.avatar {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-.editBtn {
-  margin-left: auto;
-  background-color: #f0f0f0;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
-  cursor: pointer;
+.userInfo p {
+  margin-block-start: 0.5em;
 }
 
 .details {
@@ -114,41 +85,66 @@
   flex: 1;
 }
 
+.details p {
+  margin-block-start: 0.7em;
+}
+
+.profileLesson {
+  margin-block: 3.9em 0.8em;
+}
+
+.editBtn {
+  width: 103px;
+  height: 35px;
+  margin-left: auto;
+  color: var(--color-blue);
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--color-blue);
+  cursor: pointer;
+}
+
 .lessons {
   display: flex;
-  gap: 1rem;
   flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.lessonSectionTitle {
+  margin-block-end: 1rem;
 }
 
 .lessonCard {
-  flex: 1 1 200px;
-  padding: 1rem;
-  border: 1px solid #dcdcdc;
-  border-radius: 0.75rem;
+  flex: 1 1 479px;
+  padding: 1.2rem;
+  border: 0.5px solid var(--color-blue);
 }
 
 .progressBar {
-  background-color: #eee;
   border-radius: 1rem;
-  height: 8px;
-  margin-top: 0.5rem;
-  overflow: hidden;
+  height: 9px;
+  margin-block-start: 0.5em;
 }
-
 .progress {
   height: 100%;
-  border-radius: 1rem;
+  border-radius: 20px;
+  border: 2px solid;
 }
 
-/* Progress bar colors */
-.blue {
-  background-color: #3b82f6;
+.blueProgress {
+  background-color: rgba(6, 123, 194, 1);
 }
-
-.green {
-  background-color: #10b981;
+.purpleProgress {
+  background-color: rgba(122, 40, 203, 1);
 }
-
-.purple {
-  background-color: #8b5cf6;
+.greenProgress {
+  background-color: rgba(0, 176, 54, 1);
+}
+.blueBorder {
+  border: 0.5px solid rgba(6, 123, 194, 1);
+}
+.purpleBorder {
+  border: 0.5px solid rgba(122, 40, 203, 1);
+}
+.greenBorder {
+  border: 0.5px solid rgba(0, 176, 54, 1);
 }

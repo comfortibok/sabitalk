@@ -1,0 +1,83 @@
+.lessons {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+
+.lessonCard {
+  padding: 1.2rem;
+  background-color: var(--secondary-background-color);
+  border-radius: 8px;
+  box-shadow: var(--box-shadow);
+}
+
+.lessonTitle {
+  font-weight: var(--font-weight-extrabold);
+  color: var(--color-black);
+}
+
+.lessonTitle,
+.lang {
+  font-size: var(--font-size-normal);
+}
+
+.lessonDescription,
+.continueLink {
+  font-size: var(--font-size-extrasm);
+}
+
+.lessonDescription {
+  font-weight: var(--font-weight-normal);
+  color: var(--primary-color);
+  margin: 0.65em 0 1.43em;
+}
+.langWrapper {
+  display: flex;
+  align-items: center;
+  margin-block-start: 1.25em;
+}
+
+.lang {
+  font-style: italic;
+  margin-inline-start: auto;
+}
+
+.continueLink {
+  text-decoration: none;
+  font-weight: var(--font-weight-bold);
+  color: var(--secondary-button-color);
+}
+
+.continueLink:hover,
+.continueLink:focus {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.progressBar {
+  border-radius: 1rem;
+  height: 9px;
+  margin-block-start: 0.5em;
+}
+
+.progressBar
+.progress {
+  height: 100%;
+  border-radius: 20px;
+  border: 2px solid;
+}
+
+.blueBorder {
+  border: 0.5px solid rgba(6, 123, 194, 1);
+}
+.purpleBorder {
+  border: 0.5px solid rgba(122, 40, 203, 1);
+}
+.blueProgress {
+  background-color: rgba(6, 123, 194, 1);
+}
+.purpleProgress {
+  background-color: rgba(122, 40, 203, 1);
+}
+
+
