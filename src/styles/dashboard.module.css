@@ -1,0 +1,106 @@
+.learnTitleSpan {
+  color: rgba(177, 177, 177, 1);
+  font-size: var(--font-size-extrasm);
+}
+.learnTitle {
+  font-weight: var(--font-weight-extrabold);
+  color: var(--color-black);
+}
+
+.learnTitleSpan,
+.learnDes {
+  font-weight: var(--font-weight-normal);
+}
+
+.learnTitle,
+.learnDes {
+  font-size: var(--font-size-normal);
+}
+
+.learnDes {
+  color: var(--primary-color);
+}
+
+.cardTitle {
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-med);
+  color: var(--color-black);
+}
+
+.dashboardMain {
+  margin-block-start: 2.5em;
+  display: flex;
+  gap: 2em;
+}
+.lessonWrapper,
+.card {
+  flex: 1;
+}
+
+.learnCard,
+.communityCard {
+  box-shadow: var(--box-shadow);
+  background-color: var(--secondary-background-color);
+}
+
+.learnCard,
+.communityCard,
+.card {
+  border-radius: 8px;
+}
+
+.lessonWrapper,
+.communityCard,
+.learnGrid {
+  margin-block-start: 1.56em;
+}
+
+.cardTitle,
+.communityTitle {
+  font-size: var(--font-size-big);
+}
+
+.card {
+  padding: 1rem;
+  margin-bottom: 1rem;
+  align-items: center;
+}
+
+.community {
+  width: 300px;
+}
+
+.communityCard {
+  height: 783px;
+}
+
+.startLink {
+  text-decoration: none;
+  font-weight: var(--font-weight-bold);
+  color: var(--secondary-button-color);
+}
+
+.startLink:hover,
+.startLink:focus {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.learnWrap {
+  margin-top: 3rem;
+}
+
+.learnGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(370.5px, 1fr));
+  gap: 1rem;
+}
+
+.learnCard {
+  padding: 1rem;
+}
+
+
+.learnDes {
+  margin-block: 0.75em 2.5em;
+}

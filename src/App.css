@@ -93,7 +93,6 @@ body {
   padding: 2rem;
 }
 
-<<<<<<< Updated upstream
 @media screen and (max-width: 1024px) {
   .onboarding-container{
     flex-direction: column;
@@ -107,8 +106,4 @@ body {
   .right-pane{
     width: 100%;
   }
-=======
-.reset-confirm-btn {
-  margin-block-start: 3em;
->>>>>>> Stashed changes
 }

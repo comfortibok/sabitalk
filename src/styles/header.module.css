@@ -1,0 +1,41 @@
+.header,
+.dateWrapper {
+  display: flex;
+}
+
+.header,
+.dateWrapper {
+  gap: 1.5em;
+}
+
+.header {
+  width: 100%;
+  flex-direction: column;
+}
+
+.dateWrapper {
+  order: -1;
+  padding: 1em;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: var(--box-shadow);
+  border-radius: 8px;
+}
+
+.notificationIcon {
+  margin-left: auto;
+}
+
+.headerTitle {
+  font-family: Baloo 2;
+  font-size: var(--font-size-extrabig);
+  font-weight: var(--font-weight-extrabold);
+  color: var(--color-black);
+}
+
+.date {
+  font-family: Figtree;
+  font-weight: var(--font-weight-bold);
+  color: var(--tertiary-color);
+  font-size: var(--font-size-extrasm);
+}
