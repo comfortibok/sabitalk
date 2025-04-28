@@ -1,16 +1,17 @@
-import React from "react";
 import { Router, Routes, Route } from "react-router-dom";
 import { Navigate } from "react-router-dom";
-import Onboarding from "./pages/Onboarding";
-import Lesson from "./components/Lesson";
+import LessonComplete from "./pages/LessonComplete";
+
 function App() {
   return (
     <>
-      <Routes>
+      <LessonComplete />
+      {/* <Routes>
         <Route path="/" element={<Onboarding />} />
-        <Route path="/lesson" element={<Lesson />} />
+        <Route path="/lesson" element={<LessonPage />} />
+        <Route path="/profile" element={<ProfilePage />} />
         <Route path="*" element={<Navigate to="/" />} />
-      </Routes>
+      </Routes> */}
     </>
   );
 }

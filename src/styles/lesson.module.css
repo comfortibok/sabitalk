@@ -1,0 +1,158 @@
+.headerWrapper {
+  position: relative;
+}
+
+.notificationContent {
+  font-style: unset;
+  font-size: var(--font-size-med);
+  position: absolute;
+  top: -33px;
+  right: 0;
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+.tabs {
+  margin: 1.9em 0 0;
+  display: flex;
+  gap: 1.3em;
+}
+
+.tabs a {
+  width: 126px;
+  text-align: center;
+  background: none;
+  padding: 0.65em;
+  font-family: "Figtree", sans-serif;
+  cursor: pointer;
+}
+.tabs a {
+  font-weight: var(--font-weight-normal);
+}
+
+.tabs a {
+  font-size: var(--font-size-extrasm);
+}
+.activeTab,
+.tabs a:hover,
+.tabs a:focus {
+  border-bottom: 1px solid var(--primary-background-color);
+  color: var(--primary-background-color);
+}
+
+.lessonsList {
+  margin-block-start: 1.8em;
+}
+
+.blue {
+  background-color: rgba(6, 123, 194, 1);
+}
+
+.purple {
+  background-color: rgba(122, 40, 203, 1);
+}
+
+.lessonsListWrap {
+  margin-block-start: 3.45em;
+}
+
+.subtitleWrap {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.subtitle {
+  margin-block-end: 1.5em;
+}
+
+.subtitle {
+  font-weight: var(--font-size-extrabold);
+}
+
+.subtitle {
+  font-size: var(--font-size-med);
+  margin-block-end: 0.5rem;
+}
+
+.lessonResult {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2em;
+}
+
+.celebrationIcon img {
+  width: 190px;
+  margin-block-end: 1rem;
+}
+
+.statItem span,
+.resultSubtitle,
+.resultTitle {
+  font-size: var(--font-size-small);
+}
+
+.resultSubtitle,
+.resultTitle {
+  color: var(--tertiary-color);
+}
+.resultTitle {
+  font-size: var(--font-size-med);
+  margin-block-start: 0.7em;
+}
+
+.resultSubtitle {
+  margin-block: 3em 2.5em;
+}
+
+.stats {
+  width: 375px;
+  margin-block-end: 2rem;
+}
+
+.statItem {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.75em 1em;
+  margin-block-end: 0.5em;
+  border-radius: 8px;
+  border: 1px solid var(--color-blue);
+}
+
+.statItem span {
+  color: var(--color-blue);
+}
+
+.statItemDescription {
+  font-style: italic;
+}
+
+.buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.btn {
+  width: 288px;
+  height: 44px;
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-bold);
+  border: none;
+  border-radius: 8px;
+  padding: 0.7143em;
+}
+
+.goBtn {
+  color: var(--secondary-color);
+  background-color: var(--primary-background-color);
+}
+.shareBtn {
+  border: 1px solid var(--primary-background-color);
+  color: var(--primary-background-color);
+  background-color: transparent;
+}
