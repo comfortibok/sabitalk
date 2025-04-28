@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../styles/lessonPage.module.css";
+import styles from "../styles/lesson.module.css";
 import Header from "../layouts/Header";
 import DashboardLayout from "../layouts/DashboardLayout";
 import OngoingLesson from "../components/OngoingLesson";

@@ -1,13 +1,11 @@
 import { Router, Routes, Route } from "react-router-dom";
 import { Navigate } from "react-router-dom";
-import LessonPage from "./pages/LessonPage";
-import DashboardPage from "./pages/DashboardPage";
-import LanguageSelect from "./pages/LanguageSelect";
+import LessonComplete from "./pages/LessonComplete";
 
 function App() {
   return (
     <>
-      <LanguageSelect />
+      <LessonComplete />
       {/* <Routes>
         <Route path="/" element={<Onboarding />} />
         <Route path="/lesson" element={<LessonPage />} />
