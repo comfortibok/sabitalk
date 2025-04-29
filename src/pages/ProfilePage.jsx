@@ -1,9 +1,19 @@
 import React from "react";
+import { useState } from "react";
 import DashboardLayout from "../layouts/DashboardLayout";
 import Header from "../layouts/Header";
 import styles from "../styles/profilePage.module.css";
 import avatar from "../assets/images/Ellipse 668.png";
 const ProfilePage = () => {
+  const [isSidebarOpen, setSidebarOpen] = useState(false);
+
+  const toggleSidebar = () => {
+    setSidebarOpen(!isSidebarOpen);
+  };
+
+  const closeSidebar = () => {
+    setSidebarOpen(false);
+  };
   const ongoingLessons = [
     {
       title: "Ọnka",
@@ -26,8 +36,12 @@ const ProfilePage = () => {
   ];
 
   return (
-    <DashboardLayout>
-      <Header title="Profile" date="Mar 05, 2025" />
+    <DashboardLayout isOpen={isSidebarOpen} closeSidebar={closeSidebar}>
+      <Header
+        title="Profile"
+        date="Mar 05, 2025"
+        toggleSidebar={toggleSidebar}
+      />
 
       <section className={styles.card}>
         <div className={styles.userInfo}>

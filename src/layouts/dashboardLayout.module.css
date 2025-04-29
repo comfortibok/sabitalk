@@ -8,4 +8,12 @@
 
 .dashboardContent {
   flex: 1;
+  min-width: 0;
 }
+
+@media screen and (max-width: 768px) {
+.dashboardWrapper {
+    flex-direction: column;
+    padding: 1rem 0.5rem;
+  }}
+  
