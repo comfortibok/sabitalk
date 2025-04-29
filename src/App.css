@@ -197,3 +197,23 @@ button {
   border-radius: 8px;
   padding: 0.7143em;
 }
+
+@media (max-width: 768px) {
+  .leftPaneContainer {
+    display: none;
+  }
+
+  .appWrapper {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .rightPaneContainer {
+    width: 100%;
+  }
+
+  .rightPaneContent {
+    width: 100%;
+    max-width: 432px;
+  }
+}

@@ -2,7 +2,11 @@ import "../App.css";
 
 const SabiTalkLayout = () => {
   return (
-    <section className="leftPaneContainer">
+    <section
+      className="leftPaneContainer"
+      role="region"
+      aria-labelledby="mainTitle"
+    >
       <div className="leftPaneContent">
         <h1 className="mainTitle">Speak It</h1>
         <p className="subtitle">...like a local</p>

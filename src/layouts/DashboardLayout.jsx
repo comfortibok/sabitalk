@@ -6,7 +6,9 @@ const DashboardLayout = ({ children, isOpen, closeSidebar }) => {
   return (
     <div className={styles.dashboardWrapper}>
       <Sidebar isOpen={isOpen} closeSidebar={closeSidebar} />
-      <main className={styles.dashboardContent}>{children}</main>
+      <main role="main" className={styles.dashboardContent}>
+        {children}
+      </main>
     </div>
   );
 };

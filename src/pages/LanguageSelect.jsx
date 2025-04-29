@@ -1,9 +1,17 @@
 import AppLayout from "../layouts/AppLayout";
+import { useNavigate } from "react-router-dom";
 import "../App.css";
 const LanguageSelect = () => {
+  const navigate = useNavigate();
+
+  const handleContinue = (e) => {
+    e.preventDefault();
+    navigate("/sign-up");
+  };
+
   return (
     <AppLayout>
-      <div className="rightPaneContent">
+      <section className="rightPaneContent">
         <h3 className="mainContentTitle">
           Welcome to <span className="mainContentTitleSpan">Speak It</span>
         </h3>
@@ -15,20 +23,44 @@ const LanguageSelect = () => {
           <div className="radioGroup">
             <div className="radioInput">
               <label htmlFor="yoruba">Yoruba</label>
-              <input type="radio" id="yoruba" name="language" value="Yoruba" />
+              <input
+                type="radio"
+                id="yoruba"
+                name="language"
+                value="Yoruba"
+                aria-labelledby="yorubaLabel"
+              />
             </div>
             <div className="radioInput">
               <label htmlFor="igbo">Igbo</label>
-              <input type="radio" id="igbo" name="language" value="Igbo" />
+              <input
+                type="radio"
+                id="igbo"
+                name="language"
+                value="Igbo"
+                aria-labelledby="igboLabel"
+              />
             </div>
             <div className="radioInput">
               <label htmlFor="hausa">Hausa</label>
-              <input type="radio" id="hausa" name="language" value="Hausa" />
+              <input
+                type="radio"
+                id="hausa"
+                name="language"
+                value="Hausa"
+                aria-labelledby="hausaLabel"
+              />
             </div>
           </div>
-          <button type="submit">Continue</button>
+          <button
+            type="submit"
+            onClick={handleContinue}
+            aria-label="Go to sign up page"
+          >
+            Continue
+          </button>
         </form>
-      </div>
+      </section>
     </AppLayout>
   );
 };

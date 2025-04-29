@@ -43,10 +43,18 @@ const Sidebar = ({ isOpen, closeSidebar }) => {
   ];
 
   return (
-    <aside className={`${styles.sidebar} ${isOpen ? styles.open : ""}`}>
-      <div className={styles.closeBtn} onClick={closeSidebar}>
+    <aside
+      className={`${styles.sidebar} ${isOpen ? styles.open : ""}`}
+      aria-label="Main sidebar"
+    >
+      <button
+        className={styles.closeBtn}
+        onClick={closeSidebar}
+        type="button"
+        aria-label="Close sidebar"
+      >
         &times;
-      </div>
+      </button>
       <div className={styles.logoWrapper}>
         <h1 className={styles.logo}>Speak It</h1>
         <p className={styles.subtext}>...like a local</p>
@@ -71,7 +79,7 @@ const Sidebar = ({ isOpen, closeSidebar }) => {
                 }`}
                 aria-label={link.label}
               >
-                <span className={styles.icon}>
+                <span className={styles.icon} aria-hidden="true">
                   {location.pathname === link.to
                     ? link.activeIcon
                     : link.inactiveIcon}
@@ -89,6 +97,7 @@ const Sidebar = ({ isOpen, closeSidebar }) => {
           viewBox="0 0 24 24"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
         >
           <path
             d="M13.496 21H6.5C5.395 21 4.5 19.849 4.5 18.429V5.57C4.5 4.151 5.395 3 6.5 3H13.5M16 15.5L19.5 12L16 8.5M9.5 11.996H19.5"
@@ -98,7 +107,11 @@ const Sidebar = ({ isOpen, closeSidebar }) => {
             strokeLinejoin="round"
           />
         </svg>{" "}
-        <Link to="/logout" className={`${styles.logout} ${styles.navLink}`}>
+        <Link
+          to="/logout"
+          className={`${styles.logout} ${styles.navLink}`}
+          aria-label="Log out"
+        >
           Logout
         </Link>
       </div>

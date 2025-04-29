@@ -45,12 +45,22 @@ const ProfilePage = () => {
 
       <section className={styles.card}>
         <div className={styles.userInfo}>
-          <img src={avatar} alt="Profile" className={styles.avatar} />
+          <img
+            src={avatar}
+            alt="Profile picture of Fawazat02"
+            className={styles.avatar}
+          />
           <div>
             <h3 className={styles.userName}>Fawazat02</h3>
             <p className={styles.userEmail}>fawazatrufalt@gmail.com</p>
           </div>
-          <button className={styles.editBtn}>Edit profile</button>
+          <button
+            type="button"
+            aria-label="Edit profile"
+            className={styles.editBtn}
+          >
+            Edit profile
+          </button>
         </div>
 
         <section className={styles.details}>
@@ -76,6 +86,9 @@ const ProfilePage = () => {
                 <p className={styles.lessonTitle}>{lesson.title}</p>
                 <div
                   className={`${styles.progressBar} ${styles[lesson.border]}`}
+                  aria-valuenow={lesson.progress}
+                  role="progressbar"
+                  aria-label={`Progress for ${lesson.title}: ${lesson.progress}%`}
                 >
                   <div
                     className={`${styles.progress} ${styles[lesson.color]}`}

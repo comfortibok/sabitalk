@@ -1,11 +1,20 @@
 import React from "react";
+import { useState } from "react";
 import Header from "../layouts/Header";
 import DashboardLayout from "../layouts/DashboardLayout";
 import OngoingLesson from "../components/OngoingLesson";
 import styles from "../styles/lesson.module.css";
 
 const LessonTwo = () => {
-  // Define lessons for each category
+  const [isSidebarOpen, setSidebarOpen] = useState(false);
+
+  const toggleSidebar = () => {
+    setSidebarOpen(!isSidebarOpen);
+  };
+
+  const closeSidebar = () => {
+    setSidebarOpen(false);
+  };
   const beginnerLessons = [
     {
       id: 1,
@@ -97,8 +106,12 @@ const LessonTwo = () => {
   ];
 
   return (
-    <DashboardLayout>
-      <Header title="Lessons" date="Mar 05, 2025" />
+    <DashboardLayout isOpen={isSidebarOpen} closeSidebar={closeSidebar}>
+      <Header
+        title="Lessons"
+        date="Mar 05, 2025"
+        toggleSidebar={toggleSidebar}
+      />
       <section className={styles.headerWrapper}>
         <strong className={styles.notificationContent}>
           <svg
@@ -118,14 +131,15 @@ const LessonTwo = () => {
       </section>
 
       <nav className={styles.tabs}>
-        <a className={styles.activeTab}>Your lessons</a>
+        <a className={styles.activeTab} aria-current="page" role="tab">
+          Your lessons
+        </a>
         <a>Yoruba</a>
         <a>Igbo</a>
         <a>Hausa</a>
         <a>Pidgin</a>
       </nav>
 
-      {/* Beginner Section */}
       <section className={styles.lessonsListWrap}>
         <div className={styles.subtitleWrap}>
           <h3 className={styles.subtitle}>Beginner</h3>
@@ -149,7 +163,6 @@ const LessonTwo = () => {
         <OngoingLesson lessons={beginnerLessons} />
       </section>
 
-      {/* Intermediate Section */}
       <section className={styles.lessonsListWrap}>
         <div className={styles.subtitleWrap}>
           <h3 className={styles.subtitle}>Intermediate</h3>

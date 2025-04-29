@@ -1,11 +1,25 @@
 import AppLayout from "../layouts/AppLayout";
+import { useNavigate } from "react-router-dom";
 import styles from "../styles/form.module.css";
 
 const Login = () => {
+  const navigate = useNavigate();
+
+  const handleBack = (e) => {
+    e.preventDefault();
+    navigate("/sign-up");
+  };
+
   return (
     <AppLayout>
-      <div className="formWrapper">
-        <div className={styles.backWrap}>
+      <section className="formWrapper">
+        <div
+          className={styles.backWrap}
+          onClick={handleBack}
+          role="button"
+          aria-label="Go back to sign-up page"
+          aria-hidden="true"
+        >
           <svg
             width="9"
             height="18"
@@ -24,19 +38,31 @@ const Login = () => {
           </svg>
           <p>Back</p>
         </div>
-        <div className={styles.formSection}>
+        <section className={styles.formSection}>
           <h3 className={styles.formTitle}>
             Enter your details to log in and start learning
           </h3>{" "}
           <form className={styles.accountForm}>
             <div className={styles.inputWrap}>
               <label htmlFor="email">Email Address</label>
-              <input type="text" name="email" id="email" />
+              <input
+                type="text"
+                name="email"
+                id="email"
+                required
+                aria-describedby="email"
+              />
             </div>
             <div className={styles.inputWrap}>
               <label htmlFor="password">Password</label>
               <div className={styles.passwordWrap}>
-                <input type="password" name="password" id="password" />
+                <input
+                  type="password"
+                  name="password"
+                  id="password"
+                  required
+                  aria-describedby="password"
+                />
 
                 <svg
                   className={styles.eyeIcon}
@@ -45,6 +71,7 @@ const Login = () => {
                   viewBox="0 0 24 24"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
+                  aria-label="Toggle password visibility"
                 >
                   <path
                     d="M14.5299 9.47004L9.46992 14.53C8.81992 13.88 8.41992 12.99 8.41992 12C8.41992 10.02 10.0199 8.42004 11.9999 8.42004C12.9899 8.42004 13.8799 8.82004 14.5299 9.47004Z"
@@ -90,18 +117,43 @@ const Login = () => {
                   />
                 </svg>
               </div>
-              <a href="" className={styles.link}>
+              <a
+                href="/reset-password"
+                target="_blank"
+                className={styles.link}
+                aria-label="Go to reset password page"
+              >
                 Forgot Password?
               </a>
             </div>
 
-            <button>Log in</button>
-            <button className={styles.cta}>Do this later</button>
+            <button type="button" aria-label="Log in">
+              Log in
+            </button>
+            <button
+              className={styles.cta}
+              type="button"
+              aria-label="Do this later"
+            >
+              Do this later
+            </button>
             <p className={styles.span}>
-              Don’t have an account? <a className={styles.login}>Sign up</a>
+              Don’t have an account?
+              <a
+                className={styles.login}
+                href="/sign-up"
+                target="_blank"
+                aria-label="Go to sign up page"
+              >
+                Sign up
+              </a>
             </p>
             <span className={styles.divider}>or</span>
-            <button className={`${styles.cta} ${styles.loginBtn}`}>
+            <button
+              className={`${styles.cta} ${styles.loginBtn}`}
+              type="button"
+              aria-label="Log in with Google"
+            >
               <span>Log in with Google</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -111,6 +163,7 @@ const Login = () => {
                 height="24"
                 viewBox="0 0 48 48"
                 className={styles.googleIcon}
+                aria-hidden="true"
               >
                 <path
                   fill="#FFC107"
@@ -131,8 +184,8 @@ const Login = () => {
               </svg>
             </button>
           </form>
-        </div>
-      </div>
+        </section>
+      </section>
     </AppLayout>
   );
 };

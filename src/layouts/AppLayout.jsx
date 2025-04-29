@@ -6,7 +6,9 @@ const AppLayout = ({ children }) => {
   return (
     <div className="appWrapper">
       <SabiTalkLayout />
-      <section className="rightPaneContainer">{children}</section>
+      <main className="rightPaneContainer" role="main">
+        {children}
+      </main>
     </div>
   );
 };

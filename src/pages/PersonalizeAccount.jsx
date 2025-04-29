@@ -1,11 +1,24 @@
 import AppLayout from "../layouts/AppLayout";
+import { useNavigate } from "react-router-dom";
 import styles from "../styles/form.module.css";
 
 const PersonalizeAccount = () => {
+  const navigate = useNavigate();
+
+  const handleBack = (e) => {
+    e.preventDefault();
+    navigate("/sign-up");
+  };
   return (
     <AppLayout>
-      <div className="formWrapper">
-        <div className={styles.backWrap}>
+      <section className="formWrapper">
+        <div
+          className={styles.backWrap}
+          onClick={handleBack}
+          role="button"
+          aria-label="Go back to sign up page"
+          aria-hidden="true"
+        >
           <svg
             width="9"
             height="18"
@@ -24,26 +37,32 @@ const PersonalizeAccount = () => {
           </svg>
           <p>Back</p>
         </div>
-        <div className={styles.formSection}>
+        <section className={styles.formSection}>
           <h3 className={styles.formTitle}>Personalize your account</h3>
           <form className={styles.accountForm}>
             <div className={styles.inputWrap}>
               <label htmlFor="gender">Gender</label>
-              <select id="gender" name="gender">
-                <option value="select"></option>
+              <select id="gender" name="gender" required>
+                <option value="" disabled selected hidden></option>
                 <option value="male">Male</option>
                 <option value="female">Female</option>
               </select>
             </div>
             <div className={styles.inputWrap}>
               <label htmlFor="username">Username</label>
-              <input type="text" name="username" id="username" />
+              <input type="text" name="username" id="username" required />
             </div>
             <button>Confirm</button>
-            <button className={styles.cta}>Do this later</button>
+            <button
+              className={styles.cta}
+              type="button"
+              aria-label="Do this later"
+            >
+              Do this later
+            </button>
           </form>
-        </div>
-      </div>
+        </section>
+      </section>
     </AppLayout>
   );
 };

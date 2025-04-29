@@ -118,26 +118,58 @@ nav {
 
 @media (max-width: 800px) {
   .sidebar {
-    position: fixed;
+    position: absolute;
     background-color: var(--primary-background-color);
-    width: 60%;
     border-radius: 0;
+    padding: 1rem 0;
     top: 0;
     left: 0;
     z-index: 100;
     transition: transform 0.3s ease-in-out;
     transform: translateX(-100%);
   }
+
   .open {
     transform: translateX(0);
   }
+  .label,
+  .logo,
+  .subtext,
+  .logout,
+  .closeBtn {
+   color: var(--secondary-color);
+  }
+
   .closeBtn {
     display: block;
     background: none;
     border: none;
-    font-size: 1.5rem;
-    color: black;
-    margin-bottom: 2rem;
+    font-size: 4em;
+    margin-block-end: 2rem;
     cursor: pointer;
+  }
+
+  .activeLink .label {
+    color: var(--primary-color);
+  }
+
+  .activeListItem {
+    background-color: var(--secondary-background-color);
+  }
+
+  .activeLink .icon path {
+    stroke: var(--primary-color);
+  }
+
+  .inactiveLink .icon path {
+    stroke: var(--secondary-color);
+  }
+
+  .logoutContainer svg path {
+    stroke: var(--secondary-color);
+  }
+
+  .logoutContainer {
+    margin: auto;
   }
 }
