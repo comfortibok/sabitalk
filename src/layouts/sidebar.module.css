@@ -12,14 +12,18 @@
 
 .logo,
 .subtext {
+  text-align: center;
   font-weight: var(--font-weight-normal);
-  align-self: center;
   color: var(--tertiary-color);
 }
 
+.label {
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-extrabold);
+}
+
 .subtext,
-.logout,
-.navList li {
+.logout {
   font-size: var(--font-size-normal);
 }
 
@@ -35,10 +39,20 @@
   margin-block-start: 0.7em;
 }
 
+.logout,
+.label {
+  font-weight: var(--font-weight-bold);
+}
+
 .navLink,
-.logoutContainer {
+.logoutContainer,
+.icon {
   display: flex;
   align-items: center;
+}
+
+.navLink,
+.logoutContainer {
   gap: 0.7em;
 }
 
@@ -63,26 +77,67 @@ nav {
   color: var(--secondary-color);
 }
 
-.navLink.currentLink {
+.navLink.activeLink {
   color: var(--secondary-color);
 }
 
-.navList li {
+.activeListItem {
   background-color: var(--primary-background-color);
 }
 
+.navLink.inactiveLink {
+  color: var(--primary-color);
+}
+
+.inactiveListItem:hover,
+.inactiveListItem:focus {
+  border: 1px solid var(--color-blue);
+  color: var(--color-blue);
+}
+
+.navList li .inactiveLink:hover .icon,
+.navList li .inactiveLink:focus .icon {
+  transform: scale(1.2);
+  transition: transform 250ms ease;
+}
+
 .logout {
-  font-weight: var(--font-weight-bold);
   color: rgb(255, 0, 0);
   cursor: pointer;
 }
 
-/* SVG styles
-.navLink svg {
-  fill: var(--tertiary-color);
+.logoutContainer:hover,
+.logoutContainer:focus {
+  color: var(--secondary-color);
+  transform: scale(1.05);
 }
 
-.navList li {
-  color: var(--primary-color); 
-  background: none;
-} */
+.closeBtn {
+  display: none;
+}
+
+@media (max-width: 800px) {
+  .sidebar {
+    position: fixed;
+    background-color: var(--primary-background-color);
+    width: 60%;
+    border-radius: 0;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(-100%);
+  }
+  .open {
+    transform: translateX(0);
+  }
+  .closeBtn {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: black;
+    margin-bottom: 2rem;
+    cursor: pointer;
+  }
+}

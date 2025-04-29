@@ -39,3 +39,13 @@
   color: var(--tertiary-color);
   font-size: var(--font-size-extrasm);
 }
+
+.hamburgerWrapper {
+  display: none;
+}
+
+@media screen and (max-width: 800px) {
+.hamburgerWrapper {
+    display: block;
+    cursor: pointer;
+  }}
