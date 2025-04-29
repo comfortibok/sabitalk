@@ -27,6 +27,7 @@ const Signup = async({email, password, termsAccepted, selectedLanguage}) =>{
         const user = await UsersModel.create({email, password, termsAccepted, selectedLanguage })
         
         const token = await jwt.sign({email: user.email}, process.env.JWT_SECRET, {expiresIn : "1hr"})
+        console.log( "from service: " , token)
         return({
             success: true,
             code : 201,

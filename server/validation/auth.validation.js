@@ -1,35 +1,26 @@
-const Joi = require("joi")
+const joi = require("joi")
 
 
-const authSignupSchema = Joi.object({
-    email : Joi.string()
+const authSignupSchema = joi.object({
+    email : joi.string()
         .email({ minDomainSegments: 2, tlds: { allow: ['com', 'net'] } })
         .required(),
-    password : Joi.string()
+    password : joi.string()
         .pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*(),.?":{}|<>]).{8,}$/)
-        .required()
-        .message({
-            "string.pattern.base": `Password must contain at least one lowercase letter, one uppercase letter, one number, one special character, and be at least 8 characters long.`,
-            "string.empty": `Password cannot be empty`,
-            "any.required": `Password is required`,
-        }),
-    termsAccepted:Joi.boolean()
+        .required(),
+
+    termsAccepted:joi.boolean()
         .required(),
     
 })
 
-const authLoginSchema = Joi.object({
-    email : Joi.string()
+const authLoginSchema = joi.object({
+    email : joi.string()
         .email({ minDomainSegments: 2, tlds: { allow: ['com', 'net'] } })
         .required(),
-    password : Joi.string()
+    password : joi.string()
         .pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*(),.?":{}|<>]).{8,}$/)
-        .required()
-        .message({
-            "string.pattern.base": `Password must contain at least one lowercase letter, one uppercase letter, one number, one special character, and be at least 8 characters long.`,
-            "string.empty": `Password cannot be empty`,
-            "any.required": `Password is required`,
-        }),
+        .required(),
 })
 
 

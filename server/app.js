@@ -21,6 +21,7 @@ app.use(cookieParser())
 app.use(cors(corsOption))
 app.use(express.json())
 app.use(express.urlencoded({extended : true}))
+
 app.use(session({
     secret : process.env.SESSION_SECRET,
     resave : false,
@@ -61,8 +62,9 @@ app.use((error, req, res, next)=>{
             message: "Not found"
         })
     }else{
-        res.status(500).send({
-            message: "Server error"
+        console.log( `server error : ${error.message}`)
+        res.status(500).json({
+            message: `server error : ${error.message}`
         })
     }
     next()
