@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 import Header from "../layouts/Header";
 import DashboardLayout from "../layouts/DashboardLayout";
 import styles from "../styles/dashboardPage.module.css";
@@ -6,6 +7,15 @@ import image from "../assets/images/0014.png";
 import OngoingLesson from "../components/OngoingLesson";
 
 const DashboardPage = () => {
+  const [isSidebarOpen, setSidebarOpen] = useState(false);
+
+  const toggleSidebar = () => {
+    setSidebarOpen(!isSidebarOpen);
+  };
+
+  const closeSidebar = () => {
+    setSidebarOpen(false);
+  };
   const ongoingLessons = [
     {
       id: 1,
@@ -28,10 +38,18 @@ const DashboardPage = () => {
     },
   ];
   return (
-    <DashboardLayout>
-      <Header title=" Dashboard" date="Mar 05, 2025" />
+    <DashboardLayout isOpen={isSidebarOpen} closeSidebar={closeSidebar}>
+      <Header
+        title="Welcome, Fawazat02"
+        date="Mar 05, 2025"
+        toggleSidebar={toggleSidebar}
+      />
 
-      <div className={styles.dashboardMain}>
+      <section
+        className={styles.dashboardMain}
+        role="main"
+        aria-label="Dashboard section"
+      >
         <div className={styles.card}>
           <h3 className={styles.cardTitle}>Ongoing Lessons</h3>
           <div className={styles.lessonWrapper}>
@@ -56,9 +74,21 @@ const DashboardPage = () => {
                       </span>
                     </h4>
                     <p className={styles.learnDes}>{item.time}</p>
-                    <a className={styles.startLink}>Start Learning</a>
+                    <a
+                      href="#"
+                      target="_blank"
+                      className={styles.startLink}
+                      aria-label={`Start learning ${item.lang} lessons`}
+                    >
+                      Start Learning
+                    </a>
 
-                    <img width="86" height="120" src={image} />
+                    <img
+                      width="86"
+                      height="120"
+                      src={image}
+                      alt={`Visual representation of ${item.lang} lessons`}
+                    />
                   </div>
                 ))}
               </div>
@@ -66,11 +96,11 @@ const DashboardPage = () => {
           </div>
         </div>
 
-        <aside className={styles.community}>
+        <aside className={styles.community} aria-label="Community section">
           <h3 className={styles.cardTitle}>Community</h3>
           <div className={styles.communityCard}></div>
         </aside>
-      </div>
+      </section>
     </DashboardLayout>
   );
 };

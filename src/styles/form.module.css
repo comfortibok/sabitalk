@@ -149,3 +149,25 @@ input[type="password"] {
   gap: 0.4em;
   margin-block-end: 2.5em;
 }
+
+.otpContainer {  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.otpInput {flex: 1;
+  min-width: 0;
+  height: 48px;
+  height: 48px;
+  border: 0.5px solid var(--primary-color);
+  border-radius: 8px;
+}
+
+
+@media (max-width: 768px) {
+  .backWrap p {
+    display: none;
+  }
+}

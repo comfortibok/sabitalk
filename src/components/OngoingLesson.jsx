@@ -8,14 +8,23 @@ const OngoingLesson = ({ lessons }) => {
         <div key={lesson.id} className={styles.lessonCard}>
           <p className={styles.lessonTitle}>{lesson.title}</p>
           <p className={styles.lessonDescription}>{lesson.description}</p>
-          <div className={`${styles.progressBar} ${styles[lesson.border]}`}>
+          <div
+            role="progressbar"
+            className={`${styles.progressBar} ${styles[lesson.border]}`}
+          >
             <div
               className={`${styles.progress} ${styles[lesson.color]}`}
               style={{ width: `${lesson.progress}%` }}
+              aria-label={`Progress of ${lesson.title}`}
             ></div>
           </div>
           <div className={styles.langWrapper}>
-            <a href="#" className={styles.continueLink} target="_blank">
+            <a
+              href="#"
+              target="_blank"
+              aria-label={`Continue learning ${lesson.title} in ${lesson.lang}`}
+              className={styles.continueLink}
+            >
               Continue Learning
             </a>
             <strong className={styles.lang}>{lesson.lang}</strong>

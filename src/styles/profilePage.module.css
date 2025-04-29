@@ -94,6 +94,7 @@
 }
 
 .editBtn {
+  display: block;
   width: 103px;
   height: 35px;
   margin-left: auto;

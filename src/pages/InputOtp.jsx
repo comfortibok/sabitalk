@@ -1,11 +1,23 @@
 import AppLayout from "../layouts/AppLayout";
+import { useNavigate } from "react-router-dom";
 import styles from "../styles/form.module.css";
 
 const InputOtp = () => {
+  const navigate = useNavigate();
+  const handleBack = (e) => {
+    e.preventDefault();
+    navigate("/reset-password");
+  };
   return (
     <AppLayout>
-      <div className="formWrapper">
-        <div className={styles.backWrap}>
+      <section className="formWrapper">
+        <div
+          className={styles.backWrap}
+          onClick={handleBack}
+          role="button"
+          aria-label="Go back to sign up page"
+          aria-hidden="true"
+        >
           <svg
             width="9"
             height="18"
@@ -27,15 +39,61 @@ const InputOtp = () => {
         <h3 className={styles.formTitle}>
           Please enter the 6 digit OTP sent to your email address to proceed{" "}
         </h3>
-        <div className={styles.formSection}>
+        <section className={styles.formSection}>
           <form className={styles.accountForm}>
             <div className={styles.inputWrap}>
-              <span >Resend OTP</span>
+              <div className={styles.otpContainer}>
+                <input
+                  type="text"
+                  maxLength="1"
+                  inputMode="numeric"
+                  pattern="[0-9]*"
+                  className={styles.otpInput}
+                />
+                <input
+                  type="text"
+                  maxLength="1"
+                  inputMode="numeric"
+                  pattern="[0-9]*"
+                  className={styles.otpInput}
+                />
+                <input
+                  type="text"
+                  maxLength="1"
+                  inputMode="numeric"
+                  pattern="[0-9]*"
+                  className={styles.otpInput}
+                />
+                <input
+                  type="text"
+                  maxLength="1"
+                  inputMode="numeric"
+                  pattern="[0-9]*"
+                  className={styles.otpInput}
+                />
+                <input
+                  type="text"
+                  maxLength="1"
+                  inputMode="numeric"
+                  pattern="[0-9]*"
+                  className={styles.otpInput}
+                />
+                <input
+                  type="text"
+                  maxLength="1"
+                  inputMode="numeric"
+                  pattern="[0-9]*"
+                  className={styles.otpInput}
+                />
+              </div>
+              <a href="/reset-password" target="_blank" className={styles.link}>
+                Resend OTP
+              </a>
             </div>
             <button type="button">Confirm</button>
           </form>
-        </div>
-      </div>
+        </section>
+      </section>
     </AppLayout>
   );
 };
