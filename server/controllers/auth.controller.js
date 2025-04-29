@@ -1,4 +1,5 @@
-const { sign } = require("jsonwebtoken")
+
+const UsersModel = require("../models/users.model")
 const authService = require("../services/auth.service")
 
 
@@ -7,22 +8,24 @@ const Signup = async(req, res) => {
     console.log(payload)
     const selectedLanguage = req.session.selectedLanguage
     console.log(selectedLanguage)
+    
     if(!payload){
         res.status(400).json({
             message : "all fields are required",
         })
     }
 
-    const signupResponse = await authService.Signup({
-         email : payload.email,
+    const newUser = new UsersModel({
+        email : payload.email,
          password : payload.password,
          termsAccepted : payload.termsAccepted,
          learningLanguage : selectedLanguage 
-
     })
+
+    const signupResponse = await authService.Signup(newUser)
     
-    res.status(signupResponse.code).message(signupResponse)
-    console.log(signupResponse.data.token)
+    res.status(signupResponse.code).json(signupResponse)
+    console.log( "from controller ",signupResponse.data.token)
 }
 
 module.exports = {
