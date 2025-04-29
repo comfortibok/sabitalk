@@ -61,33 +61,32 @@ const Sidebar = ({ isOpen, closeSidebar }) => {
       </div>
       <nav>
         <ul className={styles.navList}>
-          {links.map((link) => (
-            <li
-              key={link.to}
-              className={
-                location.pathname === link.to
-                  ? styles.activeListItem
-                  : styles.inactiveListItem
-              }
-            >
-              <Link
-                to={link.to}
-                className={`${styles.navLink} ${
-                  location.pathname === link.to
-                    ? styles.activeLink
-                    : styles.inactiveLink
-                }`}
-                aria-label={link.label}
+          {links.map((link) => {
+            const isActive = location.pathname.startsWith(link.to);
+            return (
+              <li
+                key={link.to}
+                className={
+                  isActive ? styles.activeListItem : styles.inactiveListItem
+                }
               >
-                <span className={styles.icon} aria-hidden="true">
-                  {location.pathname === link.to
-                    ? link.activeIcon
-                    : link.inactiveIcon}
-                </span>
-                <span className={styles.label}>{link.label}</span>
-              </Link>
-            </li>
-          ))}
+                <Link
+                  to={link.to}
+                  className={`${styles.navLink} ${
+                    isActive ? styles.activeLink : styles.inactiveLink
+                  }`}
+                  aria-label={link.label}
+                  aria-current={isActive ? "page" : undefined}
+                  onClick={closeSidebar} // Optional: auto-close sidebar on link click
+                >
+                  <span className={styles.icon} aria-hidden="true">
+                    {isActive ? link.activeIcon : link.inactiveIcon}
+                  </span>
+                  <span className={styles.label}>{link.label}</span>
+                </Link>
+              </li>
+            );
+          })}
         </ul>
       </nav>
       <div className={styles.logoutContainer}>
