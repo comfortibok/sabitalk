@@ -2,7 +2,8 @@ const UsersModel = require("../models/users.model")
 const jwt = require("jsonwebtoken")
 require("dotenv").config()
 
-const Signup = async({email, password, termsAccepted, selectedLanguage}) =>{
+const Signup = async({email, password, termsAccepted, language}) =>{
+    
     try{
         if (!termsAccepted) {
             return {
@@ -24,10 +25,10 @@ const Signup = async({email, password, termsAccepted, selectedLanguage}) =>{
             })
         }
 
-        const user = await UsersModel.create({email, password, termsAccepted, selectedLanguage })
+        const user = await UsersModel.create({email, password, termsAccepted, language })
         
         const token = await jwt.sign({email: user.email}, process.env.JWT_SECRET, {expiresIn : "1hr"})
-        console.log( "from service: " , token)
+        
         return({
             success: true,
             code : 201,

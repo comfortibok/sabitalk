@@ -14,7 +14,8 @@ connect.connectDB()
 
 var corsOption = {
     origin : ["http://localhost:5173/", "http://localhost:8000/"],
-    optionsSuccessStatus: 200 
+    optionsSuccessStatus: 200 ,
+    credentials: true 
 };
 
 app.use(cookieParser())
@@ -26,7 +27,8 @@ app.use(session({
     secret : process.env.SESSION_SECRET,
     resave : false,
     saveUninitialized : true,
-    cookie : { maxAge : 60 * 25 }
+    // set this to true before deploy
+    cookie: { secure: false } 
 }))
 
 
@@ -34,16 +36,19 @@ app.use(session({
 app.use("/auth", authRoute)
 
 app.post("/select-language", (req, res)=>{
-    const selectedLanguage = req.body.language;
-    if(!selectedLanguage){
+    const {language} = req.body;
+    if(!language){
         res.status(400).json({
             message : "you have to select a language"
         })
     }
-    req.session.selectedLanguage = selectedLanguage;
-    console.log(req.session.selectedLanguage)
+    req.session.language = language;
+
+    console.log("from select lang route ses.lang", req.session.language)
+    console.log("from select lang route language", language)
+
     res.status(200).json({
-        message : `successfully selected ${selectedLanguage}`
+        message : `successfully selected ${language}`
     })
 })
 
