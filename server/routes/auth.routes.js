@@ -9,9 +9,7 @@ const route = express.Router()
     
 route.post("/signup", validateSignup, authController.Signup)
 
-// route.post("/login", validateLogin,  (req, res)=>{
-//     // login
-// })
+route.post("/login", validateLogin, authController.Login)
 
 
 module.exports = route

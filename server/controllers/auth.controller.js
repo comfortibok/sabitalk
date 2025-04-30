@@ -22,18 +22,37 @@ const Signup = async(req, res) => {
     })
 
     const signupResponse = await authService.Signup(newUser)
-    res.cookies("token", signupResponse.data.token,{ 
+    
+    res.cookie('token', signupResponse.data.token,{ 
         httpOnly: true, 
-        // change in production to true
         secure: false, 
         maxAge: 24 * 60 * 60 * 1000, 
         sameSite: 'Strict',
     })
-    
+
     res.status(signupResponse.code).json(signupResponse)
     
 }
 
+const Login = async(req, res) =>{
+    const payload = req.body
+
+    const loginResponse = await authService.Login({
+        email : payload.email,
+        password : payload.password
+    })
+
+    res.cookie('token', loginResponse.data.token, {
+        httpOnly: true, 
+        secure: false, 
+        maxAge: 24 * 60 * 60 * 1000, 
+        sameSite: 'Strict',
+    })
+
+    res.status(loginResponse.code).json(loginResponse)
+}
+
 module.exports = {
     Signup,
+    Login
 }

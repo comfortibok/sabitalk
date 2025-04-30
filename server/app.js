@@ -5,6 +5,7 @@ const authRoute = require("./routes/auth.routes")
 const cors = require("cors")
 const cookieParser = require("cookie-parser")
 const session = require("express-session")
+const validateToken = require("./middleware/auth.middleware")
 
 const PORT = process.env.PORT
 
