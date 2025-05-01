@@ -1,0 +1,89 @@
+.lessonsMain {
+  margin-block-start: 1em;
+  padding: 1em;
+  background-color: var(--secondary-color);
+  box-shadow: var(--box-shadow);
+  border-radius: 8px;
+}
+.lessonSection {
+  margin-block: 3.5em 0;
+}
+
+.lessonsInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.lessonsInfo span {
+  font-weight: var(--font-weight-extrabold);
+  font-size: var(--font-size-med);
+  color: rgba(132, 134, 140, 1);
+}
+
+.lessonsTime {
+  display: flex;
+  align-items: center;
+  gap: 0.8em;
+}
+
+.bookmark {
+  display: block;
+  color: var(--color-blue);
+  width: 119px;
+  padding: 0.5em 0;
+  text-align: center;
+  border: 1px solid var(--color-blue);
+  border-radius: 8px;
+  position: relative;
+}
+
+.bookmarkIcon {
+  position: absolute;
+  top: -0.2em;
+  left: 0.5em;
+}
+
+.lessonTitle {
+  margin-block-end: 0.65em;
+  font-weight: var(--font-weight-extrabold);
+  font-size: var(--font-size-big);
+  color: var(--color-black);
+}
+
+.lessonDescription,
+.lessonsTime,
+.bookmark {
+  font-weight: var(--font-weight-normal);
+  font-size: var(--font-size-normal);
+}
+
+.lessonDescription,
+.lessonsTime {
+  color: var(--tertiary-color);
+}
+
+.lessonDescription {
+  line-height: 32px;
+}
+
+.lessonVideo {
+  width: 100%;
+  height: 270px;
+  border: 1px solid var(--color-blue);
+  border-radius: 8px;
+  margin-block: 1.5em;
+  position: relative;
+}
+
+.audioIcon {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.quizBtn {
+  display: block;
+  width: 752px;
+  margin: 3.5em auto 0;
+}

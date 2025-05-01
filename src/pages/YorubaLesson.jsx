@@ -1,4 +1,3 @@
-
 import LessonLayout from "../layouts/LessonLayout";
 
 const YorubaLesson = () => {

@@ -37,7 +37,7 @@ const SavePassword = () => {
         </div>
         <section className={styles.formSection}>
           <h3 className={styles.formTitle}>
-            Enter a new password for your - account
+            Enter a new password for your account
           </h3>
           <form className={styles.accountForm}>
             <div className={styles.inputWrap}>
