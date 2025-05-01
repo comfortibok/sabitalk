@@ -6,6 +6,7 @@ const cors = require("cors")
 const cookieParser = require("cookie-parser")
 const session = require("express-session")
 const validateToken = require("./middleware/auth.middleware")
+const { rateLimit } = require('express-rate-limit') 
 
 const PORT = process.env.PORT
 
@@ -18,6 +19,14 @@ var corsOption = {
     optionsSuccessStatus: 200 ,
     credentials: true 
 };
+
+const limiter = rateLimit({
+	windowMs: 15 * 60 * 1000, 
+	limit: 5, 
+	standardHeaders: 'draft-8',
+	legacyHeaders: false, 
+	
+})
 
 app.use(cookieParser())
 app.use(cors(corsOption))
@@ -34,7 +43,7 @@ app.use(session({
 
 
 // routes
-app.use("/auth", authRoute)
+app.use("/auth", limiter, authRoute)
 
 app.post("/select-language", (req, res)=>{
     const {language} = req.body;

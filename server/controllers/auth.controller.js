@@ -8,6 +8,12 @@ const Signup = async(req, res) => {
 
     const language= req.session.language
     
+    if(!language){
+        res.status(400).json({
+            message : "Language not selected",
+        })
+    }
+    
     if(!payload){
         res.status(400).json({
             message : "all fields are required",
