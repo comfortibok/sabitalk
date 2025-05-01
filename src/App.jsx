@@ -13,6 +13,7 @@ import ProfilePage from "./pages/ProfilePage";
 import LessonLayout from "./layouts/LessonLayout";
 import LessonOne from "./pages/LessonOne";
 import LessonTwo from "./pages/LessonTwo";
+import LessonThree from "./pages/LessonThree";
 import LessonComplete from "./pages/LessonComplete";
 import LessonQuiz from "./pages/LessonQuiz";
 import LessonYoruba from "./pages/YorubaLesson";
@@ -33,6 +34,7 @@ function App() {
         <Route path="/lesson" element={<LessonLayout />} />
         <Route path="/lesson-one" element={<LessonOne />} />
         <Route path="/lesson-two" element={<LessonTwo />} />
+        <Route path="/lesson-three" element={<LessonThree />} />
         <Route path="/lesson-complete" element={<LessonComplete />} />
         <Route path="/lesson-quiz" element={<LessonQuiz />} />
         <Route path="/lesson-yoruba" element={<LessonYoruba />} />

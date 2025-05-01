@@ -45,7 +45,12 @@
 }
 
 @media (max-width: 768px) {
-.hamburgerWrapper {
+  .hamburgerWrapper {
     display: block;
     cursor: pointer;
-  }}
+  }
+  
+  .date {
+    display: none;
+  }
+}
