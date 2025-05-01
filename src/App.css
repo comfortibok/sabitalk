@@ -41,26 +41,20 @@ body {
 }
 
 .appWrapper {
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   justify-content: space-between;
-  padding: 1.5rem;
+  padding: 1.5em;
   align-items: center;
   gap: 2em;
 }
 
 /* Left Pane */
 .leftPaneContainer {
-  /* max-width: 675px; */
   max-width: 50%;
   width: 100%;
-  /* height: 98vh; */
-  min-height: 976px;
+  height: 100%;
   background-color: var(--primary-background-color);
-  background-image: url(./assets/ellipse/Left-pane-background.png);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
   color: var(--secondary-color);
   border-radius: 32px;
   display: grid;
@@ -68,18 +62,47 @@ body {
   position: relative;
 }
 
-.leftPaneContainer::before {
-  content: "";
+.bg-img-container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.bg-img-content {
+  position: relative;
+  height: 100%;
+}
+
+.bg-image:first-child {
   position: absolute;
   width: 233px;
-  height: 233px;
-  top: -20px;
-  left: -26px;
-  background-image: url("./assets/ellipse/Ellipse\ 661.png");
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 50%;
-  display: none;
-  padding: 0.5em;
+  top: -40px;
+  left: -50px;
+}
+
+.bg-image:nth-child(2) {
+  position: absolute;
+  width: 233px;
+  top: 120px;
+  right: -65px;
+}
+
+.bg-image:nth-child(3) {
+  position: absolute;
+  width: 200px;
+  top: 280px;
+  left: -20px;
+}
+
+.bg-image:last-child {
+  position: absolute;
+  width: 233px;
+  top: 530px;
+  right: 80px;
 }
 
 .leftPaneContent {
@@ -120,14 +143,16 @@ body {
 
 /* RightPane */
 .rightPaneContainer {
-  /* border: 2px solid red; */
+  height: 100%;
   width: 50%;
+  display: flex;
+  flex-direction: column;
   flex: 1;
 }
 
 .rightPaneContent {
   width: 432px;
-  margin: 0 auto;
+  margin: auto;
   text-align: center;
   padding: 0.3em;
 }
