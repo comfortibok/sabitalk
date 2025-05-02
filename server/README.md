@@ -181,3 +181,125 @@ Authenticates an existing user and returns a JWT token if successful.
 2.  `POST /auth/signup` → send email, password, and `termsAccepted`
     
 3.  `POST /auth/login` → log in with email and password
+
+
+## 🔐 Google OAuth Authorization
+
+This section explains how to authenticate users via Google OAuth. This flow allows users to either **sign up or log in** using their Google account. A JWT token is issued on success and stored in a secure `httpOnly` cookie.
+
+----------
+
+### 📌 Step-by-Step Flow
+
+----------
+
+### 1. **Select Language**
+
+Before redirecting the user to Google, the frontend must call this endpoint to store the user's preferred language in the session.
+
+**Endpoint:**
+
+`POST /select-language` 
+
+**Request Body:**
+
+`{  "language":  "hausa"  }` 
+
+**Response (200 OK):**
+
+`{  "message":  "successfully selected hausa"  }` 
+
+> ⚠️ Must be called **before** starting the Google OAuth flow.
+
+----------
+
+### 2. **Start Google OAuth Login**
+
+Redirect the user to this endpoint to initiate Google login.
+
+**Endpoint:**
+
+`GET /google-auth/login` 
+
+**How to Use:**
+
+Use a browser redirect 
+
+**Example:**
+
+`<a  href="http://localhost:PORT/google-auth/login"> <button>Continue with Google</button> </a>` 
+
+
+----------
+
+### 3. **Callback After Google Auth**
+
+Google redirects back to:
+
+`GET /google-auth/callback` 
+
+Handled internally by the server using Passport — no frontend action required here.
+
+-   On success → Redirects to `/success`
+    
+-   On failure → Redirects to `/failed`
+    
+
+----------
+
+### 4. **Success Response**
+
+**Endpoint:**
+
+`GET /success` 
+
+**Response:**
+
+```
+{  
+	"success":  true,  
+	"data":  {  
+		"user":  {  
+			"_id":  "userId",  
+			"email":  "johndoe@example.com",  
+			"username":  "john doe",  
+			"language":  "hausa", ... 
+		}, 
+		"token":  "jwt.token.here"  
+	},  
+	"message":  "login with google successfully"  
+	}
+``` 
+
+-   A JWT token is set in a `httpOnly` cookie automatically.
+    
+-   No need to store the token manually on the frontend.
+    
+
+----------
+
+### 5. **Failure Response**
+
+**Endpoint:**
+
+`GET /failed` 
+
+**Response:**
+
+```
+{
+  "success": false,
+  "data": null,
+  "message": "Failed to login with Google"
+}
+```
+
+----------
+
+### ✅ Notes
+
+-   JWT is set as a cookie (`token`), valid for 1 day.
+    
+-   To make authenticated API requests, include `credentials: 'include'` in `fetch` or `axios` requests.
+    
+-   Language is stored in the user's profile on signup.

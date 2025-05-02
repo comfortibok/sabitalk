@@ -7,10 +7,14 @@ const cookieParser = require("cookie-parser")
 const session = require("express-session")
 const validateToken = require("./middleware/auth.middleware")
 const { rateLimit } = require('express-rate-limit') 
+const passport = require("passport")
+const jwt = require("jsonwebtoken")
+
 
 const PORT = process.env.PORT
 
 const app = express()
+
 // connecting to database
 connect.connectDB()
 
@@ -28,6 +32,7 @@ const limiter = rateLimit({
 	
 })
 
+require("./auth/google")
 app.use(cookieParser())
 app.use(cors(corsOption))
 app.use(express.json())
@@ -41,6 +46,8 @@ app.use(session({
     cookie: { secure: false } 
 }))
 
+app.use(passport.initialize())
+app.use(passport.session())
 
 // routes
 app.use("/auth", limiter, authRoute)
@@ -54,13 +61,57 @@ app.post("/select-language", (req, res)=>{
     }
     req.session.language = language;
 
-    console.log("from select lang route ses.lang", req.session.language)
-    console.log("from select lang route language", language)
-
     res.status(200).json({
         message : `successfully selected ${language}`
     })
 })
+
+
+// OAuth signup and login
+app.get("/success", (req, res) => {
+    const user = req.user
+    const token = jwt.sign({email:user.email}, process.env.JWT_SECRET, {expiresIn : "1hr"})
+
+    res.cookie('token', token, {
+        httpOnly : true,
+        secure: false,
+        maxAge : 24 * 60 * 60 * 1000,
+        sameSite: 'Strict',
+    })
+    res.status(201).json({
+        success : true,
+        data : {
+            user,
+            token
+        },
+        message : "login with google successfully"
+    })
+})
+
+app.get("/failed", (req, res) => {
+    res.status(400).json({
+        success : false,
+        data :null,
+        message : "failed to login"
+    })
+})
+
+app.get('/google-auth/login',
+    passport.authenticate('google', 
+        { 
+            scope:[ 'email', 'profile' ] 
+        }
+    )
+);
+  
+app.get( '/google-auth/callback',
+    passport.authenticate( 'google', 
+        {
+          successRedirect: '/success',
+          failureRedirect: '/failed'
+        }
+    )
+);
 
 app.get("/", (req,res)=>{
     res.send("we are live")

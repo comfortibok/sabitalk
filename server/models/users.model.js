@@ -11,7 +11,9 @@ const UserSchema = new mongoose.Schema({
     },
     password : {
         type : String,
-        required : true
+        required : function(){
+            return !this.googleId
+        }
     },
     termsAccepted: {
         type : Boolean,
@@ -20,6 +22,13 @@ const UserSchema = new mongoose.Schema({
     },
     language:{
         type: String
+    },
+    username: String,
+    googleId: String,
+    avatar: String,
+    gender: {
+        type : String,
+        enum : ["male", "female"]
     }
 
 }, {timestamps : true})
