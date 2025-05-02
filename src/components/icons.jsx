@@ -10,8 +10,8 @@ export const DashboardIconActive = () => (
     xmlns="http://www.w3.org/2000/svg"
   >
     <path
-      fill-rule="evenodd"
-      clip-rule="evenodd"
+      fillRule="evenodd"
+      clipRule="evenodd"
       d="M11.7066 0.292786C11.5191 0.105315 11.2648 0 10.9996 0C10.7344 0 10.4801 0.105315 10.2926 0.292786L3.29259 7.29279L1.29259 9.29279C1.19708 9.38503 1.1209 9.49538 1.06849 9.61738C1.01608 9.73939 0.988496 9.87061 0.987342 10.0034C0.986189 10.1362 1.01149 10.2678 1.06177 10.3907C1.11205 10.5136 1.18631 10.6253 1.2802 10.7192C1.37409 10.8131 1.48574 10.8873 1.60864 10.9376C1.73154 10.9879 1.86321 11.0132 1.99599 11.012C2.12877 11.0109 2.25999 10.9833 2.382 10.9309C2.504 10.8785 2.61435 10.8023 2.70659 10.7068L2.99959 10.4138V16.9998C2.99959 17.7954 3.31566 18.5585 3.87827 19.1211C4.44088 19.6837 5.20394 19.9998 5.99959 19.9998H15.9996C16.7952 19.9998 17.5583 19.6837 18.1209 19.1211C18.6835 18.5585 18.9996 17.7954 18.9996 16.9998V10.4138L19.2926 10.7068C19.4812 10.8889 19.7338 10.9897 19.996 10.9875C20.2582 10.9852 20.509 10.88 20.6944 10.6946C20.8798 10.5092 20.985 10.2584 20.9873 9.99619C20.9895 9.73399 20.8888 9.48139 20.7066 9.29279L11.7066 0.292786Z"
       fill="white"
     />
@@ -58,9 +58,9 @@ export const LessonsIconInactive = () => (
     <path
       d="M12 19.6448C10.649 18.6938 9.085 18.0878 7.445 17.8838C6.28185 17.6475 5.09682 17.5358 3.91 17.5508C3.75814 17.5521 3.60752 17.5233 3.46684 17.4661C3.32616 17.4089 3.1982 17.3244 3.09035 17.2175C2.98251 17.1106 2.8969 16.9834 2.83849 16.8432C2.78007 16.703 2.74999 16.5526 2.75 16.4008L2.771 5.50777C2.77036 5.21549 2.88103 4.93394 3.08053 4.72033C3.28002 4.50672 3.55336 4.37709 3.845 4.35777C5.05314 4.33376 6.2603 4.44173 7.445 4.67977C9.08322 4.89113 10.646 5.49565 12 6.44177M12 19.6448V6.44177M12 19.6448C13.351 18.6938 14.915 18.0878 16.555 17.8838C17.7182 17.6475 18.9032 17.5358 20.09 17.5508C20.2419 17.5521 20.3925 17.5233 20.5332 17.4661C20.6738 17.4089 20.8018 17.3244 20.9096 17.2175C21.0175 17.1106 21.1031 16.9834 21.1615 16.8432C21.2199 16.703 21.25 16.5526 21.25 16.4008L21.228 5.50777C21.2287 5.21566 21.1181 4.93424 20.9188 4.72066C20.7196 4.50707 20.4465 4.37733 20.155 4.35777C18.9469 4.33376 17.7397 4.44173 16.555 4.67977C14.9168 4.89113 13.354 5.49565 12 6.44177"
       stroke="black"
-      stroke-width="1.5"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
   </svg>
 );
@@ -111,8 +111,8 @@ export const ProfileIconInactive = () => (
     xmlns="http://www.w3.org/2000/svg"
   >
     <path
-      fill-rule="evenodd"
-      clip-rule="evenodd"
+      fillRule="evenodd"
+      clipRule="evenodd"
       d="M12.0001 1.25C10.7403 1.25 9.5321 1.75044 8.6413 2.64124C7.7505 3.53204 7.25006 4.74022 7.25006 6C7.25006 7.25978 7.7505 8.46796 8.6413 9.35876C9.5321 10.2496 10.7403 10.75 12.0001 10.75C13.2598 10.75 14.468 10.2496 15.3588 9.35876C16.2496 8.46796 16.7501 7.25978 16.7501 6C16.7501 4.74022 16.2496 3.53204 15.3588 2.64124C14.468 1.75044 13.2598 1.25 12.0001 1.25ZM8.75006 6C8.75006 5.13805 9.09247 4.3114 9.70196 3.7019C10.3115 3.09241 11.1381 2.75 12.0001 2.75C12.862 2.75 13.6887 3.09241 14.2982 3.7019C14.9076 4.3114 15.2501 5.13805 15.2501 6C15.2501 6.86195 14.9076 7.6886 14.2982 8.2981C13.6887 8.90759 12.862 9.25 12.0001 9.25C11.1381 9.25 10.3115 8.90759 9.70196 8.2981C9.09247 7.6886 8.75006 6.86195 8.75006 6ZM12.0001 12.25C9.68706 12.25 7.55506 12.776 5.97606 13.664C4.42006 14.54 3.25006 15.866 3.25006 17.5V17.602C3.24906 18.764 3.24806 20.222 4.52706 21.264C5.15606 21.776 6.03706 22.141 7.22706 22.381C8.41906 22.623 9.97406 22.75 12.0001 22.75C14.0261 22.75 15.5801 22.623 16.7741 22.381C17.9641 22.141 18.8441 21.776 19.4741 21.264C20.7531 20.222 20.7511 18.764 20.7501 17.602V17.5C20.7501 15.866 19.5801 14.54 18.0251 13.664C16.4451 12.776 14.3141 12.25 12.0001 12.25ZM4.75006 17.5C4.75006 16.649 5.37206 15.725 6.71106 14.972C8.02706 14.232 9.89506 13.75 12.0011 13.75C14.1051 13.75 15.9731 14.232 17.2891 14.972C18.6291 15.725 19.2501 16.649 19.2501 17.5C19.2501 18.808 19.2101 19.544 18.5261 20.1C18.1561 20.402 17.5361 20.697 16.4761 20.911C15.4191 21.125 13.9741 21.25 12.0001 21.25C10.0261 21.25 8.58006 21.125 7.52406 20.911C6.46406 20.697 5.84406 20.402 5.47406 20.101C4.79006 19.544 4.75006 18.808 4.75006 17.5Z"
       fill="black"
     />
@@ -181,27 +181,27 @@ export const PointsIcon = () => (
       <path
         d="M18.0488 2.01979C18.3376 1.90204 19.0516 1.77529 19.5953 2.20729C20.2748 2.74579 20.1811 3.51979 20.0873 4.01179C20.0123 4.40554 19.7911 6.90229 19.5953 8.06629"
         stroke="url(#paint12_linear_161_826)"
-        stroke-width="0.5"
-        stroke-linecap="round"
+        strokeWidth="0.5"
+        strokeLinecap="round"
       />
     </g>
     <g filter="url(#filter2_f_161_826)">
       <path
         d="M17.8376 9.21477C17.6036 9.50577 16.7358 9.93702 16.1921 9.50577C15.5126 8.96652 15.6063 8.19327 15.7001 7.70127C15.7751 7.30752 15.9971 6.08952 16.1921 4.92627"
         stroke="url(#paint13_linear_161_826)"
-        stroke-width="0.5"
-        stroke-linecap="round"
+        strokeWidth="0.5"
+        strokeLinecap="round"
       />
     </g>
     <path
-      fill-rule="evenodd"
-      clip-rule="evenodd"
+      fillRule="evenodd"
+      clipRule="evenodd"
       d="M19.754 12.7222C19.7751 12.8235 19.776 12.9279 19.7568 13.0295C19.7375 13.1311 19.6984 13.2279 19.6417 13.3144C19.585 13.4009 19.5118 13.4754 19.4264 13.5336C19.3409 13.5919 19.2448 13.6327 19.1435 13.6537L12.668 15L7.72853 16.1002C7.62757 16.1228 7.52318 16.1252 7.42129 16.1073C7.31941 16.0895 7.22204 16.0517 7.13474 15.9963C6.95844 15.8842 6.83385 15.7068 6.7884 15.5029C6.7659 15.4019 6.7635 15.2975 6.78134 15.1956C6.79918 15.0938 6.83691 14.9964 6.89238 14.9091C6.94785 14.8218 7.01998 14.7463 7.10463 14.6868C7.18929 14.6274 7.28482 14.5853 7.38578 14.5627L12.3365 13.4602L18.8225 12.1117C18.9238 12.0907 19.0282 12.0897 19.1298 12.109C19.2314 12.1283 19.3282 12.1674 19.4147 12.2241C19.5012 12.2808 19.5757 12.3539 19.6339 12.4394C19.6921 12.5249 19.733 12.621 19.754 12.7222Z"
       fill="url(#paint14_linear_161_826)"
     />
     <path
-      fill-rule="evenodd"
-      clip-rule="evenodd"
+      fillRule="evenodd"
+      clipRule="evenodd"
       d="M18.1475 15.8832C18.1909 16.0874 18.1514 16.3004 18.0378 16.4755C17.9242 16.6506 17.7457 16.7734 17.5415 16.817L10.9475 18.2225L6.00205 19.301C5.90099 19.323 5.79659 19.3249 5.69481 19.3065C5.59303 19.2882 5.49585 19.25 5.40883 19.1941C5.32181 19.1382 5.24665 19.0657 5.18764 18.9808C5.12863 18.8959 5.08693 18.8001 5.06492 18.6991C5.04291 18.598 5.04101 18.4936 5.05935 18.3918C5.07768 18.2901 5.11588 18.1929 5.17177 18.1059C5.28465 17.9301 5.46271 17.8064 5.6668 17.762L10.616 16.6827L17.2138 15.2765C17.418 15.2331 17.631 15.2726 17.8061 15.3862C17.9812 15.4998 18.104 15.6791 18.1475 15.8832Z"
       fill="url(#paint15_linear_161_826)"
     />
@@ -215,32 +215,32 @@ export const PointsIcon = () => (
       <path
         d="M3.33984 14.1368L4.48734 5.86279"
         stroke="url(#paint16_linear_161_826)"
-        stroke-width="0.375"
-        stroke-linecap="round"
+        strokeWidth="0.375"
+        strokeLinecap="round"
       />
     </g>
     <g filter="url(#filter5_f_161_826)">
       <path
         d="M1.74609 7.88807L3.19884 6.15332"
         stroke="url(#paint17_linear_161_826)"
-        stroke-width="0.375"
-        stroke-linecap="round"
+        strokeWidth="0.375"
+        strokeLinecap="round"
       />
     </g>
     <g filter="url(#filter6_f_161_826)">
       <path
         d="M9.94922 3.75409C10.2387 3.63709 10.9527 3.51034 11.4965 3.94159C12.176 4.48084 12.0815 5.25409 11.9885 5.74609C11.9135 6.13984 11.6915 8.63659 11.4965 9.80059"
         stroke="url(#paint18_linear_161_826)"
-        stroke-width="0.5"
-        stroke-linecap="round"
+        strokeWidth="0.5"
+        strokeLinecap="round"
       />
     </g>
     <g filter="url(#filter7_f_161_826)">
       <path
         d="M9.73671 10.9494C9.50196 11.2397 8.63421 11.6709 8.09121 11.2397C7.41096 10.7012 7.50471 9.92716 7.59846 9.43516C7.67346 9.04141 7.89546 7.82416 8.09121 6.66016"
         stroke="url(#paint19_linear_161_826)"
-        stroke-width="0.5"
-        stroke-linecap="round"
+        strokeWidth="0.5"
+        strokeLinecap="round"
       />
     </g>
     <g filter="url(#filter8_f_161_826)">
@@ -263,9 +263,9 @@ export const PointsIcon = () => (
         width="2.55859"
         height="7.92529"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feBlend
           mode="normal"
           in="SourceGraphic"
@@ -284,9 +284,9 @@ export const PointsIcon = () => (
         width="3.60352"
         height="7.65967"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feBlend
           mode="normal"
           in="SourceGraphic"
@@ -305,9 +305,9 @@ export const PointsIcon = () => (
         width="3.70312"
         height="6.26172"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feBlend
           mode="normal"
           in="SourceGraphic"
@@ -326,9 +326,9 @@ export const PointsIcon = () => (
         width="2.17188"
         height="2.17139"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feBlend
           mode="normal"
           in="SourceGraphic"
@@ -347,9 +347,9 @@ export const PointsIcon = () => (
         width="2.52344"
         height="9.64893"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feBlend
           mode="normal"
           in="SourceGraphic"
@@ -368,9 +368,9 @@ export const PointsIcon = () => (
         width="2.82812"
         height="3.10986"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feBlend
           mode="normal"
           in="SourceGraphic"
@@ -389,9 +389,9 @@ export const PointsIcon = () => (
         width="3.60352"
         height="7.65918"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feBlend
           mode="normal"
           in="SourceGraphic"
@@ -410,9 +410,9 @@ export const PointsIcon = () => (
         width="3.70312"
         height="6.26172"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feBlend
           mode="normal"
           in="SourceGraphic"
@@ -431,9 +431,9 @@ export const PointsIcon = () => (
         width="1.33906"
         height="1.01289"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feBlend
           mode="normal"
           in="SourceGraphic"
@@ -452,9 +452,9 @@ export const PointsIcon = () => (
         width="1.33906"
         height="1.01289"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feBlend
           mode="normal"
           in="SourceGraphic"
@@ -474,8 +474,8 @@ export const PointsIcon = () => (
         y2="0.784924"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#EC008C" />
-        <stop offset="1" stop-color="#E81123" />
+        <stop stopColor="#EC008C" />
+        <stop offset="1" stopColor="#E81123" />
       </linearGradient>
       <linearGradient
         id="paint1_linear_161_826"
@@ -485,8 +485,8 @@ export const PointsIcon = () => (
         y2="7.26942"
         gradientUnits="userSpaceOnUse"
       >
-        <stop offset="0.151" stop-color="#A11749" stop-opacity="0" />
-        <stop offset="0.895" stop-color="#A21749" />
+        <stop offset="0.151" stopColor="#A11749" stopOpacity="0" />
+        <stop offset="0.895" stopColor="#A21749" />
       </linearGradient>
       <linearGradient
         id="paint2_linear_161_826"
@@ -496,8 +496,8 @@ export const PointsIcon = () => (
         y2="12.1211"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#DB1136" />
-        <stop offset="1" stop-color="#DB1136" stop-opacity="0" />
+        <stop stopColor="#DB1136" />
+        <stop offset="1" stopColor="#DB1136" stopOpacity="0" />
       </linearGradient>
       <linearGradient
         id="paint3_linear_161_826"
@@ -507,8 +507,8 @@ export const PointsIcon = () => (
         y2="10.5038"
         gradientUnits="userSpaceOnUse"
       >
-        <stop offset="0.151" stop-color="#A11749" stop-opacity="0" />
-        <stop offset="0.895" stop-color="#A21749" />
+        <stop offset="0.151" stopColor="#A11749" stopOpacity="0" />
+        <stop offset="0.895" stopColor="#A21749" />
       </linearGradient>
       <linearGradient
         id="paint4_linear_161_826"
@@ -518,8 +518,8 @@ export const PointsIcon = () => (
         y2="2.86311"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#EC008C" />
-        <stop offset="1" stop-color="#E81123" />
+        <stop stopColor="#EC008C" />
+        <stop offset="1" stopColor="#E81123" />
       </linearGradient>
       <radialGradient
         id="paint5_radial_161_826"
@@ -529,8 +529,8 @@ export const PointsIcon = () => (
         gradientUnits="userSpaceOnUse"
         gradientTransform="translate(9.48823 8.06618) rotate(-172.166) scale(1.30993 3.40941)"
       >
-        <stop offset="0.417" stop-color="#B50A47" />
-        <stop offset="1" stop-color="#CE0D52" stop-opacity="0" />
+        <stop offset="0.417" stopColor="#B50A47" />
+        <stop offset="1" stopColor="#CE0D52" stopOpacity="0" />
       </radialGradient>
       <linearGradient
         id="paint6_linear_161_826"
@@ -540,8 +540,8 @@ export const PointsIcon = () => (
         y2="4.07661"
         gradientUnits="userSpaceOnUse"
       >
-        <stop offset="0.151" stop-color="#A11749" stop-opacity="0" />
-        <stop offset="0.895" stop-color="#A21749" />
+        <stop offset="0.151" stopColor="#A11749" stopOpacity="0" />
+        <stop offset="0.895" stopColor="#A21749" />
       </linearGradient>
       <linearGradient
         id="paint7_linear_161_826"
@@ -551,8 +551,8 @@ export const PointsIcon = () => (
         y2="13.0354"
         gradientUnits="userSpaceOnUse"
       >
-        <stop offset="0.151" stop-color="#A11749" stop-opacity="0" />
-        <stop offset="0.895" stop-color="#A21749" />
+        <stop offset="0.151" stopColor="#A11749" stopOpacity="0" />
+        <stop offset="0.895" stopColor="#A21749" />
       </linearGradient>
       <linearGradient
         id="paint8_linear_161_826"
@@ -562,8 +562,8 @@ export const PointsIcon = () => (
         y2="1.12898"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#EC008C" />
-        <stop offset="1" stop-color="#E81123" />
+        <stop stopColor="#EC008C" />
+        <stop offset="1" stopColor="#E81123" />
       </linearGradient>
       <radialGradient
         id="paint9_radial_161_826"
@@ -573,8 +573,8 @@ export const PointsIcon = () => (
         gradientUnits="userSpaceOnUse"
         gradientTransform="translate(17.5879 6.3317) rotate(-172.166) scale(1.30993 3.40941)"
       >
-        <stop offset="0.417" stop-color="#B50A47" />
-        <stop offset="1" stop-color="#CE0D52" stop-opacity="0" />
+        <stop offset="0.417" stopColor="#B50A47" />
+        <stop offset="1" stopColor="#CE0D52" stopOpacity="0" />
       </radialGradient>
       <linearGradient
         id="paint10_linear_161_826"
@@ -584,8 +584,8 @@ export const PointsIcon = () => (
         y2="2.34174"
         gradientUnits="userSpaceOnUse"
       >
-        <stop offset="0.151" stop-color="#A11749" stop-opacity="0" />
-        <stop offset="0.895" stop-color="#A21749" />
+        <stop offset="0.151" stopColor="#A11749" stopOpacity="0" />
+        <stop offset="0.895" stopColor="#A21749" />
       </linearGradient>
       <linearGradient
         id="paint11_linear_161_826"
@@ -595,8 +595,8 @@ export const PointsIcon = () => (
         y2="11.3005"
         gradientUnits="userSpaceOnUse"
       >
-        <stop offset="0.151" stop-color="#A11749" stop-opacity="0" />
-        <stop offset="0.895" stop-color="#A21749" />
+        <stop offset="0.151" stopColor="#A11749" stopOpacity="0" />
+        <stop offset="0.895" stopColor="#A21749" />
       </linearGradient>
       <linearGradient
         id="paint12_linear_161_826"
@@ -606,9 +606,9 @@ export const PointsIcon = () => (
         y2="10.1055"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#FF6579" stop-opacity="0" />
-        <stop offset="0.367" stop-color="#FF6579" />
-        <stop offset="1" stop-color="#FF596F" stop-opacity="0" />
+        <stop stopColor="#FF6579" stopOpacity="0" />
+        <stop offset="0.367" stopColor="#FF6579" />
+        <stop offset="1" stopColor="#FF596F" stopOpacity="0" />
       </linearGradient>
       <linearGradient
         id="paint13_linear_161_826"
@@ -618,9 +618,9 @@ export const PointsIcon = () => (
         y2="1.60752"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#FF6579" stop-opacity="0" />
-        <stop offset="0.367" stop-color="#FF6579" />
-        <stop offset="1" stop-color="#FF596F" stop-opacity="0" />
+        <stop stopColor="#FF6579" stopOpacity="0" />
+        <stop offset="0.367" stopColor="#FF6579" />
+        <stop offset="1" stopColor="#FF596F" stopOpacity="0" />
       </linearGradient>
       <linearGradient
         id="paint14_linear_161_826"
@@ -630,8 +630,8 @@ export const PointsIcon = () => (
         y2="12.3787"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#EC008C" />
-        <stop offset="0.828" stop-color="#E81123" />
+        <stop stopColor="#EC008C" />
+        <stop offset="0.828" stopColor="#E81123" />
       </linearGradient>
       <linearGradient
         id="paint15_linear_161_826"
@@ -641,8 +641,8 @@ export const PointsIcon = () => (
         y2="14.129"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#EC008C" />
-        <stop offset="0.668" stop-color="#E81123" />
+        <stop stopColor="#EC008C" />
+        <stop offset="0.668" stopColor="#E81123" />
       </linearGradient>
       <linearGradient
         id="paint16_linear_161_826"
@@ -652,8 +652,8 @@ export const PointsIcon = () => (
         y2="19.0815"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#FF6579" />
-        <stop offset="1" stop-color="#FF596F" stop-opacity="0" />
+        <stop stopColor="#FF6579" />
+        <stop offset="1" stopColor="#FF596F" stopOpacity="0" />
       </linearGradient>
       <linearGradient
         id="paint17_linear_161_826"
@@ -663,8 +663,8 @@ export const PointsIcon = () => (
         y2="8.98007"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#FF47B4" stop-opacity="0" />
-        <stop offset="1" stop-color="#FF47B4" />
+        <stop stopColor="#FF47B4" stopOpacity="0" />
+        <stop offset="1" stopColor="#FF47B4" />
       </linearGradient>
       <linearGradient
         id="paint18_linear_161_826"
@@ -674,9 +674,9 @@ export const PointsIcon = () => (
         y2="11.8398"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#FF6579" stop-opacity="0" />
-        <stop offset="0.367" stop-color="#FF6579" />
-        <stop offset="1" stop-color="#FF596F" stop-opacity="0" />
+        <stop stopColor="#FF6579" stopOpacity="0" />
+        <stop offset="0.367" stopColor="#FF6579" />
+        <stop offset="1" stopColor="#FF596F" stopOpacity="0" />
       </linearGradient>
       <linearGradient
         id="paint19_linear_161_826"
@@ -686,9 +686,9 @@ export const PointsIcon = () => (
         y2="3.34141"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#FF6579" stop-opacity="0" />
-        <stop offset="0.367" stop-color="#FF6579" />
-        <stop offset="1" stop-color="#FF596F" stop-opacity="0" />
+        <stop stopColor="#FF6579" stopOpacity="0" />
+        <stop offset="0.367" stopColor="#FF6579" />
+        <stop offset="1" stopColor="#FF596F" stopOpacity="0" />
       </linearGradient>
       <linearGradient
         id="paint20_linear_161_826"
@@ -698,8 +698,8 @@ export const PointsIcon = () => (
         y2="13.1406"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#FF5E84" />
-        <stop offset="1" stop-color="#FF698D" stop-opacity="0" />
+        <stop stopColor="#FF5E84" />
+        <stop offset="1" stopColor="#FF698D" stopOpacity="0" />
       </linearGradient>
       <linearGradient
         id="paint21_linear_161_826"
@@ -709,8 +709,8 @@ export const PointsIcon = () => (
         y2="16.3517"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#FF5E84" />
-        <stop offset="1" stop-color="#FF698D" stop-opacity="0" />
+        <stop stopColor="#FF5E84" />
+        <stop offset="1" stopColor="#FF698D" stopOpacity="0" />
       </linearGradient>
     </defs>
   </svg>
@@ -734,23 +734,23 @@ export const TimeIcon = () => (
     <path
       d="M18.369 8.45986C19.2286 10.0009 19.4998 11.8014 19.1324 13.5273C18.765 15.2531 17.7839 16.787 16.3713 17.8443C14.9586 18.9016 13.2103 19.4105 11.4509 19.2765C9.69146 19.1424 8.04042 18.3746 6.80423 17.1155C5.56803 15.8564 4.83064 14.1915 4.72892 12.4299C4.62721 10.6684 5.16808 8.9297 6.25114 7.53668C7.3342 6.14367 8.88588 5.19091 10.6182 4.85525C12.3505 4.5196 14.1457 4.82385 15.6707 5.71153"
       stroke="black"
-      stroke-width="0.5"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="0.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
     <path
       d="M20.9799 11.9988C20.9796 14.1429 20.2152 16.2167 18.8239 17.848C17.4325 19.4794 15.5053 20.5614 13.3881 20.9C11.2709 21.2386 9.10239 20.8115 7.27169 19.6954C5.44099 18.5793 4.06799 16.8473 3.39913 14.8102C2.73026 12.7731 2.80931 10.5643 3.62209 8.58024C4.43487 6.59618 5.92816 4.96674 7.83397 3.98437C9.73977 3.00201 11.9333 2.73103 14.0209 3.22008C16.1084 3.70913 17.9534 4.92618 19.2246 6.6528"
       stroke="black"
-      stroke-width="0.5"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="0.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
     <path
       d="M15.7986 7.19246L19.478 6.8058L19.0913 3.12646M16.659 12.1178H11.9643V6.17313M11.9643 17.9701V16.6885M7.0483 12.1178H6.0293"
       stroke="black"
-      stroke-width="0.5"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="0.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
     <path
       d="M11.9644 13.3639C12.6524 13.3639 13.2101 12.8062 13.2101 12.1182C13.2101 11.4303 12.6524 10.8726 11.9644 10.8726C11.2765 10.8726 10.7188 11.4303 10.7188 12.1182C10.7188 12.8062 11.2765 13.3639 11.9644 13.3639Z"
@@ -779,14 +779,14 @@ export const CorrectIcon = () => (
     xmlns="http://www.w3.org/2000/svg"
   >
     <path
-      fill-rule="evenodd"
-      clip-rule="evenodd"
+      fillRule="evenodd"
+      clipRule="evenodd"
       d="M1 9L3.5 6.5L8.5 11.5L18.5 1.5L21 4L8.5 16.5L1 9Z"
       fill="#2F88FF"
       stroke="black"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
   </svg>
 );
@@ -802,17 +802,17 @@ export const TargetIcon = () => (
       d="M9.94337 19.9444C14.3634 19.9444 17.9434 16.3644 17.9434 11.9444C17.9434 7.52435 14.3634 3.94434 9.94337 3.94434C5.52337 3.94434 1.94336 7.52435 1.94336 11.9444C1.94336 16.3644 5.52337 19.9444 9.94337 19.9444Z"
       fill="#2F88FF"
       stroke="black"
-      stroke-width="2"
-      stroke-miterlimit="2"
-      stroke-linejoin="round"
+      strokeWidth="2"
+      strokeMiterlimit="2"
+      strokeLinejoin="round"
     />
     <path
       d="M9.94336 15.9443C12.1534 15.9443 13.9434 14.1543 13.9434 11.9443C13.9434 9.73434 12.1534 7.94434 9.94336 7.94434C7.73336 7.94434 5.94336 9.73434 5.94336 11.9443C5.94336 14.1543 7.73336 15.9443 9.94336 15.9443Z"
       fill="#43CCF8"
       stroke="white"
-      stroke-width="2"
-      stroke-miterlimit="2"
-      stroke-linejoin="round"
+      strokeWidth="2"
+      strokeMiterlimit="2"
+      strokeLinejoin="round"
     />
     <path
       d="M9.94336 12.9443C10.4934 12.9443 10.9434 12.4943 10.9434 11.9443C10.9434 11.3943 10.4934 10.9443 9.94336 10.9443C9.39336 10.9443 8.94336 11.3943 8.94336 11.9443C8.94336 12.4943 9.39336 12.9443 9.94336 12.9443Z"
@@ -821,26 +821,26 @@ export const TargetIcon = () => (
     <path
       d="M9.94336 3.94434V1.94434"
       stroke="black"
-      stroke-width="2"
-      stroke-miterlimit="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="2"
+      strokeMiterlimit="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
     <path
       d="M16.9434 21.9443L14.9434 18.4443"
       stroke="black"
-      stroke-width="2"
-      stroke-miterlimit="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="2"
+      strokeMiterlimit="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
     <path
       d="M4.94337 18.4443L2.94336 21.9443"
       stroke="black"
-      stroke-width="2"
-      stroke-miterlimit="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="2"
+      strokeMiterlimit="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
   </svg>
 );
@@ -855,16 +855,16 @@ export const ClockIcon = () => (
     <path
       d="M22 12C22 17.52 17.52 22 12 22C6.48 22 2 17.52 2 12C2 6.48 6.48 2 12 2C17.52 2 22 6.48 22 12Z"
       stroke="#383848"
-      stroke-width="1.5"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
     <path
       d="M15.7099 15.1798L12.6099 13.3298C12.0699 13.0098 11.6299 12.2398 11.6299 11.6098V7.50977"
       stroke="#383848"
-      stroke-width="1.5"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
   </svg>
 );
@@ -882,9 +882,9 @@ export const BookmarkIcon = () => (
       d="M13 5V19L7 15L1 19V5C1 3.93913 1.42143 2.92172 2.17157 2.17157C2.92172 1.42143 3.93913 1 5 1H9C10.0609 1 11.0783 1.42143 11.8284 2.17157C12.5786 2.92172 13 3.93913 13 5Z"
       fill="white"
       stroke="#124163"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
   </svg>
 );
@@ -901,21 +901,21 @@ export const AudioIcon = () => (
     <path
       d="M2 9.99979V13.9998C2 15.9998 3 16.9998 5 16.9998H6.43C6.8 16.9998 7.17 17.1098 7.49 17.2998L10.41 19.1298C12.93 20.7098 15 19.5598 15 16.5898V7.40979C15 4.42979 12.93 3.28979 10.41 4.86979L7.49 6.69979C7.17 6.88979 6.8 6.99979 6.43 6.99979H5C3 6.99979 2 7.99979 2 9.99979Z"
       stroke="#124163"
-      stroke-width="1.5"
+      strokeWidth="1.5"
     />
     <path
       d="M18 8C19.78 10.37 19.78 13.63 18 16"
       stroke="#124163"
-      stroke-width="1.5"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
     <path
       d="M19.8301 5.5C22.7201 9.35 22.7201 14.65 19.8301 18.5"
       stroke="#124163"
-      stroke-width="1.5"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
   </svg>
 );

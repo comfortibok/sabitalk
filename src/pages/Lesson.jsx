@@ -3,7 +3,7 @@ import styles from "../styles/lesson.module.css";
 import LessonLayout from "../layouts/LessonLayout";
 import OngoingLesson from "../components/OngoingLesson";
 
-const LessonOne = () => {
+const Lesson= () => {
   const ongoingLessons = [
     {
       id: 1,
@@ -34,4 +34,4 @@ const LessonOne = () => {
   );
 };
 
-export default LessonOne;
+export default Lesson;

@@ -6,7 +6,7 @@ import styles from "../styles/mainLesson.module.css";
 
 const LessonThree = () => {
   return (
-    <LessonLayout>
+    <LessonLayout activeLanguage="Yoruba">
       <main className={styles.lessonsMain}>
         <section className={styles.lessonsInfo}>
           <div className={styles.lessonsTime}>
@@ -16,7 +16,7 @@ const LessonThree = () => {
           <span>(Numbers)</span>
           <div className={styles.bookmark}>
             <BookmarkIcon />
-            Bookmark
+           <span>Bookmark</span> 
           </div>
         </section>
         <section className={styles.lessonSection}>
@@ -53,7 +53,7 @@ const LessonThree = () => {
         <section className={styles.lessonSection}>
           <h2 className={styles.lessonTitle}>Title</h2>
           <div className={styles.lessonVideo}>
-            <AudioIcon />
+           <div className={styles.audioWrap}><AudioIcon /></div> 
           </div>
           <p className={styles.lessonDescription}>
             Lorem ipsum dolor sit amet consectetur. Ut fermentum ut et dolor

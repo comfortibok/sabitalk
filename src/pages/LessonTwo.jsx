@@ -95,7 +95,7 @@ const LessonTwo = () => {
   ];
 
   return (
-    <LessonLayout>
+    <LessonLayout activeLanguage="Yoruba">
       <section className={styles.lessonsListWrap}>
         <div className={styles.subtitleWrap}>
           <h3 className={styles.subtitle}>Beginner</h3>
@@ -109,10 +109,10 @@ const LessonTwo = () => {
             <path
               d="M16.9201 0.950195L10.4001 7.4702C9.63008 8.2402 8.37008 8.2402 7.60008 7.4702L1.08008 0.950195"
               stroke="#383848"
-              stroke-width="1.5"
-              stroke-miterlimit="10"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="1.5"
+              strokeMiterlimit="10"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
           </svg>
         </div>
@@ -132,10 +132,10 @@ const LessonTwo = () => {
             <path
               d="M16.9201 0.950195L10.4001 7.4702C9.63008 8.2402 8.37008 8.2402 7.60008 7.4702L1.08008 0.950195"
               stroke="#383848"
-              stroke-width="1.5"
-              stroke-miterlimit="10"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="1.5"
+              strokeMiterlimit="10"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
           </svg>
         </div>
@@ -155,10 +155,10 @@ const LessonTwo = () => {
             <path
               d="M16.9201 0.950195L10.4001 7.4702C9.63008 8.2402 8.37008 8.2402 7.60008 7.4702L1.08008 0.950195"
               stroke="#383848"
-              stroke-width="1.5"
-              stroke-miterlimit="10"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="1.5"
+              strokeMiterlimit="10"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
           </svg>
         </div>

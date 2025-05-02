@@ -1,6 +1,7 @@
-.backWrap{
+.backWrap {
   margin-block-start: 2.5em;
 }
+
 .formWrapper {
   display: flex;
   flex-direction: column;
@@ -8,7 +9,7 @@
 }
 
 .accountForm {
-  width: 288px;
+  max-width: 288px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -153,21 +154,22 @@ input[type="password"] {
   margin-block-end: 2.5em;
 }
 
-.otpContainer {  width: 100%;
+.otpContainer {
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 0.5em;
 }
 
-.otpInput {flex: 1;
+.otpInput {
+  flex: 1;
   min-width: 0;
   height: 48px;
   height: 48px;
   border: 0.5px solid var(--primary-color);
   border-radius: 8px;
 }
-
 
 @media (max-width: 768px) {
   .backWrap p {

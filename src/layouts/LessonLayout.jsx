@@ -4,7 +4,7 @@ import Header from "./Header";
 import DashboardLayout from "./DashboardLayout";
 import styles from "../styles/lesson.module.css";
 
-const LessonLayout = ({ children }) => {
+const LessonLayout = ({ children, activeLanguage = "Your lessons" }) => {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
 
   const toggleSidebar = () => {
@@ -40,13 +40,16 @@ const LessonLayout = ({ children }) => {
       </section>
 
       <nav className={styles.tabs}>
-        <a className={styles.activeTab} aria-current="page" role="tab">
-          Your lessons
-        </a>
-        <a>Yoruba</a>
-        <a>Igbo</a>
-        <a>Hausa</a>
-        <a>Pidgin</a>
+        {["Your lessons", "Yoruba", "Igbo", "Hausa", "Pidgin"].map((lang) => (
+          <a
+            key={lang}
+            className={lang === activeLanguage ? styles.activeTab : ""}
+            aria-current={lang === activeLanguage ? "page" : undefined}
+            role="tab"
+          >
+            {lang}
+          </a>
+        ))}
       </nav>
       {children}
     </DashboardLayout>

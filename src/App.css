@@ -41,10 +41,10 @@ body {
 }
 
 .appWrapper {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   justify-content: space-between;
-  padding: 1.5em;
+  padding: 1.5rem;
   align-items: center;
   gap: 2em;
 }
@@ -53,56 +53,16 @@ body {
 .leftPaneContainer {
   max-width: 50%;
   width: 100%;
-  height: 100%;
+ height: 976px;
   background-color: var(--primary-background-color);
+  background-image: url(./assets/ellipse/Left-pane-background.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   color: var(--secondary-color);
   border-radius: 32px;
   display: grid;
   place-items: center;
-  position: relative;
-}
-
-.bg-img-container {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-}
-
-.bg-img-content {
-  position: relative;
-  height: 100%;
-}
-
-.bg-image:first-child {
-  position: absolute;
-  width: 233px;
-  top: -40px;
-  left: -50px;
-}
-
-.bg-image:nth-child(2) {
-  position: absolute;
-  width: 233px;
-  top: 120px;
-  right: -65px;
-}
-
-.bg-image:nth-child(3) {
-  position: absolute;
-  width: 200px;
-  top: 280px;
-  left: -20px;
-}
-
-.bg-image:last-child {
-  position: absolute;
-  width: 233px;
-  top: 530px;
-  right: 80px;
 }
 
 .leftPaneContent {
@@ -143,7 +103,7 @@ body {
 
 /* RightPane */
 .rightPaneContainer {
-  height: 100%;
+  height: 976px;
   width: 50%;
   display: flex;
   flex-direction: column;
@@ -151,7 +111,7 @@ body {
 }
 
 .rightPaneContent {
-  width: 432px;
+  max-width: 432px;
   margin: auto;
   text-align: center;
   padding: 0.3em;

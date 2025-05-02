@@ -4,8 +4,8 @@ import styles from "../styles/ongoingLesson.module.css";
 const OngoingLesson = ({ lessons }) => {
   return (
     <div className={styles.lessons}>
-      {lessons.map((lesson) => (
-        <div key={lesson.id} className={styles.lessonCard}>
+      {lessons.map((lesson, index) => (
+        <div key={`${lesson.id}-${index}`} className={styles.lessonCard}>
           <p className={styles.lessonTitle}>{lesson.title}</p>
           <p className={styles.lessonDescription}>{lesson.description}</p>
           <div
