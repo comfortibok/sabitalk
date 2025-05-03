@@ -1,0 +1,154 @@
+.mainContent {
+  padding: 2rem;
+  background-color: white;
+}
+
+.questionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.questionHeader h2 {
+  margin: 0;
+  color: #333;
+}
+
+.timer {
+  background-color: #e9ecef;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  color: #495057;
+}
+
+.questionCard {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.phrase {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.translation {
+  color: #666;
+  font-style: italic;
+  margin-bottom: 1.5rem;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+.option {
+  padding: 1rem;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.option:hover {
+  background-color: #f1f3f5;
+}
+
+.option.selected {
+  background-color: #4a6fa5;
+  color: white;
+  border-color: #4a6fa5;
+}
+
+.navigation {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.nextButton {
+  background-color: #4a6fa5;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s;
+}
+
+.nextButton:hover {
+  background-color: #3a5a80;
+}
+
+
+/* .quizCard {
+  background-color: #fff;
+  border: 1px solid #cfd8dc;
+  border-radius: 12px;
+  padding: 24px;
+  max-width: 600px;
+  margin: auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.translation {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.option {
+  border: 1px solid #cfd8dc;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: #f8f9fa;
+  transition: all 0.2s ease;
+}
+
+.option:hover {
+  background-color: #e0f2fe;
+}
+
+.correct {
+  background-color: #d4edda;
+  border-color: #28a745;
+  color: #155724;
+}
+
+.incorrect {
+  background-color: #f8d7da;
+  border-color: #dc3545;
+  color: #721c24;
+}
+
+.nextButton {
+  background-color: #1e40af;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  width: 100%;
+  font-weight: bold;
+  cursor: pointer;
+} */
