@@ -77,7 +77,7 @@ const Sidebar = ({ isOpen, closeSidebar }) => {
                   }`}
                   aria-label={link.label}
                   aria-current={isActive ? "page" : undefined}
-                  onClick={closeSidebar} // Optional: auto-close sidebar on link click
+                  onClick={closeSidebar}
                 >
                   <span className={styles.icon} aria-hidden="true">
                     {isActive ? link.activeIcon : link.inactiveIcon}

@@ -28,10 +28,10 @@ const InputOtp = () => {
             <path
               d="M7.99984 16.92L1.47984 10.4C0.709844 9.63002 0.709844 8.37002 1.47984 7.60002L7.99984 1.08002"
               stroke="#383848"
-              stroke-width="1.5"
-              stroke-miterlimit="10"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="1.5"
+              strokeMiterlimit="10"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
           </svg>
           <p>Back</p>
@@ -86,7 +86,7 @@ const InputOtp = () => {
                   className={styles.otpInput}
                 />
               </div>
-              <a href="/reset-password" target="_blank" className={styles.link}>
+              <a href="#" target="_self" className={styles.link}>
                 Resend OTP
               </a>
             </div>

@@ -29,10 +29,10 @@ const ResetPassword = () => {
             <path
               d="M7.99984 16.92L1.47984 10.4C0.709844 9.63002 0.709844 8.37002 1.47984 7.60002L7.99984 1.08002"
               stroke="#383848"
-              stroke-width="1.5"
-              stroke-miterlimit="10"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="1.5"
+              strokeMiterlimit="10"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
           </svg>
           <p>Back</p>
@@ -44,7 +44,13 @@ const ResetPassword = () => {
           <form className={styles.accountForm}>
             <div className={styles.inputWrap}>
               <label htmlFor="email">Email Address</label>
-              <input type="text" name="email" id="email" required />
+              <input
+                type="email"
+                name="email"
+                id="email"
+                autoComplete="email"
+                required
+              />
             </div>
             <button type="button">Confirm</button>
           </form>
