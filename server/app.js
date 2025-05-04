@@ -9,6 +9,7 @@ const validateToken = require("./middleware/auth.middleware")
 const { rateLimit } = require('express-rate-limit') 
 const passport = require("passport")
 const jwt = require("jsonwebtoken")
+const cache = require("./redisClient")
 
 
 const PORT = process.env.PORT
@@ -17,6 +18,8 @@ const app = express()
 
 // connecting to database
 connect.connectDB()
+cache.connect();
+
 
 var corsOption = {
     origin : ["http://localhost:5173/", "http://localhost:8000/"],
