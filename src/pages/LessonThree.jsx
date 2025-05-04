@@ -16,7 +16,7 @@ const LessonThree = () => {
           <span>(Numbers)</span>
           <div className={styles.bookmark}>
             <BookmarkIcon />
-           <span>Bookmark</span> 
+            <span>Bookmark</span>
           </div>
         </section>
         <section className={styles.lessonSection}>
@@ -53,7 +53,9 @@ const LessonThree = () => {
         <section className={styles.lessonSection}>
           <h2 className={styles.lessonTitle}>Title</h2>
           <div className={styles.lessonVideo}>
-           <div className={styles.audioWrap}><AudioIcon /></div> 
+            <div className={styles.audioWrap}>
+              <AudioIcon />
+            </div>
           </div>
           <p className={styles.lessonDescription}>
             Lorem ipsum dolor sit amet consectetur. Ut fermentum ut et dolor
@@ -70,7 +72,9 @@ const LessonThree = () => {
         <section className={styles.lessonSection}>
           <h2 className={styles.lessonTitle}>Title</h2>{" "}
           <div className={styles.lessonVideo}>
-            <AudioIcon />
+            <div className={styles.audioWrap}>
+              <AudioIcon />
+            </div>
           </div>
           <p className={styles.lessonDescription}>
             Lorem ipsum dolor sit amet consectetur. Consectetur nec mi
