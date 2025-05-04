@@ -58,7 +58,36 @@ const Login = async(req, res) =>{
     res.status(loginResponse.code).json(loginResponse)
 }
 
+const Reset = async(req, res) =>{
+    const {email} = req.body;
+    if(!req.session.email){
+        req.session.email = email
+    }
+    const resetResponse = await authService.Reset({email})
+    res.status(resetResponse.code).json(resetResponse)
+}
+
+const VerifyOtp = async(req,res) =>{
+    const {otp} = req.body
+    const email = req.session.email
+    console.log(otp, email)
+    const otpRespone = await authService.VerifyOtp({otp, email})
+    res.status(otpRespone.code).json(otpRespone)
+}
+
+const PasswordChange = async(req, res)=>{
+    const {password} = req.body
+    const email = req.session.email
+    const response =  await authService.PasswordChange({email ,password})
+
+    res.status(response.code).json(response)
+}
+
+
 module.exports = {
     Signup,
-    Login
+    Login,
+    Reset,
+    VerifyOtp,
+    PasswordChange
 }
