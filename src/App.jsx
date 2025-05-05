@@ -15,10 +15,12 @@ import LessonTwo from "./pages/LessonTwo";
 import LessonThree from "./pages/LessonThree";
 import LessonComplete from "./pages/LessonComplete";
 import LessonQuiz from "./pages/LessonQuiz";
+import Homepage from "./pages/Homepage";
 function App() {
   return (
     <>
       <Routes>
+        <Route path="/" element={<Homepage />} />
         <Route path="/lang-select" element={<LanguageSelect />} />
         <Route path="/sign-up" element={<SignUp />} />
         <Route path="/personalize-account" element={<PersonalizeAccount />} />

@@ -59,7 +59,7 @@ const Sidebar = ({ isOpen, closeSidebar }) => {
         <h1 className={styles.logo}>Speak It</h1>
         <p className={styles.subtext}>...like a local</p>
       </div>
-      <nav>
+      <nav className={styles.nav}>
         <ul className={styles.navList}>
           {links.map((link) => {
             const isActive = location.pathname.startsWith(link.to);
