@@ -56,7 +56,7 @@ const Sidebar = ({ isOpen, closeSidebar }) => {
         &times;
       </button>
       <div className={styles.logoWrapper}>
-        <h1 className={styles.logo}>Speak It</h1>
+        <h1 className={styles.logo}>Sabitalk</h1>
         <p className={styles.subtext}>...like a local</p>
       </div>
       <nav className={styles.nav}>

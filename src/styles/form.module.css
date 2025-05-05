@@ -61,7 +61,8 @@ label,
 
 .link,
 .signUp,
-.login, .span > a {
+.login,
+.span > a {
   color: var(--color-blue);
 }
 
@@ -80,7 +81,6 @@ label,
 .spanAlign {
   text-align: center;
 }
-
 
 .signUp,
 .login,
@@ -124,12 +124,6 @@ select:focus {
   border: 1px solid var(--primary-background-color);
 }
 
-.cta {
-  background-color: var(--secondary-background-color);
-  border: 1px solid var(--primary-background-color);
-  color: var(--primary-background-color);
-}
-
 input[type="password"] {
   width: 100%;
 }
@@ -145,12 +139,35 @@ input[type="password"] {
   bottom: 10px;
 }
 
+.cta {
+  background-color: var(--secondary-background-color);
+  border: 1px solid var(--primary-background-color);
+  color: var(--primary-background-color);
+}
+
 .loginBtn,
 .signUpBtn {
   display: flex;
   align-items: center;
   gap: 0.7em;
   justify-content: center;
+}
+
+.cta,
+.loginBtn,
+.signUpBtn {
+  transition: background-color 250ms ease;
+}
+
+.cta:hover,
+.cta:focus,
+.loginBtn:hover,
+.loginBtn:focus,
+.signUpBtn:hover,
+.signUpBtn:focus {
+  cursor: pointer;
+  background-color: rgba(39, 69, 132, 1);
+  color: var(--secondary-color);
 }
 
 .confirmBtn {
@@ -180,6 +197,16 @@ input[type="password"] {
   height: 48px;
   border: 0.5px solid var(--primary-color);
   border-radius: 8px;
+}
+
+.link:hover,
+.link:focus,
+.termsLink:hover,
+.termsLink:focus,
+.span > a:hover,
+.span > a:focus {
+  cursor: pointer;
+  text-decoration: underline;
 }
 
 @media (max-width: 768px) {

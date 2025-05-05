@@ -1,0 +1,33 @@
+.container {
+  width: 100vw;
+  height: 100vh;  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content {
+  position: relative;
+  text-align: center;
+}
+
+.logo,
+.subtitle {
+  font-weight: var(--font-weight-normal);
+  color: var(--color-blue);
+}
+
+.logo {
+  font-family: "Alfa Slab One", serif;
+  font-size: 2.27rem;
+  margin: 1.3em 0 0;
+}
+
+.subtitle {
+  font-family: "Amita", serif;
+  font-size: 1.13rem;
+}
+
+.speech {
+    font-size: 0.5rem;
+  color: var(--color-black);
+}

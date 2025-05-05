@@ -8,7 +8,7 @@ const SabiTalkLayout = () => {
       aria-labelledby="mainTitle"
     >
       <div className="leftPaneContent">
-        <h1 className="mainTitle">Speak It</h1>
+        <h1 className="mainTitle">Sabitalk</h1>
         <p className="subtitle">...like a local</p>
         <h2>Master Nigerian languages in a fun and interactive way</h2>
         <p className="subtext">

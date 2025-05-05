@@ -1,7 +1,7 @@
 import LessonLayout from "../layouts/LessonLayout";
 import QuizCard from "../components/QuizCard";
 import styles from "../styles/mainLesson.module.css";
-import { BookmarkIcon } from "../components/icons";
+import { BookmarkIcon, TimerIcon } from "../components/icons";
 
 const LessonQuiz = () => {
   return (
@@ -15,7 +15,21 @@ const LessonQuiz = () => {
             <span>Bookmark</span>
           </div>
         </section>
-        <div></div>
+
+        <div className={styles.timerContainer}>
+          <div className={styles.progressBarBackground}>
+            <div className={styles.progressBar} style={{ width: `50%` }}></div>
+          </div>
+          <div className={styles.timerInfoWrap}>
+            <h4>Question 1</h4>
+            <div className={styles.timerInfo}>
+              {" "}
+              <TimerIcon />
+              <span>20s</span>
+            </div>
+          </div>
+        </div>
+
         <QuizCard />
       </main>
     </LessonLayout>

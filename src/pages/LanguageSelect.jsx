@@ -13,7 +13,7 @@ const LanguageSelect = () => {
     <AppLayout>
       <section className="rightPaneContent">
         <h3 className="mainContentTitle">
-          Welcome to <span className="mainContentTitleSpan">Speak It</span>
+          Welcome to <span className="mainContentTitleSpan">Sabitalk</span>
         </h3>
         <p>
           Pick a preferred language to start your journey! Whether it's Yoruba,

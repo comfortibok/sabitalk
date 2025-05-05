@@ -175,7 +175,7 @@ body {
 .reset-confirm-btn {
   margin-block-start: 3em;
 }
- 
+
 /* Form */
 
 button {
@@ -189,6 +189,13 @@ button {
   border: none;
   border-radius: 8px;
   padding: 0.7143em;
+  transition: opacity 250ms ease;
+}
+
+button:hover,
+button:focus {
+  cursor: pointer;
+  opacity: 0.8;
 }
 
 @media (max-width: 768px) {
@@ -210,16 +217,16 @@ button {
     max-width: 342px;
   }
 
-  .mainContentTitle{
+  .mainContentTitle {
     font-size: var(--font-size-med);
   }
 
-  .rightPaneContent p{
-   color: rgba(132, 134, 140, 1);
+  .rightPaneContent p {
+    color: rgba(132, 134, 140, 1);
   }
 
-  .radioInput label, .rightPaneContent p{
+  .radioInput label,
+  .rightPaneContent p {
     font-size: var(--font-size-extrasm);
-
   }
 }
