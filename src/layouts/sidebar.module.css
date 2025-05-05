@@ -132,6 +132,19 @@ nav {
   .open {
     transform: translateX(0);
   }
+
+  .logo {
+    font-size: var(--font-size-big);
+  }
+
+  .logout {
+    font-size: var(--font-size-med);
+  }
+
+  .label {
+    font-size: var(--font-size-normal);
+  }
+
   .label,
   .logo,
   .subtext,

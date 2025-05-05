@@ -49,8 +49,23 @@
     display: block;
     cursor: pointer;
   }
-  
+
+  .dateWrapper {
+    padding: 0.6em;
+  }
+
   .date {
     display: none;
   }
+
+  .headerTitle {
+    font-size: var(--font-size-med);
+  }
+
+  svg {
+    width: 21px;
+    height: 21px;
+  }
+ 
+  
 }

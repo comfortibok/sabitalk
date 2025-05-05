@@ -52,7 +52,9 @@ const ResetPassword = () => {
                 required
               />
             </div>
-            <button type="button">Confirm</button>
+            <button type="button" className={styles.confirmBtn}>
+              Confirm
+            </button>
           </form>
         </section>
       </section>

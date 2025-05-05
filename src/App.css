@@ -38,6 +38,7 @@
 
 body {
   font-family: "Lato", sans-serif;
+  color: var(--primary-color);
 }
 
 .appWrapper {
@@ -53,7 +54,7 @@ body {
 .leftPaneContainer {
   max-width: 50%;
   width: 100%;
- height: 976px;
+  height: 976px;
   background-color: var(--primary-background-color);
   background-image: url(./assets/ellipse/Left-pane-background.png);
   background-position: center;
@@ -102,6 +103,7 @@ body {
 }
 
 /* RightPane */
+
 .rightPaneContainer {
   height: 976px;
   width: 50%;
@@ -127,7 +129,8 @@ body {
 }
 
 .mainContentTitle,
-.rightPaneContent p {
+.rightPaneContent p,
+.radioInput label {
   font-weight: var(--font-weight-bold);
 }
 .rightPaneContentTitleSpan {
@@ -142,9 +145,13 @@ body {
   color: var(--color-blue);
 }
 
-.rightPaneContent p {
+.rightPaneContent p,
+.radioInput label {
   font-size: var(--font-size-small);
-  line-height: 1.5;
+}
+
+.rightPaneContent p {
+  line-height: 1.6;
 }
 
 .radioGroup {
@@ -168,7 +175,7 @@ body {
 .reset-confirm-btn {
   margin-block-start: 3em;
 }
-
+ 
 /* Form */
 
 button {
@@ -177,6 +184,7 @@ button {
   color: var(--secondary-color);
   font-size: var(--font-size-small);
   font-weight: var(--font-weight-bold);
+  font-family: inherit;
   background-color: var(--primary-background-color);
   border: none;
   border-radius: 8px;
@@ -199,6 +207,19 @@ button {
 
   .rightPaneContent {
     width: 100%;
-    max-width: 432px;
+    max-width: 342px;
+  }
+
+  .mainContentTitle{
+    font-size: var(--font-size-med);
+  }
+
+  .rightPaneContent p{
+   color: rgba(132, 134, 140, 1);
+  }
+
+  .radioInput label, .rightPaneContent p{
+    font-size: var(--font-size-extrasm);
+
   }
 }

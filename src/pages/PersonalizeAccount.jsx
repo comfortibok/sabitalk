@@ -52,7 +52,9 @@ const PersonalizeAccount = () => {
               <label htmlFor="username">Username</label>
               <input type="text" name="username" id="username" required />
             </div>
-            <button>Confirm</button>
+            <button className={styles.confirmBtn} type="button">
+              Confirm
+            </button>
             <button
               className={styles.cta}
               type="button"
