@@ -5,6 +5,7 @@
   box-shadow: var(--box-shadow);
   border-radius: 8px;
 }
+
 .lessonSection {
   margin-block: 3.5em 0;
 }
@@ -242,8 +243,58 @@
   background-color: var(--color-blue);
 }
 
-
 .speak:disabled {
   opacity: 0.5;
   transition: all 0.3s ease;
+}
+
+.translation {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #222;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .lessonDescription,
+  .lessonsTime,
+  .bookmark span {
+    font-size: var(--font-size-small);
+  }
+
+  .lessonsInfo span {
+    font-size: var(--font-size-normal);
+  }
+
+  .lessonSection {
+    margin-block: 2.2em 0;
+  }
+
+  .lessonTitle {
+    font-size: var(--font-size-med);
+  }
+
+  .lessonsInfo p,
+  .prompt,
+  .optionLabel,
+  .option {
+    font-size: var(--font-size-small);
+  }
+
+  .lessonsInfo h3 {
+    font-size: var(--font-size-normal);
+  }
+
+  .prompt span {
+    font-size: var(--font-size-extrasm);
+  }
+
+  .yorubaWord {
+    font-size: var(--font-size-big);
+  }
+
+  .quizCard {
+    height: 280px;
+  }
 }

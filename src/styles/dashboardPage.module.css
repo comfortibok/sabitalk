@@ -1,10 +1,15 @@
-.learnTitleSpan {
-  color: rgba(177, 177, 177, 1);
+.learnTitleSpan,
+.learnDes,
+.startLink {
   font-size: var(--font-size-extrasm);
 }
+
+.learnTitleSpan {
+  color: rgba(177, 177, 177, 1);
+}
+
 .learnTitle {
   font-weight: var(--font-weight-extrabold);
-  color: var(--color-black);
 }
 
 .learnTitleSpan,
@@ -12,18 +17,17 @@
   font-weight: var(--font-weight-normal);
 }
 
-.learnTitle,
-.learnDes {
+.learnTitle {
   font-size: var(--font-size-normal);
 }
 
-.learnDes {
-  color: var(--primary-color);
+.cardTitle,
+.startLink {
+  font-weight: var(--font-weight-bold);
 }
 
 .cardTitle {
-  font-weight: var(--font-weight-bold);
-  font-size: var(--font-size-med);
+  font-size: var(--font-size-big);
   color: var(--color-black);
 }
 
@@ -74,10 +78,40 @@
   height: 783px;
 }
 
+.learnWrap {
+  margin-top: 3rem;
+}
+
+.learnGrid {
+  height: 149px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(370.5px, 1fr));
+  gap: 1rem;
+}
+
+.learnCard {
+  padding: 1rem;
+  display: flex;
+}
+
+img {
+  margin-inline-start: auto;
+}
+
+.learnCardInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.learnDes {
+  margin-block: 0.75em 2.5em;
+}
+
 .startLink {
   text-decoration: none;
-  font-weight: var(--font-weight-bold);
-  color: var(--secondary-button-color);
+  color: var(--primary-background-color);
+  margin-block-start: auto;
+  margin-block-end: 0.8em;
 }
 
 .startLink:hover,
@@ -86,28 +120,29 @@
   text-decoration: underline;
 }
 
-.learnWrap {
-  margin-top: 3rem;
-}
-
-.learnGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(370.5px, 1fr));
-  gap: 1rem;
-}
-
-.learnCard {
-  padding: 1rem;
-}
-
-
-.learnDes {
-  margin-block: 0.75em 2.5em;
-}
-
 @media (max-width: 768px) {
   .dashboardMain {
     flex-direction: column;
   }
-  
+
+  .learnCard{
+    height: 124px;
+  }
+
+  .cardTitle,
+  .learnTitle {
+    font-size: var(--font-size-small);
+  }
+
+  .learnTitleSpan,
+  .learnDes {
+    font-size: 0.625rem;
+  }
+
+  img {
+    width: 63px;
+    height: 88px;
+  }
+
+
 }

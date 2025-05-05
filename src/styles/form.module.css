@@ -1,5 +1,6 @@
 .backWrap {
   margin-block-start: 2.5em;
+  cursor: pointer;
 }
 
 .formWrapper {
@@ -14,7 +15,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.2em;
+  gap: 1.5em;
 }
 
 .backWrap {
@@ -35,15 +36,14 @@ label,
   font-weight: var(--font-weight-bold);
 }
 
-label,
-.formTitle,
-.backWrap p {
-  color: var(--primary-color);
+.backWrap p,
+.span,
+.termsLink {
+  font-size: var(--font-size-normal);
 }
 
-.backWrap p,
-.span {
-  font-size: var(--font-size-normal);
+.termsText {
+  color: rgba(132, 134, 140, 1);
 }
 
 label,
@@ -55,14 +55,13 @@ label,
   font-size: var(--font-size-extrasm);
 }
 
-.span,
 .termsLink {
   color: var(--primary-color);
 }
 
 .link,
 .signUp,
-.login {
+.login, .span > a {
   color: var(--color-blue);
 }
 
@@ -76,10 +75,12 @@ label,
   font-style: italic;
   margin: 1em 0;
 }
+
 .divider,
 .spanAlign {
   text-align: center;
 }
+
 
 .signUp,
 .login,
@@ -87,8 +88,14 @@ label,
   font-weight: 300;
 }
 
-.termsLink {
+.link,
+.termsLink,
+.span > a {
   text-decoration: none;
+}
+
+.termsLink,
+.span > a {
   margin-inline-start: 0.3em;
 }
 
@@ -103,6 +110,7 @@ label,
   flex-direction: column;
   gap: 0.7em;
 }
+
 input,
 select {
   padding: 12px;
@@ -116,11 +124,10 @@ select:focus {
   border: 1px solid var(--primary-background-color);
 }
 
-.cta,
 .cta {
   background-color: var(--secondary-background-color);
   border: 1px solid var(--primary-background-color);
-  color: var(--secondary-button-color);
+  color: var(--primary-background-color);
 }
 
 input[type="password"] {
@@ -144,6 +151,10 @@ input[type="password"] {
   align-items: center;
   gap: 0.7em;
   justify-content: center;
+}
+
+.confirmBtn {
+  margin-block-start: 2em;
 }
 
 .termsCheckbox {

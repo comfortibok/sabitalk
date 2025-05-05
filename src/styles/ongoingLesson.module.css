@@ -7,6 +7,7 @@
 .lessonCard {
   padding: 1.2rem;
   background-color: var(--secondary-background-color);
+  height: 149px;
   border-radius: 8px;
   box-shadow: var(--box-shadow);
 }
@@ -45,7 +46,7 @@
 .continueLink {
   text-decoration: none;
   font-weight: var(--font-weight-bold);
-  color: var(--secondary-button-color);
+  color: var(--primary-background-color);
 }
 
 .continueLink:hover,
@@ -60,8 +61,7 @@
   margin-block-start: 0.5em;
 }
 
-.progressBar
-.progress {
+.progressBar .progress {
   height: 100%;
   border-radius: 20px;
   border: 2px solid;
@@ -80,4 +80,20 @@
   background-color: rgba(122, 40, 203, 1);
 }
 
+@media (max-width: 768px) {
+  .lessonCard {
+    height: 124px;
+  }
 
+  .lessonTitle {
+    font-size: var(--font-size-small);
+  }
+
+  .lessonDescription {
+    font-size: 0.625rem;
+  }
+
+  .lang {
+    font-size: var(--font-size-extrasm);
+  }
+}

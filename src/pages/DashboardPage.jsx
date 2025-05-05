@@ -67,21 +67,23 @@ const DashboardPage = () => {
                   { lang: "Pidgin", lessons: 32, time: "6h 10min" },
                 ].map((item) => (
                   <div key={item.lang} className={styles.learnCard}>
-                    <h4 className={styles.learnTitle}>
-                      {item.lang}
-                      <span className={styles.learnTitleSpan}>
-                        - {item.lessons} lessons
-                      </span>
-                    </h4>
-                    <p className={styles.learnDes}>{item.time}</p>
-                    <a
-                      href="#"
-                      target="_blank"
-                      className={styles.startLink}
-                      aria-label={`Start learning ${item.lang} lessons`}
-                    >
-                      Start Learning
-                    </a>
+                    <div className={styles.learnCardInfo}>
+                      <h4 className={styles.learnTitle}>
+                        {item.lang}
+                        <span className={styles.learnTitleSpan}>
+                          - {item.lessons} lessons
+                        </span>
+                      </h4>
+                      <p className={styles.learnDes}>{item.time}</p>
+                      <a
+                        href="#"
+                        target="_blank"
+                        className={styles.startLink}
+                        aria-label={`Start learning ${item.lang} lessons`}
+                      >
+                        Start Learning
+                      </a>
+                    </div>
 
                     <img
                       width="86"
