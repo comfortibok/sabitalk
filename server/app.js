@@ -123,19 +123,14 @@ app.get("/", (req,res)=>{
 
 app.use((error, req, res, next)=>{
     console.log("path: ", req.path)
-    if(error.type == "Redirect"){
-        console.log("from error handler middleware : redirecting error", error.message)
-        res.send({message : error.message})
-    }else if(error.type == "Not found"){
-        res.status(404).send({
-            message: "Not found"
-        })
-    }else{
-        console.log( `server error : ${error.message}`)
-        res.status(500).json({
-            message: `server error : ${error.message}`
-        })
-    }
+   
+    const StatusCode = error.status || 500
+    const message = error.message || "Internal server error"
+
+    res.status(StatusCode).json({
+        success : false,
+        message 
+    })
     next()
 })
 
