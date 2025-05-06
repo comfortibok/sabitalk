@@ -45,11 +45,13 @@ const ProfilePage = () => {
 
       <section className={styles.card}>
         <div className={styles.userInfo}>
-          <img
-            src={avatar}
-            alt="Profile picture of Fawazat02"
-            className={styles.avatar}
-          />
+          <div>
+            <img
+              src={avatar}
+              alt="Profile picture of Fawazat02"
+              className={styles.avatar}
+            />
+          </div>
           <div>
             <h3 className={styles.userName}>Fawazat02</h3>
             <p className={styles.userEmail}>fawazatrufalt@gmail.com</p>

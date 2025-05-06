@@ -252,7 +252,7 @@ h4 {
 .translation {
   font-size: 1.5rem;
   font-weight: 600;
-  color: #222;
+  color: var(--tertiary-color);
   margin-top: 1rem;
   text-align: center;
 }
@@ -269,6 +269,20 @@ h4 {
   height: 100%;
   background-color: var(--color-blue);
   border-radius: 5px;
+}
+
+.timerInfoWrap,
+.timerInfo {
+  display: flex;
+  align-items: center;
+}
+
+.timerInfoWrap {
+  gap: 2em;
+}
+
+.timerInfo {
+  gap: 0.5em;
 }
 
 h4 {

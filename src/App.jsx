@@ -16,11 +16,13 @@ import LessonThree from "./pages/LessonThree";
 import LessonComplete from "./pages/LessonComplete";
 import LessonQuiz from "./pages/LessonQuiz";
 import Homepage from "./pages/Homepage";
+import SplashScreen from "./pages/SplashScreen";
 function App() {
   return (
     <>
       <Routes>
         <Route path="/" element={<Homepage />} />
+        <Route path="/splash-screen" element={<SplashScreen />} />
         <Route path="/lang-select" element={<LanguageSelect />} />
         <Route path="/sign-up" element={<SignUp />} />
         <Route path="/personalize-account" element={<PersonalizeAccount />} />

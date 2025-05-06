@@ -1,12 +1,9 @@
-import React, { useState } from "react";
 import LessonLayout from "../layouts/LessonLayout";
 import QuizCard from "../components/QuizCard";
 import styles from "../styles/mainLesson.module.css";
-import { BookmarkIcon } from "../components/icons";
+import { BookmarkIcon, TimerIcon } from "../components/icons";
 
 const LessonQuiz = () => {
-  const [progress, setProgress] = useState(100); 
- 
   return (
     <LessonLayout activeLanguage="Yoruba">
       <main className={styles.lessonsMain}>
@@ -21,14 +18,15 @@ const LessonQuiz = () => {
 
         <div className={styles.timerContainer}>
           <div className={styles.progressBarBackground}>
-            <div
-              className={styles.progressBar}
-              style={{ width: `50%` }} 
-            ></div>
+            <div className={styles.progressBar} style={{ width: `50%` }}></div>
           </div>
-          <div className={styles.timerInfo}>
+          <div className={styles.timerInfoWrap}>
             <h4>Question 1</h4>
-            <span>20s</span>
+            <div className={styles.timerInfo}>
+              {" "}
+              <TimerIcon />
+              <span>20s</span>
+            </div>
           </div>
         </div>
 

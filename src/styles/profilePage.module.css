@@ -101,7 +101,14 @@
   color: var(--color-blue);
   padding: 0.5rem 1rem;
   border: 1px solid var(--color-blue);
+  transition: background-color 250ms ease;
+}
+
+.editBtn:hover,
+.editBtn:focus {
   cursor: pointer;
+  background-color: rgba(39, 69, 132, 1);
+  color: var(--secondary-color);
 }
 
 .lessons {
@@ -128,7 +135,6 @@
 .progress {
   height: 100%;
   border-radius: 20px;
-  border: 2px solid;
 }
 
 .blueProgress {
@@ -150,7 +156,7 @@
   border: 0.5px solid rgba(0, 176, 54, 1);
 }
 
-@media (max-width: 769px) {
+@media (max-width: 768px) {
   .details {
     flex-direction: column;
     gap: 1em;
