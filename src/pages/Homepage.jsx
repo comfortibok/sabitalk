@@ -14,56 +14,61 @@ const Homepage = () => {
 
   return (
     <div className={styles.wrapper}>
-      <header className={styles.header}>
-        <div className={styles.logo}>
-          <img src={logo} alt="The brand logo" />
-        </div>
+      <header>
+        <div className={styles.header}>
+          <div className={styles.logo}>
+            <img src={logo} alt="The brand logo" />
+            <p className={styles.logoSubtext}>...like a local</p>
+          </div>
 
-        <nav className={styles.nav}>
-          <ul>
-            <li>
-              <Link
-                className={styles.navBtn}
-                to="#about"
-                onClick={() => scrollToSection(aboutSection)}
-              >
-                About us
-              </Link>
-            </li>
-          </ul>
-        </nav>
+          <nav className={styles.nav}>
+            <ul>
+              <li>
+                <Link
+                  className={styles.navBtn}
+                  to="#about"
+                  onClick={() => scrollToSection(aboutSection)}
+                >
+                  About us
+                </Link>
+              </li>
+            </ul>
+          </nav>
 
-        <div className={styles.ctaBtns}>
-          <Link className={styles.secondaryBtn} to="/login">
-            Log in
-          </Link>
-          <Link className={styles.primaryBtn} to="/sign-up">
-            Sign Up
-          </Link>
+          <div className={styles.ctaBtns}>
+            <Link className={styles.secondaryBtn} to="/login">
+              Log in
+            </Link>
+            <Link className={styles.primaryBtn} to="/sign-up">
+              Sign Up
+            </Link>
+          </div>
         </div>
       </header>
 
       <main>
-        <section className={styles.heroSection}>
-          <div className={styles.leftHero}>
-            <div className={styles.textContainer}>
-              <h1 className={styles.heroText}>
-                Speak Your Culture. Learn Nigerian Languages with Ease
-              </h1>
-              <p className={styles.heroSubtext}>
-                From everyday phrases to deep cultural expressions, master
-                Nigerian languages like Yoruba, Igbo, and Hausa{" "}
-              </p>
+        <section className={styles.heroSectionWrap}>
+          <div className={styles.heroSection}>
+            <div className={styles.leftHero}>
+              <div className={styles.textContainer}>
+                <h1 className={styles.heroText}>
+                  Speak Your Culture. Learn Nigerian Languages with Ease
+                </h1>
+                <p className={styles.heroSubtext}>
+                  From everyday phrases to deep cultural expressions, master
+                  Nigerian languages like Yoruba, Igbo, and Hausa{" "}
+                </p>
+              </div>
+              <Link className={styles.heroBtn} to="/sign-up">
+                Sign Up
+              </Link>
             </div>
-            <Link className={styles.heroBtn} to="/sign-up">
-              Sign Up
-            </Link>
-          </div>
-          <div className={styles.rightHero}>
-            <img
-              src={heroImage}
-              alt="An Illustration of a tongue showcasing other laguages "
-            />
+            <div className={styles.rightHero}>
+              <img
+                src={heroImage}
+                alt="An Illustration of a tongue showcasing other laguages "
+              />
+            </div>
           </div>
         </section>
 
@@ -84,23 +89,27 @@ const Homepage = () => {
         </section>
       </main>
 
-      <footer className={styles.footer}>
-        <div>
-          <img src={footerLogo} alt="A coloured brand Logo for the footer" />
-        </div>
-        <Link to="#about" onClick={() => scrollToSection(aboutSection)}>
-          About Us
-        </Link>
-        <div className={styles.inputContainer}>
-          <label htmlFor="emailInput">
-            <input
-              type="email"
-              placeholder="Enter your email to sign up"
-              id="emailInput"
-              name="emailInput"
-            />
-          </label>
-          <button className={styles.heroBtn}>Submit</button>
+      <footer>
+        <div className={styles.footer}>
+          <div>
+            <img src={footerLogo} alt="A coloured brand Logo for the footer" />
+          </div>
+          <Link to="#about" onClick={() => scrollToSection(aboutSection)}>
+            About Us
+          </Link>
+          <div className={styles.inputContainer}>
+            <label htmlFor="emailInput" aria-label="Email sign up input">
+              <input
+                type="email"
+                placeholder="Enter your email to sign up"
+                id="emailInput"
+                name="emailInput"
+              />
+            </label>
+            <button type="submit" className={styles.heroBtn}>
+              Submit
+            </button>
+          </div>
         </div>
       </footer>
     </div>
