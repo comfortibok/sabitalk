@@ -6,9 +6,9 @@ import LanguageSelect from "./pages/LanguageSelect";
 import SignUp from "./pages/SignUp.jsx";
 import Login from "./pages/Login";
 import PersonalizeAccount from "./pages/PersonalizeAccount";
-import InputOtp from "./pages/InputOtp";
 import ResetPassword from "./pages/ResetPassword";
-import SavePassword from "./pages/savePassword";
+import InputOtp from "./pages/InputOtp";
+import NewPassword from "./pages/NewPassword.jsx";
 import ProfilePage from "./pages/ProfilePage";
 import Lesson from "./pages/Lesson";
 import LessonTwo from "./pages/LessonTwo";
@@ -29,7 +29,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/reset-password" element={<ResetPassword />} />
         <Route path="/input-otp" element={<InputOtp />} />
-        <Route path="/save-password" element={<SavePassword />} />
+        <Route path="/new-password" element={<NewPassword />} />
         <Route path="/profile" element={<ProfilePage />} />{" "}
         <Route path="/dashboard" element={<DashboardPage />} />
         <Route path="/lesson" element={<Lesson />} />
