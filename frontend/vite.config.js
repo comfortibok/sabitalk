@@ -30,6 +30,11 @@ export default defineConfig({
         changeOrigin: true,
         secure: false,
       },
+      "/auth/login": {
+        target: "https://sabitalk-api.onrender.com",
+        changeOrigin: true,
+        secure: false,
+      },
     },
   },
 });

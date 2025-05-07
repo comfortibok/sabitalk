@@ -18,7 +18,7 @@ const Homepage = () => {
         <div className={styles.header}>
           <div className={styles.logo}>
             <img src={logo} alt="The brand logo" />
-            <p className={styles.logoSubtext}>...like a local</p>
+            <p className={styles.logoSubtitle}>...like a local</p>
           </div>
 
           <nav className={styles.nav}>
@@ -54,7 +54,7 @@ const Homepage = () => {
                 <h1 className={styles.heroText}>
                   Speak Your Culture. Learn Nigerian Languages with Ease
                 </h1>
-                <p className={styles.heroSubtext}>
+                <p className={styles.heroDescription}>
                   From everyday phrases to deep cultural expressions, master
                   Nigerian languages like Yoruba, Igbo, and Hausa{" "}
                 </p>
@@ -94,7 +94,7 @@ const Homepage = () => {
           <div>
             <img src={footerLogo} alt="A coloured brand Logo for the footer" />
           </div>
-          <Link to="#about" onClick={() => scrollToSection(aboutSection)}>
+          <Link to="#about" className={styles.footerLink}  onClick={() => scrollToSection(aboutSection)}>
             About Us
           </Link>
           <div className={styles.inputContainer}>

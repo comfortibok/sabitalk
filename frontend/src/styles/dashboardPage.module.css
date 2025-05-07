@@ -1,3 +1,4 @@
+
 .learnTitleSpan,
 .learnDes,
 .startLink {
@@ -125,7 +126,7 @@ img {
     flex-direction: column;
   }
 
-  .learnCard{
+  .learnCard {
     height: 124px;
   }
 
@@ -143,6 +144,4 @@ img {
     width: 63px;
     height: 88px;
   }
-
-
 }
