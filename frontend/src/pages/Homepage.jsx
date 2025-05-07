@@ -14,7 +14,7 @@ const Homepage = () => {
 
   return (
     <div className={styles.wrapper}>
-      <header>
+      <header className={styles.headerWrap}>
         <div className={styles.header}>
           <div className={styles.logo}>
             <img src={logo} alt="The brand logo" />

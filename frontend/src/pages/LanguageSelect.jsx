@@ -1,12 +1,44 @@
 import AppLayout from "../layouts/AppLayout";
 import { useNavigate } from "react-router-dom";
+import React, { useState } from "react";
 import "../App.css";
 const LanguageSelect = () => {
   const navigate = useNavigate();
+  const [selectedLanguage, setSelectedLanguage] = useState("");
 
-  const handleContinue = (e) => {
+  const handleLanguageChange = (e) => {
+    setSelectedLanguage(e.target.value);
+  };
+
+  const handleContinue = async (e) => {
     e.preventDefault();
-    navigate("/sign-up");
+
+    if (!selectedLanguage) {
+      alert("Please select a language.");
+      return;
+    }
+
+    try {
+      const response = await fetch(
+        "/select-language",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ language: selectedLanguage }),
+        }
+      );
+
+      if (response.ok) {
+        navigate("/sign-up");
+      } else {
+        alert("There was an error. Please try again.");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      alert("An error occurred. Please try again.");
+    }
   };
 
   return (
@@ -28,6 +60,7 @@ const LanguageSelect = () => {
                 id="yoruba"
                 name="language"
                 value="Yoruba"
+                onChange={handleLanguageChange}
                 aria-labelledby="yorubaLabel"
               />
             </div>
@@ -38,6 +71,7 @@ const LanguageSelect = () => {
                 id="igbo"
                 name="language"
                 value="Igbo"
+                onChange={handleLanguageChange}
                 aria-labelledby="igboLabel"
               />
             </div>
@@ -48,6 +82,7 @@ const LanguageSelect = () => {
                 id="hausa"
                 name="language"
                 value="Hausa"
+                onChange={handleLanguageChange}
                 aria-labelledby="hausaLabel"
               />
             </div>

@@ -18,9 +18,9 @@
   margin: 0 auto;
 }
 
-header,
+.headerSectionWrap,
 footer,
-section {
+.heroSectionWrap{
   width: 100%;
 }
 

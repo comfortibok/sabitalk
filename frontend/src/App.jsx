@@ -3,7 +3,7 @@ import { Navigate } from "react-router-dom";
 
 import DashboardPage from "./pages/DashboardPage";
 import LanguageSelect from "./pages/LanguageSelect";
-import SignUp from "./pages/SignUp";
+import SignUp from "./pages/SignUp.jsx";
 import Login from "./pages/Login";
 import PersonalizeAccount from "./pages/PersonalizeAccount";
 import InputOtp from "./pages/InputOtp";
