@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import styles from "../layouts/sidebar.module.css";
 import {
   DashboardIconActive,
@@ -11,6 +12,7 @@ import {
   ProfileIconActive,
   ProfileIconInactive,
 } from "../components/icons";
+import AuthService from "../services/auth.service";
 
 const Sidebar = ({ isOpen, closeSidebar }) => {
   const location = useLocation();
@@ -42,6 +44,11 @@ const Sidebar = ({ isOpen, closeSidebar }) => {
     },
   ];
 
+  const navigate = useNavigate();
+  const handleLogout = () => {
+    AuthService.logout();
+    navigate("/login");
+  };
   return (
     <aside
       className={`${styles.sidebar} ${isOpen ? styles.open : ""}`}
@@ -110,6 +117,7 @@ const Sidebar = ({ isOpen, closeSidebar }) => {
           to="/logout"
           className={`${styles.logout} ${styles.navLink}`}
           aria-label="Log out"
+          onClick={handleLogout}
         >
           Logout
         </Link>

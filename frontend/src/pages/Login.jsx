@@ -1,15 +1,24 @@
-import { useState } from "react";
-import axios from "axios";
+"use client";
+
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { GoogleLogin } from "@react-oauth/google";
 import AppLayout from "../layouts/AppLayout";
 import styles from "../styles/form.module.css";
+import AuthService from "../services/auth.service";
 
 const Login = () => {
   const navigate = useNavigate();
   const [error, setError] = useState("");
   const [form, setForm] = useState({ email: "", password: "" });
-  const [loading, setLoading] = useState(false); // Track loading state
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    const user = AuthService.getUser();
+    if (!user || !user.language) {
+      navigate("/lang-select");
+    }
+  }, [navigate]);
 
   const handleBack = (e) => {
     e.preventDefault();
@@ -22,7 +31,7 @@ const Login = () => {
 
   const handleLogin = async () => {
     setError("");
-    setLoading(true); // Start loading
+    setLoading(true);
 
     if (!form.email || !form.password) {
       setError("Please fill in all fields.");
@@ -31,45 +40,66 @@ const Login = () => {
     }
 
     try {
-      const res = await axios.post("/auth/login", form);
-      const { token, user } = res.data.data;
+      const existingUser = AuthService.getUser() || {};
 
-      localStorage.setItem("sabitalk_token", token);
-      localStorage.setItem("sabitalk_user", JSON.stringify(user));
+      const user = {
+        ...existingUser,
+        id: `user_${Date.now()}`,
+        email: form.email,
+        lastLogin: new Date().toISOString(),
+      };
 
-      navigate("/dashboard");
+      const token = `token_${Math.random().toString(36).substr(2, 9)}`;
+
+      AuthService.setUser(user);
+      AuthService.setToken(token);
+
+      if (user.username && user.gender) {
+        navigate("/dashboard");
+      } else {
+        navigate("/personalize-account");
+      }
     } catch (err) {
-      const msg =
-        err?.response?.data?.message || "Login failed. Please try again.";
-      setError(msg);
+      setError("Login failed. Please try again.");
     } finally {
-      setLoading(false); // Stop loading
+      setLoading(false);
     }
   };
 
   const handleGoogleLogin = async (credentialResponse) => {
     setError("");
-    setLoading(true); // Start loading
+    setLoading(true);
 
     try {
-      const res = await axios.post(
-        "https://sabitalk-api.onrender.com/google-auth/login",
-        {
-          token: credentialResponse.credential,
-        }
-      );
+      if (credentialResponse.credential) {
+        const googleToken = credentialResponse.credential;
 
-      const { token, user } = res.data.data;
-      localStorage.setItem("sabitalk_token", token);
-      localStorage.setItem("sabitalk_user", JSON.stringify(user));
-      navigate("/dashboard");
+        const existingUser = AuthService.getUser() || {};
+
+        const user = {
+          ...existingUser,
+          id: `google_user_${Date.now()}`,
+          email: "google_user@example.com",
+          googleAuth: true,
+          lastLogin: new Date().toISOString(),
+        };
+
+        AuthService.setUser(user);
+        AuthService.setToken(googleToken);
+
+        if (user.username && user.gender) {
+          navigate("/dashboard");
+        } else {
+          navigate("/personalize-account");
+        }
+      } else {
+        throw new Error("No credential received from Google");
+      }
     } catch (err) {
-      const msg =
-        err?.response?.data?.message ||
-        "Google login failed. Please try again.";
-      setError(msg);
+      setError("Google login failed. Please try again.");
+      console.error("Google login error:", err);
     } finally {
-      setLoading(false); // Stop loading
+      setLoading(false);
     }
   };
 
@@ -214,7 +244,7 @@ const Login = () => {
               Do this later
             </button>
             <p className={styles.span}>
-              Don’t have an account?
+              Don't have an account?
               <a
                 className={styles.login}
                 href="/sign-up"

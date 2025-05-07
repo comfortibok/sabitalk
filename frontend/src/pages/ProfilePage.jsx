@@ -1,11 +1,33 @@
-import React from "react";
-import { useState } from "react";
+"use client";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import DashboardLayout from "../layouts/DashboardLayout";
 import Header from "../layouts/Header";
 import styles from "../styles/profilePage.module.css";
 import avatar from "../assets/images/Ellipse 668.png";
+import AuthService from "../services/auth.service";
+
 const ProfilePage = () => {
+  const navigate = useNavigate();
   const [isSidebarOpen, setSidebarOpen] = useState(false);
+  const [userData, setUserData] = useState({
+    username: "",
+    email: "",
+    gender: "",
+    language: "",
+  });
+
+  useEffect(() => {
+    const user = AuthService.getUser();
+    if (user) {
+      setUserData({
+        username: user.username || "Not set",
+        email: user.email || "Not set",
+        gender: user.gender || "Not set",
+        language: user.language || "Not set",
+      });
+    }
+  }, []);
 
   const toggleSidebar = () => {
     setSidebarOpen(!isSidebarOpen);
@@ -14,6 +36,11 @@ const ProfilePage = () => {
   const closeSidebar = () => {
     setSidebarOpen(false);
   };
+
+  const handleEditProfile = () => {
+    navigate("/personalize-account");
+  };
+
   const ongoingLessons = [
     {
       title: "Ọnka",
@@ -47,19 +74,20 @@ const ProfilePage = () => {
         <div className={styles.userInfo}>
           <div>
             <img
-              src={avatar}
-              alt="Profile picture of Fawazat02"
+              src={avatar || "/placeholder.svg"}
+              alt={`Profile picture of ${userData.username}`}
               className={styles.avatar}
             />
           </div>
           <div>
-            <h3 className={styles.userName}>Fawazat02</h3>
-            <p className={styles.userEmail}>fawazatrufalt@gmail.com</p>
+            <h3 className={styles.userName}>{userData.username}</h3>
+            <p className={styles.userEmail}>{userData.email}</p>
           </div>
           <button
             type="button"
             aria-label="Edit profile"
             className={styles.editBtn}
+            onClick={handleEditProfile}
           >
             Edit profile
           </button>
@@ -68,15 +96,19 @@ const ProfilePage = () => {
         <section className={styles.details}>
           <div>
             <p className={styles.title}>Gender</p>
-            <p className={styles.info}>Fawazat02</p>
+            <p className={styles.info}>{userData.gender}</p>
           </div>
           <div>
             <p className={styles.title}>Username</p>
-            <p className={styles.info}>Fawazat02</p>
+            <p className={styles.info}>{userData.username}</p>
           </div>
           <div>
             <p className={styles.title}>Email Address</p>
-            <p className={styles.info}>fawazatrufalt@gmail.com</p>
+            <p className={styles.info}>{userData.email}</p>
+          </div>
+          <div>
+            <p className={styles.title}>Learning Language</p>
+            <p className={styles.info}>{userData.language}</p>
           </div>
         </section>
 

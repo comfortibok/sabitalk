@@ -6,6 +6,7 @@ import App from "./App";
 
 const GOOGLE_CLIENT_ID =
   "789565353923-vtfferitgp69uckkbtlqmkck41i7epe1.apps.googleusercontent.com";
+
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <GoogleOAuthProvider clientId={GOOGLE_CLIENT_ID}>
