@@ -1,5 +1,3 @@
-### README.md
-
 # Sabitalk Frontend
 
 This is the frontend codebase for the Sabitalk application. The frontend is built using React, React Router, and CSS Modules for styling.
