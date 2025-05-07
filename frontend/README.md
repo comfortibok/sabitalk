@@ -1,5 +1,3 @@
-### README.md
-
 # Sabitalk Frontend
 
 This is the frontend codebase for the Sabitalk application. The frontend is built using React, React Router, and CSS Modules for styling.
@@ -7,7 +5,6 @@ This is the frontend codebase for the Sabitalk application. The frontend is buil
 ## Table of Contents
 
 Features
-Project Structure
 Installation
 Usage
 Available Scripts
@@ -17,8 +14,7 @@ Contributing
 
 ## Features
 
--- **User Authentication**: Login, signup, and password reset functionality.
-
+- **User Authentication**: Login, signup, and password reset functionality.
 - **Personalization**: Users can personalize their accounts with gender and username.
 - **Responsive Design**: Fully responsive UI for desktop, tablet, and mobile devices.
 - **Google Login**: Integration with Google OAuth for seamless login.
