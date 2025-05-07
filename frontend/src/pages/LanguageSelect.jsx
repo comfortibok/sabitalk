@@ -27,7 +27,7 @@ const LanguageSelect = () => {
       AuthService.setLanguage(selectedLanguage);
 
       // Navigate to sign-up page
-      navigate("/sign-up");
+      navigate("/profile");
     } catch (error) {
       console.error("Error:", error);
       alert("An error occurred. Please try again.");

@@ -1,15 +1,29 @@
+"use client";
+
+import { useState, useEffect } from "react";
 import AppLayout from "../layouts/AppLayout";
-import { useNavigate, useLocation } from "react-router-dom";
-import { useState } from "react";
-import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import styles from "../styles/form.module.css";
+import AuthService from "../services/auth.service";
 
 const InputOtp = () => {
   const navigate = useNavigate();
-  const location = useLocation();
-  const email = location.state?.email || "user@example.com"; // fallback or get from state
+  const [email, setEmail] = useState("");
   const [otp, setOtp] = useState(new Array(6).fill(""));
   const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(null);
+
+  // Get email from session storage
+  useEffect(() => {
+    const resetEmail = AuthService.getResetEmail();
+    if (!resetEmail) {
+      // If no email is found, redirect back to reset password page
+      navigate("/reset-password");
+    } else {
+      setEmail(resetEmail);
+    }
+  }, [navigate]);
 
   const handleBack = (e) => {
     e.preventDefault();
@@ -41,46 +55,51 @@ const InputOtp = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const otpCode = otp.join("");
+    setLoading(true);
+    setError(null);
+    setSuccess(null);
 
     if (otpCode.length !== 6) {
       setError("Please enter a valid 6-digit OTP.");
+      setLoading(false);
       return;
     }
 
     try {
-      const response = await axios.post("/auth/verify-otp", {
-        otp: otpCode,
-      });
+      // Use AuthService instead of direct API call
+      await AuthService.verifyOtp(otpCode);
 
-      console.log("OTP verification successful:", response.data);
-      navigate("/dashboard");
-    } catch (error) {
-      console.error(
-        "OTP verification error:",
-        error.response?.data || error.message
-      );
-      const errorMessage =
-        error.response?.data?.message === "otp already expired"
-          ? "The OTP has expired. Please request a new one."
-          : error.response?.data?.message ||
-            "Failed to verify OTP. Please try again.";
-      setError(errorMessage);
+      // Show success message
+      setSuccess("OTP verified successfully!");
+
+      // Navigate to new password page or dashboard
+      setTimeout(() => {
+        navigate("/new-password");
+      }, 1500);
+    } catch (err) {
+      setError(err.message || "Failed to verify OTP. Please try again.");
+      console.error("OTP verification error:", err);
+    } finally {
+      setLoading(false);
     }
   };
 
   const handleResendOtp = async () => {
+    setLoading(true);
+    setError(null);
+    setSuccess(null);
+
     try {
-      const response = await axios.post("/auth/resend-otp", {
-        email: email,
-      });
-      console.log("OTP resent successfully:", response.data);
-      setError("A new OTP has been sent to your email.");
-    } catch (error) {
-      console.error("Resend OTP error:", error.response?.data || error.message);
-      setError(
-        error.response?.data?.message ||
-          "Failed to resend OTP. Please try again."
-      );
+      // Use AuthService instead of direct API call
+      await AuthService.resendOtp();
+
+      // Show success message
+      setSuccess("A new OTP has been sent to your email.");
+    } catch (err) {
+      setError("Failed to resend OTP. Please try again.");
+      console.error("Resend OTP error:", err);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -114,7 +133,8 @@ const InputOtp = () => {
         </div>
 
         <h3 className={styles.formTitle}>
-          Please enter the 6-digit OTP sent to your email address to proceed
+          Please enter the 6-digit OTP sent to {email || "your email address"}{" "}
+          to proceed
         </h3>
 
         <section className={styles.formSection}>
@@ -142,11 +162,13 @@ const InputOtp = () => {
                         e.target.previousSibling.focus();
                       }
                     }}
+                    disabled={loading}
                   />
                 ))}
               </div>
 
               {error && <p className={styles.error}>{error}</p>}
+              {success && <p className={styles.success}>{success}</p>}
 
               <a
                 href="#"
@@ -155,11 +177,14 @@ const InputOtp = () => {
                   handleResendOtp();
                 }}
                 className={styles.link}
+                aria-disabled={loading}
               >
                 Resend OTP
               </a>
             </div>
-            <button type="submit">Confirm</button>
+            <button type="submit" disabled={loading}>
+              {loading ? "Verifying..." : "Confirm"}
+            </button>
           </form>
         </section>
       </section>

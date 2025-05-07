@@ -1,13 +1,15 @@
-import React, { useState } from "react";
+"use client";
+
+import { useState } from "react";
 import AppLayout from "../layouts/AppLayout";
 import { useNavigate } from "react-router-dom";
 import styles from "../styles/form.module.css";
-import axios from "axios";
+import AuthService from "../services/auth.service";
 
 const ResetPassword = () => {
   const [email, setEmail] = useState("");
-  const [error, setError] = useState(null); 
-  const [loading, setLoading] = useState(false); 
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   const handleBack = (e) => {
@@ -21,16 +23,11 @@ const ResetPassword = () => {
     setError(null);
 
     try {
-            const response = await axios.post(
-        "/auth/reset-password",
-        { email }
-      );
-
-      if (response.status === 200) {
-        navigate("/input-otp");
-      }
+      await AuthService.initiatePasswordReset(email);
+      navigate("/input-otp");
     } catch (err) {
       setError("Failed to send OTP. Please try again.");
+      console.error("Password reset error:", err);
     } finally {
       setLoading(false);
     }
