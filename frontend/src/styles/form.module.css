@@ -1,4 +1,6 @@
 .backWrap {
+  display: flex;
+  align-items: center;
   margin-block-start: 2.5em;
   cursor: pointer;
 }
@@ -207,6 +209,17 @@ input[type="password"] {
 .span > a:focus {
   cursor: pointer;
   text-decoration: underline;
+}
+
+.error {
+  color: red;
+}
+
+.success {
+  background-color: rgba(85, 185, 56, 1);
+  color: var(--secondary-color);
+  padding: 0.7em 1.4em;
+  margin-left: auto;
 }
 
 @media (max-width: 768px) {

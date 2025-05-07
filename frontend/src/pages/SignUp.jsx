@@ -86,7 +86,6 @@ const SignUp = () => {
           createdAt: new Date().toISOString(),
         };
 
-        // Store in session storage
         AuthService.setUser(user);
         AuthService.setToken(googleToken);
 

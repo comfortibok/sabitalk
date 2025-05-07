@@ -14,11 +14,9 @@ const InputOtp = () => {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(null);
 
-  // Get email from session storage
   useEffect(() => {
     const resetEmail = AuthService.getResetEmail();
     if (!resetEmail) {
-      // If no email is found, redirect back to reset password page
       navigate("/reset-password");
     } else {
       setEmail(resetEmail);
@@ -66,13 +64,8 @@ const InputOtp = () => {
     }
 
     try {
-      // Use AuthService instead of direct API call
       await AuthService.verifyOtp(otpCode);
-
-      // Show success message
       setSuccess("OTP verified successfully!");
-
-      // Navigate to new password page or dashboard
       setTimeout(() => {
         navigate("/new-password");
       }, 1500);
@@ -90,10 +83,8 @@ const InputOtp = () => {
     setSuccess(null);
 
     try {
-      // Use AuthService instead of direct API call
       await AuthService.resendOtp();
 
-      // Show success message
       setSuccess("A new OTP has been sent to your email.");
     } catch (err) {
       setError("Failed to resend OTP. Please try again.");
@@ -129,7 +120,8 @@ const InputOtp = () => {
               strokeLinejoin="round"
             />
           </svg>
-          <p>Back</p>
+          <p>Back</p>{" "} 
+          <div>{success && <p className={styles.success}>{success}</p>}</div>
         </div>
 
         <h3 className={styles.formTitle}>
@@ -168,7 +160,6 @@ const InputOtp = () => {
               </div>
 
               {error && <p className={styles.error}>{error}</p>}
-              {success && <p className={styles.success}>{success}</p>}
 
               <a
                 href="#"
