@@ -239,7 +239,11 @@ const NewPassword = () => {
 
             {error && <p className={styles.error}>{error}</p>}
 
-            <button type="submit" disabled={loading}>
+            <button
+              type="submit"
+              className={styles.confirmBtn}
+              disabled={loading}
+            >
               {loading ? "Resetting..." : "Save Password"}
             </button>
           </form>
