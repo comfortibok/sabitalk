@@ -1,32 +1,26 @@
-// Enhanced auth service to handle more user profile data
+
 const AuthService = {
-  // Store user data in session storage
   setUser: (user) => {
     sessionStorage.setItem("sabitalk_user", JSON.stringify(user));
   },
 
-  // Get user data from session storage
   getUser: () => {
     const user = sessionStorage.getItem("sabitalk_user");
     return user ? JSON.parse(user) : null;
   },
 
-  // Store token in session storage
   setToken: (token) => {
     sessionStorage.setItem("sabitalk_token", token);
   },
 
-  // Get token from session storage
   getToken: () => {
     return sessionStorage.getItem("sabitalk_token");
   },
 
-  // Check if user is authenticated
   isAuthenticated: () => {
     return !!sessionStorage.getItem("sabitalk_token");
   },
 
-  // Update user profile data
   updateUserProfile: (profileData) => {
     const currentUser = AuthService.getUser();
     if (currentUser) {
@@ -36,8 +30,6 @@ const AuthService = {
     }
     return null;
   },
-
-  // Store selected language
   setLanguage: (language) => {
     const currentUser = AuthService.getUser();
     if (currentUser) {
@@ -45,17 +37,53 @@ const AuthService = {
       sessionStorage.setItem("sabitalk_user", JSON.stringify(updatedUser));
       return updatedUser;
     } else {
-      // If no user exists yet, create a temporary user object with just the language
       const tempUser = { language };
       sessionStorage.setItem("sabitalk_user", JSON.stringify(tempUser));
       return tempUser;
     }
   },
 
-  // Log out user
   logout: () => {
     sessionStorage.removeItem("sabitalk_user");
     sessionStorage.removeItem("sabitalk_token");
+    sessionStorage.removeItem("sabitalk_reset_email");
+    sessionStorage.removeItem("sabitalk_otp");
+  },
+
+  initiatePasswordReset: (email) => {
+    sessionStorage.setItem("sabitalk_reset_email", email);
+
+    const otp = Math.floor(100000 + Math.random() * 900000).toString();
+    sessionStorage.setItem("sabitalk_otp", otp);
+
+    console.log("Generated OTP for testing:", otp);
+    return Promise.resolve({ success: true });
+  },
+
+  verifyOtp: (otpCode) => {
+    const storedOtp = sessionStorage.getItem("sabitalk_otp");
+
+    if (storedOtp === otpCode) {
+            return Promise.resolve({ success: true });
+    } else {
+      return Promise.reject({ message: "Invalid OTP. Please try again." });
+    }
+  },
+
+  resendOtp: () => {
+    const newOtp = Math.floor(100000 + Math.random() * 900000).toString();
+    sessionStorage.setItem("sabitalk_otp", newOtp);
+
+    console.log("New OTP for testing:", newOtp);
+    return Promise.resolve({ success: true });
+  },
+
+  getResetEmail: () => {
+    return sessionStorage.getItem("sabitalk_reset_email");
+  },
+
+  resetPassword: (newPassword) => {
+    return Promise.resolve({ success: true });
   },
 };
 
