@@ -1,6 +1,11 @@
 .sidebar {
   width: 268px;
   background-color: var(--secondary-background-color);
+  background-image: url(../assets/images/sidebar-bg.svg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -120,6 +125,7 @@
   .sidebar {
     position: absolute;
     background-color: var(--primary-background-color);
+    background-image: none;
     border-radius: 0;
     padding: 1rem;
     top: 0;

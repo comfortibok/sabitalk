@@ -3,7 +3,7 @@ import { useRef } from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/images/brand-logo.svg";
 import heroImage from "../assets/images/HeroImage.svg";
-import footerLogo from "../assets/images/footerLogo.svg";
+import footerLogo from "../assets/images/footerLogos.svg";
 
 const Homepage = () => {
   const aboutSection = useRef(null);
