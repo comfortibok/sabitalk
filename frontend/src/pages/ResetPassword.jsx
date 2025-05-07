@@ -1,14 +1,41 @@
+import React, { useState } from "react";
 import AppLayout from "../layouts/AppLayout";
 import { useNavigate } from "react-router-dom";
 import styles from "../styles/form.module.css";
+import axios from "axios";
 
 const ResetPassword = () => {
+  const [email, setEmail] = useState("");
+  const [error, setError] = useState(null); // For any errors
+  const [loading, setLoading] = useState(false); // To track loading state
   const navigate = useNavigate();
 
   const handleBack = (e) => {
     e.preventDefault();
     navigate("/login");
   };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setError(null);
+
+    try {
+            const response = await axios.post(
+        "/auth/reset-password",
+        { email }
+      );
+
+      if (response.status === 200) {
+        navigate("/input-otp");
+      }
+    } catch (err) {
+      setError("Failed to send OTP. Please try again.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <AppLayout>
       <section className="formWrapper">
@@ -41,7 +68,7 @@ const ResetPassword = () => {
           Enter your email address to receive an OTP to reset your password
         </h3>
         <section className={styles.formSection}>
-          <form className={styles.accountForm}>
+          <form className={styles.accountForm} onSubmit={handleSubmit}>
             <div className={styles.inputWrap}>
               <label htmlFor="email">Email Address</label>
               <input
@@ -49,11 +76,18 @@ const ResetPassword = () => {
                 name="email"
                 id="email"
                 autoComplete="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 required
               />
             </div>
-            <button type="button" className={styles.confirmBtn}>
-              Confirm
+            {error && <p className={styles.error}>{error}</p>}
+            <button
+              type="submit"
+              className={styles.confirmBtn}
+              disabled={loading}
+            >
+              {loading ? "Sending..." : "Confirm"}
             </button>
           </form>
         </section>
