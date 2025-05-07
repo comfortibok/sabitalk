@@ -1,4 +1,3 @@
-// Lessons.jsx
 import React from "react";
 import LessonLayout from "../layouts/LessonLayout";
 import { ClockIcon, BookmarkIcon, AudioIcon } from "../components/icons";

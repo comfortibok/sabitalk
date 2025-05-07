@@ -1,9 +1,11 @@
+"use client";
+
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
-import axios from "axios";
+import { useState, useEffect } from "react";
 import AppLayout from "../layouts/AppLayout";
 import { GoogleLogin } from "@react-oauth/google";
 import styles from "../styles/form.module.css";
+import AuthService from "../services/auth.service";
 
 const SignUp = () => {
   const navigate = useNavigate();
@@ -11,8 +13,17 @@ const SignUp = () => {
     email: "",
     password: "",
     confirmPassword: "",
+    termsAccepted: false,
   });
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    const user = AuthService.getUser();
+    if (!user || !user.language) {
+      navigate("/lang-select");
+    }
+  }, [navigate]);
 
   const handleBack = (e) => {
     e.preventDefault();
@@ -27,44 +38,64 @@ const SignUp = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
+    setLoading(true);
 
     if (formData.password !== formData.confirmPassword) {
       setError("Passwords do not match.");
+      setLoading(false);
       return;
     }
 
     try {
-      const response = await axios.post(
-        "https://sabitalk-api.onrender.com/auth/signup",
-        {
-          email: formData.email,
-          password: formData.password,
-        }
-      );
-      console.log("Sign-up successful:", response.data);
-      alert("Sign-up successful!");
-      navigate("/login");
+      const existingUser = AuthService.getUser() || {};
+
+      const user = {
+        ...existingUser,
+        id: `user_${Date.now()}`,
+        email: formData.email,
+        createdAt: new Date().toISOString(),
+      };
+
+      const token = `token_${Math.random().toString(36).substr(2, 9)}`;
+
+      AuthService.setUser(user);
+      AuthService.setToken(token);
+
+      navigate("/personalize-account");
+      setLoading(false);
     } catch (err) {
-      console.error("Error during sign-up:", err.response?.data || err.message);
-      setError(
-        err.response?.data?.message || "Sign-up failed. Please try again."
-      );
+      console.error("Error during sign-up:", err.message);
+      setError("Sign-up failed. Please try again.");
+      setLoading(false);
     }
   };
 
   const handleGoogleLogin = async (response) => {
     if (response.credential) {
+      setLoading(true);
       try {
         const googleToken = response.credential;
-        const backendResponse = await axios.post(
-          "https://sabitalk-api.onrender.com/google-auth/login",
-          { token: googleToken }
-        );
-        console.log("Google login successful:", backendResponse.data);
-        navigate("/dashboard");
+
+        const existingUser = AuthService.getUser() || {};
+
+        const user = {
+          ...existingUser,
+          id: `google_user_${Date.now()}`,
+          email: "google_user@example.com",
+          googleAuth: true,
+          createdAt: new Date().toISOString(),
+        };
+
+        // Store in session storage
+        AuthService.setUser(user);
+        AuthService.setToken(googleToken);
+
+        navigate("/personalize-account");
       } catch (error) {
         setError("Google sign-in failed. Please try again.");
         console.error("Google login error:", error);
+      } finally {
+        setLoading(false);
       }
     }
   };
@@ -253,7 +284,18 @@ const SignUp = () => {
             </div>
 
             <div className={styles.termsCheckbox}>
-              <input type="checkbox" id="terms" required />
+              <input
+                type="checkbox"
+                id="terms"
+                required
+                checked={formData.termsAccepted}
+                onChange={(e) =>
+                  setFormData((prev) => ({
+                    ...prev,
+                    termsAccepted: e.target.checked,
+                  }))
+                }
+              />
               <label htmlFor="terms" className={styles.termsText}>
                 By signing up, I agree to its{" "}
                 <a href="#" className={styles.termsLink}>
@@ -262,7 +304,9 @@ const SignUp = () => {
               </label>
             </div>
 
-            <button type="submit">Sign up</button>
+            <button type="submit" disabled={loading}>
+              {loading ? "Signing up..." : "Sign up"}
+            </button>
 
             <p className={`${styles.span} ${styles.spanAlign}`}>
               Already have an account?{" "}

@@ -1,7 +1,11 @@
+"use client";
+
 import AppLayout from "../layouts/AppLayout";
 import { useNavigate } from "react-router-dom";
-import React, { useState } from "react";
+import { useState } from "react";
 import "../App.css";
+import AuthService from "../services/auth.service";
+
 const LanguageSelect = () => {
   const navigate = useNavigate();
   const [selectedLanguage, setSelectedLanguage] = useState("");
@@ -19,22 +23,11 @@ const LanguageSelect = () => {
     }
 
     try {
-      const response = await fetch(
-        "/select-language",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ language: selectedLanguage }),
-        }
-      );
+      // Save the selected language to session storage
+      AuthService.setLanguage(selectedLanguage);
 
-      if (response.ok) {
-        navigate("/sign-up");
-      } else {
-        alert("There was an error. Please try again.");
-      }
+      // Navigate to sign-up page
+      navigate("/sign-up");
     } catch (error) {
       console.error("Error:", error);
       alert("An error occurred. Please try again.");

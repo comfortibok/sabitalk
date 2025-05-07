@@ -1,14 +1,64 @@
-import AppLayout from "../layouts/AppLayout";
+"use client";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import AppLayout from "../layouts/AppLayout";
 import styles from "../styles/form.module.css";
+import AuthService from "../services/auth.service";
 
 const PersonalizeAccount = () => {
   const navigate = useNavigate();
+  const [formData, setFormData] = useState({
+    gender: "",
+    username: "",
+  });
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    const user = AuthService.getUser();
+    if (user) {
+      setFormData({
+        gender: user.gender || "",
+        username: user.username || "",
+      });
+    }
+  }, []);
 
   const handleBack = (e) => {
     e.preventDefault();
     navigate("/sign-up");
   };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  const handleConfirm = () => {
+    if (!formData.gender || !formData.username) {
+      alert("Please fill in all fields.");
+      return;
+    }
+
+    setLoading(true);
+
+    try {
+      AuthService.updateUserProfile({
+        gender: formData.gender,
+        username: formData.username,
+      });
+
+      navigate("/profile");
+    } catch (error) {
+      console.error("Error updating profile:", error);
+      alert("An error occurred while updating your profile. Please try again.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <AppLayout>
       <section className="formWrapper">
@@ -39,26 +89,48 @@ const PersonalizeAccount = () => {
         </div>
         <section className={styles.formSection}>
           <h3 className={styles.formTitle}>Personalize your account</h3>
-          <form className={styles.accountForm}>
+          <form
+            className={styles.accountForm}
+            onSubmit={(e) => e.preventDefault()}
+          >
             <div className={styles.inputWrap}>
               <label htmlFor="gender">Gender</label>
-              <select id="gender" name="gender" required>
-                <option value="" disabled selected hidden></option>
+              <select
+                id="gender"
+                name="gender"
+                value={formData.gender}
+                onChange={handleChange}
+                required
+              >
+                <option value="" disabled hidden></option>
                 <option value="male">Male</option>
                 <option value="female">Female</option>
               </select>
             </div>
             <div className={styles.inputWrap}>
               <label htmlFor="username">Username</label>
-              <input type="text" name="username" id="username" required />
+              <input
+                type="text"
+                name="username"
+                id="username"
+                value={formData.username}
+                onChange={handleChange}
+                required
+              />
             </div>
-            <button className={styles.confirmBtn} type="button">
-              Confirm
+            <button
+              className={styles.confirmBtn}
+              type="button"
+              onClick={handleConfirm}
+              disabled={loading}
+            >
+              {loading ? "Saving..." : "Confirm"}
             </button>
             <button
               className={styles.cta}
               type="button"
               aria-label="Do this later"
+              onClick={() => navigate("/profile")}
             >
               Do this later
             </button>

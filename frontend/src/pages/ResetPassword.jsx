@@ -6,8 +6,8 @@ import axios from "axios";
 
 const ResetPassword = () => {
   const [email, setEmail] = useState("");
-  const [error, setError] = useState(null); // For any errors
-  const [loading, setLoading] = useState(false); // To track loading state
+  const [error, setError] = useState(null); 
+  const [loading, setLoading] = useState(false); 
   const navigate = useNavigate();
 
   const handleBack = (e) => {
