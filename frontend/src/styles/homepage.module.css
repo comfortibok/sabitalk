@@ -20,7 +20,7 @@
 
 .headerSectionWrap,
 footer,
-.heroSectionWrap{
+.heroSectionWrap {
   width: 100%;
 }
 
@@ -49,11 +49,25 @@ header {
   height: 30px;
 }
 
-.logoSubtext {
+.logoSubtitle {
   font-family: "Amita", serif;
-  font-weight: var(--fontweight-normal);
   font-size: 0.69rem;
+}
+
+.logoSubtitle,
+.footerLink {
+  font-weight: var(--fontweight-normal);
+}
+
+.heroDescription,
+.heroText,
+.logoSubtitle {
   color: var(--tertiary-color);
+}
+
+.aboutHeading,
+.aboutText {
+  font-weight: var(--font-weight-bold);
 }
 
 .nav {
@@ -99,7 +113,6 @@ header {
   border-radius: 8px;
   font-size: var(--font-size-med);
   background-color: transparent;
-  border: 1.2px solid var(--primary-background-color);
   color: var(--primary-background-color);
 
   &:hover {
@@ -114,7 +127,9 @@ header {
   background-color: transparent;
   color: var(--primary-background-color);
   display: inline-block;
+  font-weight: var(--font-weight-bold);
   text-decoration: none;
+  font-family: inherit;
   cursor: pointer;
 
   &:hover {
@@ -163,13 +178,21 @@ header {
   }
 }
 
-.heroSubtext{
+.heroDescription {
   font-size: var(--font-size-med);
 }
 
+.heroSubtitle,
+.heroDescription {
+  font-weight: var(--fontweight-normal);
+}
+
+.heroText {
+  font-weight: var(--font-weight-extrabold);
+}
+
 .heroText,
-.heroSubtext {
-  color: var(--tertiary-color);
+.heroDescription {
   line-height: 1.7;
 }
 
@@ -205,6 +228,11 @@ header {
   background-size: contain;
   color: var(--tertiary-color);
   text-align: center;
+}
+
+.aboutHeading {
+  font-size: var(--font-size-extrabig);
+  color: var(--color-blue);
 }
 
 .aboutText {
@@ -246,3 +274,97 @@ footer {
   cursor: pointer;
 }
 
+@media (max-width: 1024px) {
+  .wrapper {
+    padding: 1em;
+  }
+
+  .logo img {
+    width: 80px;
+    height: 25px;
+  }
+
+  .heroSection {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+  }
+
+  .rightHero > img {
+    width: 400px;
+    height: 400px;
+  }
+
+  .heroText {
+    font-size: 1.8em;
+  }
+
+  .aboutSection {
+    padding: 2em;
+    gap: 1.5em;
+  }
+
+  .aboutText {
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+
+  .footer,
+  .header {
+    flex-direction: column;
+    gap: 2em;
+    padding: 2em;
+  }
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    padding: 0.5rem;
+  }
+
+  .header {
+    gap: 1em;
+    padding: 1em;
+  }
+
+  .logo img {
+    width: 70px;
+    height: 20px;
+  }
+
+  .heroSection {
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1.5rem;
+  }
+
+  .rightHero > img {
+    width: 300px;
+    height: 300px;
+  }
+
+  .heroText {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .aboutSection {
+    padding: 1.5rem;
+    gap: 1rem;
+  }
+
+  .aboutText {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .footer {
+    flex-direction: column;
+    gap: 1.5em;
+    padding: 1.5em;
+  }
+
+  .footer a {
+    font-size: 0.9rem;
+  }
+}
