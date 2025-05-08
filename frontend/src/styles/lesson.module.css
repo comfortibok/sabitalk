@@ -172,6 +172,12 @@
   gap: 1em;
 }
 
+.continueButton {
+  display: block;
+  max-width: 752px;
+  margin: 3em auto 0;
+}
+
 @media (max-width: 768px) {
   .buttons {
     flex-direction: column;

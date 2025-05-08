@@ -1,9 +1,12 @@
 import React from "react";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 import OngoingLesson from "../components/OngoingLesson";
 import LessonLayout from "../layouts/LessonLayout";
 import styles from "../styles/lesson.module.css";
 
 const LessonTwo = () => {
+  const navigate = useNavigate(); 
+
   const beginnerLessons = [
     {
       id: 1,
@@ -44,15 +47,6 @@ const LessonTwo = () => {
       border: "purpleBorder",
       color: "purpleProgress",
     },
-    {
-      id: 1,
-      lang: "Yoruba",
-      title: "Ọnka",
-      description: "Numbers",
-      progress: 24,
-      border: "blueBorder",
-      color: "blueProgress",
-    },
   ];
 
   const advancedLessons = [
@@ -74,26 +68,12 @@ const LessonTwo = () => {
       border: "purpleBorder",
       color: "purpleProgress",
     },
-    {
-      id: 1,
-      lang: "Yoruba",
-      title: "Ọnka",
-      description: "Numbers",
-      progress: 24,
-      border: "blueBorder",
-      color: "blueProgress",
-    },
-    {
-      id: 2,
-      lang: "Igbo",
-      title: "Abịdịi",
-      description: "Alphabet",
-      progress: 50,
-      border: "purpleBorder",
-      color: "purpleProgress",
-    },
   ];
 
+  const handleContinue = () => {
+    navigate("/lesson-three"); 
+  };
+  
   return (
     <LessonLayout activeLanguage="Yoruba">
       <section className={styles.lessonsListWrap}>
@@ -164,6 +144,10 @@ const LessonTwo = () => {
         </div>
         <OngoingLesson lessons={advancedLessons} />
       </section>
+
+      <button onClick={handleContinue} className={styles.continueButton}>
+        Continue to Lesson Three
+      </button>
     </LessonLayout>
   );
 };

@@ -20,8 +20,8 @@ const OngoingLesson = ({ lessons }) => {
           </div>
           <div className={styles.langWrapper}>
             <a
-              href="#"
-              target="_blank"
+              href="/lesson-two"
+              target="_self"
               aria-label={`Continue learning ${lesson.title} in ${lesson.lang}`}
               className={styles.continueLink}
             >

@@ -1,13 +1,22 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "../layouts/Header";
 import DashboardLayout from "../layouts/DashboardLayout";
 import styles from "../styles/dashboardPage.module.css";
 import image from "../assets/images/0014.png";
 import OngoingLesson from "../components/OngoingLesson";
+import AuthService from "../services/auth.service"; // Import AuthService to fetch user data
 
 const DashboardPage = () => {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
+  const [userData, setUserData] = useState({ username: "" }); // State to store user data
+
+  useEffect(() => {
+    // Fetch user data from AuthService
+    const user = AuthService.getUser();
+    if (user) {
+      setUserData({ username: user.username || "User" }); // Default to "User" if username is not set
+    }
+  }, []);
 
   const toggleSidebar = () => {
     setSidebarOpen(!isSidebarOpen);
@@ -16,6 +25,7 @@ const DashboardPage = () => {
   const closeSidebar = () => {
     setSidebarOpen(false);
   };
+
   const ongoingLessons = [
     {
       id: 1,
@@ -37,10 +47,12 @@ const DashboardPage = () => {
       color: "purpleProgress",
     },
   ];
+
   return (
     <DashboardLayout isOpen={isSidebarOpen} closeSidebar={closeSidebar}>
+      {/* Updated title to dynamically include the username */}
       <Header
-        title="Welcome, Fawazat02"
+        title={`Welcome, ${userData.username}`}
         date="Mar 05, 2025"
         toggleSidebar={toggleSidebar}
       />
